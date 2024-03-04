@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prize Details</title>
+</head>
+<body>
+  <div class="prize-details-container">
+    <img id="prizeImage" src="" alt="Prize Image">
+    <h2 id="prizeTitle"></h2>
+  </div>
+
+  <script>
+    // Get the query parameters from the URL
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    // Retrieve the prize details
+    const prizeImage = urlParams.get('image');
+    const prizeTitle = urlParams.get('title');
+
+    // Display the prize details on the new page
+    document.getElementById('prizeImage').src = decodeURIComponent(prizeImage);
+    document.getElementById('prizeTitle').innerText = decodeURIComponent(prizeTitle);
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const imageParam = urlParams.get('image');
+      const titleParam = urlParams.get('title');
+
+      // Update the display with the retrieved parameters
+      const imageElement = document.getElementById('prizeImage'); // Replace 'prizeImage' with the actual ID of the image element
+      const titleElement = document.getElementById('prizeTitle'); // Replace 'prizeTitle' with the actual ID of the title element
+
+      if (imageElement && titleElement) {
+        imageElement.src = decodeURIComponent(imageParam);
+        titleElement.innerText = decodeURIComponent(titleParam);
+      }
+    });
+  </script>
+  
+</body>
+</html>
