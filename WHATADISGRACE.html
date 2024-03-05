@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background from HTML2 -->
+    <div id="background">
+        <!-- Include content from HTML2 here -->
+        <iframe src="https://kingsgamek.github.io/index.html" sandbox="allow-scripts"></iframe>
+    </div>
+
+    <!-- Main content from HTML1 -->
+    <div id="content">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gotcha Game</title>
+  
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomEase3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrambleTextPlugin3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomBounce3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomWiggle3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/InertiaPlugin.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/Draggable3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/EasePack3.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/Flip.min.js"></script>
+</head>
+<body>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap">
+  <style>
+    
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+%stroke {
+	text-shadow: 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white),
+		0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white),
+		0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white),
+		0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white), 0px 0px 2px var(--stroke-color, white);
+	filter: drop-shadow(0px 2px 0px rgba(0, 0, 0, 0.2));
+}
+
+* {
+	&,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+		font-family: inherit;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+html {
+	font-size: 62.5%;
+	height: 100%;
+	color: white;
+	font-family: 'Exo', 'Exo', 'Exo', 'Exo', 'Exo', Exo, sans-serif;
+
+	body {
+		font-size: 1.6rem;
+		overflow: hidden;
+		height: 100%;
+		position: relative;
+		user-select: none;
+	}
+}
+
+.dim {
+	&[data-animate] {
+		filter: brightness(0.6) saturate(0.8);
+	}
+	
+	transition: 0.5s linear;
+}
+
+.confetti {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	pointer-events: none;
+	perspective: 100vmin;
+
+	span {
+		--size: 5;
+
+		display: block;
+		position: absolute;
+		width: calc(var(--size) * 1px);
+		height: calc(var(--size) * 1px);
+		background-color: blue;
+		animation: rotate linear calc(var(--rs) * 1s) infinite both;
+	}
+}
+
+#app.gotcha {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: transparent;
+
+	.container {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+
+		.game-layer {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			background: transparent;
+
+			.machine-container {
+				position: relative;
+				white-space: nowrap;
+
+				.machine {
+					position: relative;
+					z-index: 1;
+					max-height: 80vh;
+					pointer-events: none;
+					// max-width: 80vw;
+				}
+
+				.backboard {
+					z-index: 0;
+					width: 15vh;
+					height: 13vh;
+					top: 65%;
+					left: 48%;
+					background-color: #000000;
+					position: absolute;
+				}
+
+				.title {
+					--stroke-color: #ad8bd6;
+					position: absolute;
+					display: block;
+					top: 10%;
+					width: 100%;
+					text-align: center;
+					@extend %stroke;
+					font-size: 5vh;
+					z-index: 3;
+
+					span {
+						animation: blink 0.8s linear both infinite;
+
+						@for $i from 1 through 10 {
+							&:nth-child(#{$i}) {
+								animation-delay: #{$i * 0.12}s;
+							}
+						}
+					}
+				}
+
+				.price {
+					z-index: 3;
+					position: absolute;
+					color: #000000;
+					font-size: 2.5vh;
+					top: 80.5%;
+					left: 15%;
+				}
+
+				.handle {
+					z-index: 3;
+					position: absolute;
+					height: 3.9vh;
+					left: 13%;
+					top: 69%;
+				}
+
+				.balls {
+					position: absolute;
+					top: 22%;
+					left: 2%;
+					width: 96%;
+					height: 34.5%;
+				}
+
+				.pointer {
+					position: absolute;
+					height: 15vh;
+					top: 75%;
+					left: 15%;
+					z-index: 5;
+          pointer-events: none;
+
+					img {
+						height: 100%;
+						display: block;
+						transform: rotate(-30deg);
+						transform-origin: 0% 0%;
+						animation: click 1s ease-in-out infinite both;
+					}
+				}
+			}
+		}
+
+		.ui-layer {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			pointer-events: none;
+
+			.title-container {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 10;
+
+				.title {
+					h2 {
+						--stroke-color: #f06e5b;
+						text-align: center;
+						@extend %stroke;
+						font-size: 5vh;
+					}
+				}
+			}
+
+			.prize-container {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				.prize-ball-container {
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+
+				.prize-reward-container {
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+
+					&>* {
+						display: block;
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+
+					.prize {
+						img {
+							height: 50vh;
+						}
+					}
+
+					.shine {
+						img {
+							height: 110vh;
+							animation: spin linear 5s infinite forwards;
+						}
+					}
+				}
+			}
+		}
+
+		.ball {
+			--size: 8vh;
+			--outline: #4c3fc2;
+			--color1: #2facff;
+			--color2: #ff8ff6;
+
+			width: var(--size);
+			height: var(--size);
+			border-radius: 100%;
+			background-color: var(--color1);
+			border: solid 0.8vh var(--outline);
+			position: absolute;
+			overflow: hidden;
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				height: 200%;
+				width: 200%;
+				background-color: var(--color2);
+				border-radius: 100%;
+				border: inherit;
+				transform: translate(-25%, -5%);
+			}
+		}
+	}
+
+	.wiggle {
+		animation: wiggle 2s ease-in-out infinite both;
+	}
+}
+
+@keyframes blink {
+	0% {
+		color: #ffc7e5;
+	}
+
+	20% {
+		color: #fcff33;
+	}
+
+	100% {
+		color: #ffc7e5;
+	}
+}
+
+@keyframes wiggle {
+	0% {
+		transform: rotate(-5deg);
+	}
+
+	50% {
+		transform: rotate(5deg);
+	}
+
+	100% {
+		transform: rotate(-5deg);
+	}
+}
+
+@keyframes click {
+	0% {
+		transform: rotate(-30deg) translateY(0vh);
+	}
+
+	80% {
+		transform: rotate(-30deg) translateY(5vh);
+	}
+
+	100% {
+		transform: rotate(-30deg) translateY(0vh);
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(0turn);
+	}
+
+	from {
+		transform: rotate(1turn);
+	}
+}
+
+
+@keyframes rotate {
+	from {
+		transform: rotate3d(var(--rx), var(--ry), var(--rz), 0turn);
+	}
+
+	to {
+		transform: rotate3d(var(--rx), var(--ry), var(--rz), 1turn);
+	}
+} ... */
+  </style>
+</head>
+<body>
+  <div id="app" class="gotcha">
+    <div class="container">
+      <div class="game-layer">
+        <div class="machine-container">
+          <div class="backboard"></div>
+          <div class="balls"></div>
+          <img class="machine" src="https://res.cloudinary.com/dyqaluliy/image/upload/v1709090673/Dise%C3%B1o_sin_t%C3%ADtulo_17_p7peto.svg" />
+          <div class="title"></div>
+          <div class="price"></div>
+          <img class="handle" src="https://res.cloudinary.com/dyqaluliy/image/upload/v1709167741/Dise%C3%B1o_sin_t%C3%ADtulo_29_ev42hs.svg" />
+          <div class="pointer">
+            <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1709171936/PASS_4_tobjat.svg" />
+          </div>
+        </div>
+      </div>
+      <div class="ui-layer">
+        <div class="title-container">
+          <div class="title">
+            <h2 class="wiggle"></h2>
+          </div>
+        </div>
+        <div class="prize-container">
+          <div class="prize-ball-container"></div>
+          <div class="prize-reward-container">
+            <div class="shine">
+              <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1709451340/Dise%C3%B1o_sin_t%C3%ADtulo_61_h0itsk.png" />
+            </div>
+            <div class="prize">
+              <img class="wiggle" src="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const confetti = ($parent, {
+	count = 100,
+	x = 50,
+	y = 50,
+	randX = 10,
+	randY = 10,
+	speedX = 0,
+	speedY = -2,
+	speedRandX = 0.5,
+	speedRandY = 0.5,
+	gravity = 0.01,
+	size = 10,
+	sizeRand = 5
+} = {}) => {
+	const $container = document.createElement('div');
+	$container.classList.add('confetti');
+
+	const particles = [];
+
+	for (let i = 0; i < count; i++) {
+		const $particle = document.createElement('span');
+
+		const settings = {
+			dom: $particle,
+			x: x + Math.random() * randX * 2 - randX,
+			y: y + Math.random() * randY * 2 - randY,
+			speedX: speedX + Math.random() * speedRandX * 2 - speedRandX,
+			speedY: speedY + Math.random() * speedRandY * 2 - speedRandY,
+			size: size + Math.random() * sizeRand * 2 - sizeRand
+		};
+
+		$particle.style.backgroundColor = `hsl(${Math.random() * 360}deg, 80%, 60%)`;
+		$particle.style.setProperty('--rx', Math.random() * 2 - 1);
+		$particle.style.setProperty('--ry', Math.random() * 2 - 1);
+		$particle.style.setProperty('--rz', Math.random() * 2 - 1);
+		$particle.style.setProperty('--rs', Math.random() * 2 + 0.5);
+		particles.push(settings);
+		$container.appendChild($particle);
+	}
+
+	const update = () => {
+		particles.forEach((config, i) => {
+			if (config.y > 100) {
+				particles.splice(i, 1);
+				config.dom.remove();
+			}
+
+			config.dom.style.setProperty('--size', config.size);
+			config.dom.style.left = config.x + '%';
+			config.dom.style.top = config.y + '%';
+			config.x += config.speedX;
+			config.y += config.speedY;
+			config.speedY += gravity
+		});
+
+
+		if(particles.length) {
+			requestAnimationFrame(update);
+		} else {
+			$container.remove();
+		}
+	}
+
+	update();
+
+	$parent.insertAdjacentElement('beforeend', $container);
+}
+
+const addAnimClass = ($e, clazz, timing) => {
+	const _func = $e => {
+		$e.classList.add(clazz);
+		$e.setAttribute('data-animate', '');
+	}
+
+	if (typeof $e === 'string') {
+		[...document.querySelectorAll($e)].forEach(_func);
+	} else {
+		_func($e);
+	}
+}
+
+let balls = [], started = false, prizeBall;
+let $app, $machine, $handle, $balls, $title, $pointer;
+let $$jitters = [];
+let prize;
+const SPEED = 1;
+
+const getPrize = async () => {
+	const prizes = [
+		{
+			image: 'https://assets.codepen.io/2509128/prize1.png',
+			title: 'Bunny'
+		},
+		{
+			image: 'https://assets.codepen.io/2509128/prize2.png',
+			title: 'Teddy Bear'
+		},
+		{
+			image: 'https://assets.codepen.io/2509128/prize3.png',
+			title: 'Polar Bear'
+		},
+		{
+			image: 'https://assets.codepen.io/2509128/prize4.png',
+			title: 'Polar Bear Bride'
+		}
+	]
+
+	return await prizes[~~(prizes.length * Math.random())];
+}
+
+const init = async () => {
+	$app = document.querySelector('#app');
+	$app.classList.add('gotcha');
+	getPrize().then(e => {
+		prize = e;
+		document.querySelector('.prize-container .prize img').src = e.image;
+	});
+
+	const TITLE = '';
+	const PRICE = '· ??? ·';
+
+	$machine = document.querySelector('.machine-container');
+	$handle = document.querySelector('.machine-container .handle');
+	$balls = document.querySelector('.machine-container .balls');
+	$title = document.querySelector('.title-container .title');
+	$pointer = document.querySelector('.machine-container .pointer');
+
+  $machine.querySelector('.title').innerHTML = [...TITLE].map(e => `<span>${e}</span>`).join('');
+  $machine.querySelector('.price').innerText = PRICE;
+  
+	createBalls();
+
+	gsap.set($machine, {
+		y: '100vh'
+	});
+
+	gsap.set($title, {
+		y: '120vh'
+	});
+
+	gsap.set($pointer, {
+		opacity: 0
+	});
+
+	gsap.set('.prize-reward-container', {
+		opacity: 0
+	});
+
+	setTimeout(prepare, 500 * SPEED);
+}
+
+const prepare = () => {
+	let tl = gsap.timeline();
+
+	tl.to($machine, {
+		y: '0vh',
+		ease: 'none',
+		duration: 0.6,
+		onComplete() {
+      $handle.style.cursor = 'pointer';
+			$handle.addEventListener('click', start, { once: true });
+
+			balls.forEach(ball => {
+				const tl = gsap.timeline();
+				const duration = 0.05 + Math.random() * 0.1;
+
+				tl.to(ball.dom, {
+					y: -(10 + Math.random() * 10),
+					ease: 'power1.out',
+					duration,
+				}).to(ball.dom, {
+					y: 0,
+					duration,
+					ease: 'power1.in'
+				});
+
+				setTimeout(() => {
+					if (!started) {
+						showHint();
+					}
+				}, 2000 * SPEED);
+
+			})
+		}
+	});
+}
+
+const start = async () => {
+  $handle.style.cursor = 'default';
+	started = true;
+	hideHint();
+
+	// handle spin and jitter
+	await (() => new Promise(resolve => {
+		const tl = gsap.timeline()
+		tl.to($handle, {
+			rotate: 90,
+			duration: 0.3,
+			ease: 'power1.in',
+			async onComplete() {
+				jitter();
+				await delay(2000 * SPEED);
+				await stopJittering();
+				resolve();
+			}
+		}).to($handle, {
+			rotate: 0,
+			duration: 1,
+		});
+	}))();
+
+
+	// ball drop
+	await (() => new Promise(resolve => {
+		const tl = gsap.timeline();
+		gsap.to(prizeBall.dom, {
+			x: '-3vh',
+			ease: 'none',
+			duration: 0.5,
+			rotate: prizeBall.rotate + 10
+		});
+
+		gsap.to(balls[3].dom, {
+			x: '1vh',
+			y: '1vh',
+			ease: 'none',
+			duration: 0.5,
+			rotate: balls[3].rotate - 5
+		});
+
+		gsap.to(balls[4].dom, {
+			x: '-1vh',
+			y: '1vh',
+			ease: 'none',
+			duration: 0.5,
+			rotate: balls[4].rotate - 5
+		});
+
+		gsap.to(balls[5].dom, {
+			x: '1vh',
+			y: '1vh',
+			ease: 'none',
+			duration: 0.5,
+			rotate: balls[5].rotate - 5
+		});
+
+		tl.to(prizeBall.dom, {
+			y: '12vh',
+			ease: 'power1.in',
+			duration: 0.5
+		}).to(prizeBall.dom, {
+			y: '23vh',
+			ease: 'power1.in',
+			duration: 0.5
+		}).to(prizeBall.dom, {
+			y: '22vh',
+			ease: 'power1.out',
+			duration: 0.2
+		}).to(prizeBall.dom, {
+			y: '23vh',
+			ease: 'power1.in',
+			duration: 0.2
+		}).to(prizeBall.dom, {
+			y: '22.5vh',
+			ease: 'power1.out',
+			duration: 0.1
+		}).to(prizeBall.dom, {
+			y: '23vh',
+			ease: 'power1.in',
+			duration: 0.1,
+			onComplete: resolve
+		});
+	}))();
+  
+  prizeBall.dom.style.cursor = 'pointer';
+
+	let shouldShowHint = true;
+	prizeBall.dom.addEventListener('click', () => {
+    prizeBall.dom.style.cursor = 'default';
+		shouldShowHint = false;
+		hideHint();
+		pickup();
+	}, { once: true });
+
+	await delay(2000);
+	if(shouldShowHint) {
+		showHint2();
+	}
+}
+
+const pickup = () => {
+	let { x, y } = prizeBall.dom.getBoundingClientRect();
+	[x, y] = [x / window.innerHeight * 100, y / window.innerHeight * 100]; 
+	document.querySelector('.prize-container .prize-ball-container').appendChild(prizeBall.dom);
+	const rotate = prizeBall.rotate;
+	prizeBall.x = 0;
+	prizeBall.y = 0;
+	prizeBall.rotate = 0;
+
+	addAnimClass('.game-layer', 'dim')
+
+	prizeBall.dom.style.left = 0;
+	prizeBall.dom.style.top = 0;
+	
+
+	gsap.set(prizeBall.dom, {
+		x: `${x}vh`,
+		y: `${y}vh`,
+		rotate,
+		duration: 1
+	});
+
+	gsap.to('.prize-container .prize-ball-container', {
+		x: `-4vh`,
+		y: `-4vh`,
+		duration: 1
+	});
+
+	let tl = gsap.timeline();
+	tl.to(prizeBall.dom, {
+		x: '50vw',
+		y: '50vh',
+		scale: 2,
+		rotate: -180,
+		duration: 1
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		scaleX: 2.1,
+		ease: 'power1.inOut',
+		scaleY: 1.9
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		ease: 'power1.inOut',
+		scaleX: 1.9,
+		scaleY: 2.1
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		ease: 'power1.inOut',
+		scaleX: 2.1,
+		scaleY: 1.9
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		ease: 'power1.inOut',
+		scaleX: 1.9,
+		scaleY: 2.1
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		ease: 'power1.inOut',
+		scaleX: 2.1,
+		scaleY: 1.9
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		ease: 'power1.inOut',
+		scaleX: 1.9,
+		scaleY: 2.1
+	}).to(prizeBall.dom, {
+		duration: 0.5,
+		ease: 'power1.out',
+		scaleX: 2.6,
+		scaleY: 1.6
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		ease: 'power1.out',
+		scaleX: 1.6,
+		scaleY: 2.4,
+		onComplete: pop
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		ease: 'power1.out',
+		scaleX: 2.1,
+		scaleY: 1.9,
+	}).to(prizeBall.dom, {
+		duration: 0.1,
+		ease: 'power1.out',
+		scaleX: 2,
+		scaleY: 2
+	});
+}
+
+const openLink = () => {
+  // Navigate to a new page within the same document
+  window.location.href = 'https://your-link-url.com';
+};
+
+const pop = () => {
+  confetti($app, {
+    speedY: 0,
+    speedRandY: 1,
+    speedRandX: 0.75,
+    speedY: -0.5,
+    gravity: 0.02,
+    y: 50,
+    randX: 6,
+    randY: 6,
+    size: 8,
+    sizeRand: 4,
+    count: 128
+  });
+
+  gsap.set('.prize-reward-container .prize', {
+    scale: 0
+  });
+
+  gsap.to('.prize-reward-container', {
+    opacity: 1,
+    duration: 0.3
+  });
+
+  gsap.to('.prize-reward-container .prize', {
+    scale: 1,
+    duration: 0.5,
+    ease: 'back.out'
+  });
+
+  gsap.to(prizeBall.dom, {
+    opacity: 0
+  });
+
+  gsap.set($title, {
+    y: '-50vh',
+  });
+
+  $title.children[0].innerHTML = `<br>${prize.title}`;
+  gsap.to($title, {
+    delay: 1,
+    y: '5vh',
+    duration: 0.6,
+    onComplete: openLink // Call the openLink function when the animation is complete
+  });
+
+  gsap.to($machine, {
+    y: '100vh',
+    duration: 1,
+    delay: 1,
+    onComplete() {
+      $machine.remove();
+    }
+  });
+};
+
+
+const showHint = () => {
+  gsap.set($pointer, { opacity: 0 });
+  
+	gsap.to($title, {
+		y: '80vh',
+		duration: 1,
+    ease: 'back.out'
+	});
+
+	gsap.to($pointer, {
+		opacity: 1,
+		duration: 1,
+    ease: 'none'
+	});
+}
+
+const hideHint = () => {
+	gsap.to($title, {
+		y: '120vh',
+		duration: 0.6
+	});
+
+	gsap.to($pointer, {
+		opacity: 0,
+		duration: 1
+	});
+}
+
+const showHint2 = () => {
+	$title.children[0].innerHTML = 'Tap to claim it!';
+	gsap.set($pointer, {
+		x: '16vh',
+		y: '3vh'
+	});
+
+	gsap.to($title, {
+		y: '80vh',
+		duration: 1,
+    ease: 'back.out'
+	});
+
+	gsap.to($pointer, {
+		opacity: 1,
+		duration: 1,
+    ease: 'none'
+	});
+}
+
+const createBalls = () => {
+	let id = 0;
+	const createBall = (x, y, rotate = ~~(Math.random() * 360), hue = ~~(Math.random() * 360)) => {
+		const size = 8;
+		const $ball = document.createElement('figure');
+		$ball.classList.add('ball');
+		$ball.setAttribute('data-id', ++id);
+		$ball.style.setProperty('--size', `${size}vh`);
+		$ball.style.setProperty('--color1', `hsl(${hue}deg, 80%, 70%)`);
+		$ball.style.setProperty('--color2', `hsl(${hue + 20}deg, 50%, 90%)`);
+		$ball.style.setProperty('--outline', `hsl(${hue}deg, 50%, 55%)`);
+		
+		$balls.appendChild($ball);
+
+		const update = () => {
+			gsap.set($ball, {
+				css: {
+					left: `calc(${x} * (100% - ${size}vh))`,
+					top: `calc(${y} * (100% - ${size}vh))`,
+					transform: `rotate(${rotate}deg)`
+				},
+			});
+		}
+
+		const ball = {
+			dom: $ball,
+			get x() {
+				return x;
+			},
+			get y() {
+				return y;
+			},
+			get rotate() {
+				return rotate;
+			},
+			set x(value) {
+				x = value;
+				update();
+			},
+			set y(value) {
+				y = value;
+				update();
+			},
+			set rotate(value) {
+				rotate = value;
+				update();
+			},
+			get size() {
+				return size;
+			}
+		};
+
+		balls.push(ball);
+
+		update();
+
+		return ball;
+	}
+	createBall(0.5, 0.6);
+	createBall(0, 0.68);
+	createBall(0.22, 0.65);
+	createBall(0.7, 0.63);
+	createBall(0.96, 0.66);
+
+	createBall(0.75, 0.79);
+	createBall(0.5, 0.8);
+	prizeBall = createBall(0.9, 0.81);
+	createBall(0, 0.82);
+
+	createBall(1, 0.9);
+	createBall(0.25, 0.85);
+
+	createBall(0.9, 1);
+	createBall(0.4, 1);
+	createBall(0.65, 1);
+	createBall(0.09, 1);
+}
+
+const jitter = () => {
+	balls.forEach(({ dom, rotate }, i) => {
+		const tl = gsap.timeline({ repeat: -1, delay: -i * 0.0613 });
+
+		gsap.set(dom, {
+			y: 0,
+			rotateZ: rotate,
+		})
+
+		const duration = Math.random() * 0.1 + 0.05;
+
+		tl.to(dom, {
+			y: -(Math.random() * 6 + 2),
+			rotateZ: rotate,
+			duration,
+      ease: RoughEase.ease.config({ 
+        template: Power0.easeOut, 
+        strength: 1, 
+        points: 20, 
+        taper: "none", 
+        randomize: true, 
+        clamp: false
+      })
+		}).to(dom, {
+			y: 0,
+			rotateZ: rotate - Math.random() * 10 - 5,
+			duration,
+		});
+
+		$$jitters.push(tl);
+	});
+
+	const tl = gsap.timeline({ repeat: -1 });
+	tl.to('.machine-container', {
+		x: 2,
+		duration: 0.1
+	}).to('.machine-container', {
+		x: 0,
+		duration: 0.1
+	});
+
+	$$jitters.push(tl);
+}
+
+const stopJittering = async () => {
+	$$jitters.forEach($$jitter => $$jitter.pause());
+
+	balls.forEach(({ dom, rotate }, i) => {
+		gsap.to(dom, {
+			y: 0,
+			rotate,
+			duration: 0.1
+		})
+	});
+
+	gsap.to('.machine-container', {
+		x: 0,
+		duration: 0.1
+	});
+
+	await delay(200);
+}
+
+init();
+    
+  </script>
+</body>
+  
+<button id="openLinkButton" onclick="openLink()">Open Link</button>
+  
+  
+</html>
+
+    </div>
+</body>
+</html>
