@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prize Details</title>
+</head>
+<body>
+  <div class="prize-details-container">
+    <img id="prizeImage" src="" alt="Prize Image">
+    <h2 id="prizeTitle"></h2>
+  </div>
+
+  <script>
+    // Get the query parameters from the URL
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    // Retrieve the prize details
+    const prizeImage = urlParams.get('image');
+    const prizeTitle = urlParams.get('title');
+
+    // Display the prize details on the new page
+    document.getElementById('prizeImage').src = decodeURIComponent(prizeImage);
+    document.getElementById('prizeTitle').innerText = decodeURIComponent(prizeTitle);
+  </script>
+  
+  <!-- Inside the body of index1.html -->
+    <button onclick="obtainPrize()">Obtain Prize</button>
+
+    <script src="gacha.js"></script>
+</body>
+</html>
