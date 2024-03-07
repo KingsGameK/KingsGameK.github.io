@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Roulette</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #roulette {
+      text-align: center;
+    }
+
+    #prizeTitle {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #prizeImage {
+      max-width: 300px;
+    }
+
+    #goToInventory {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="roulette">
+    <div id="prizeTitle">Prize Title: Jerrycan</div>
+    <img id="prizeImage" src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="Prize Image">
+    <button id="goToInventory">Go to Inventory</button>
+  </div>
+
+  <script>
+    document.getElementById('goToInventory').addEventListener('click', function() {
+      // Retrieve prize information
+      const prizeTitle = document.getElementById('prizeTitle').textContent.trim();
+      const prizeImage = document.getElementById('prizeImage').src;
+
+      // Redirect to HTML2 with prize information
+      window.location.href = `https://kingsgamek.github.io/BOOMBACLATINVENTORY.html?prizeTitle=${encodeURIComponent(prizeTitle)}&prizeImage=${encodeURIComponent(prizeImage)}`;
+    });
+  </script>
+</body>
+</html>
