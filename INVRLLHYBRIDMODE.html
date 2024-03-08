@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roulette & Inventory</title>
+  <style>
+    #roulette-container {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    #roulette-items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      transition: transform 3s ease-out;
+    }
+    .roulette-item {
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #000;
+      text-align: center;
+    }
+    #result {
+      margin-top: 20px;
+    }
+
+    #inventory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 10px;
+    }
+    .inventory-item {
+      position: relative;
+      border: 1px solid #000;
+      text-align: center;
+      padding: 10px;
+    }
+    .remove-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Roulette Section -->
+<div id="roulette-container">
+  <ul id="roulette-items">
+    <li class="roulette-item">Item 1</li>
+    <li class="roulette-item">Item 2</li>
+    <li class="roulette-item">Item 3</li>
+    <li class="roulette-item">Item 4</li>
+    <li class="roulette-item">Item 5</li>
+  </ul>
+</div>
+
+<!-- Move the button here -->
+<button id="spinButton">Spin Roulette</button>
+<div id="result"></div>
+
+<!-- Inventory Section -->
+<h2>Inventory</h2>
+<div id="inventory-items" class="inventory-grid"></div>
+
+<script>
+  window.onload = function () {
+    const inventoryGrid = document.getElementById('inventory-items');
+    const spinButton = document.getElementById('spinButton');
+
+    // Load inventory from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const inventoryData = urlParams.get('inventoryData');
+    const inventory = inventoryData ? JSON.parse(atob(inventoryData)) : [];
+
+    // Display items in the inventory
+    displayInventory(inventory);
+
+    spinButton.addEventListener('click', startRoulette);
+
+    function startRoulette() {
+      const rouletteItems = document.getElementById('roulette-items');
+      const resultDiv = document.getElementById('result');
+
+      // Disable button during animation
+      spinButton.disabled = true;
+
+      // Generate a random rotation count
+      const rotations = 3 + Math.floor(Math.random() * 3);
+
+      // Calculate the final rotation angle
+      const finalRotation = rotations * 360 + (Math.floor(Math.random() * 360));
+
+      // Apply the rotation animation
+      rouletteItems.style.transform = `rotate(${finalRotation}deg)`;
+      
+      // Wait for the animation to finish
+      setTimeout(() => {
+        // Enable the button again
+        spinButton.disabled = false;
+
+        // Calculate the selected item
+        const selectedItemIndex = rotations % 5;
+
+        // Display the result
+        resultDiv.textContent = `You obtained: ${document.getElementsByClassName('roulette-item')[selectedItemIndex].textContent}`;
+        
+        // Save the obtained item to the inventory (this is a simplified example)
+        addToInventory(selectedItemIndex);
+      }, 3000);
+    }
+
+    function addToInventory(itemIndex) {
+      // Add the obtained item to the inventory
+      inventory.push(`Item ${itemIndex + 1}`);
+
+      // Update the URL with the new inventory data
+      updateURL();
+
+      // Display items in the inventory
+      displayInventory(inventory);
+    }
+
+    function updateURL() {
+      const inventoryData = btoa(JSON.stringify(inventory));
+      const url = `?inventoryData=${inventoryData}`;
+      window.history.replaceState({}, '', url);
+    }
+
+    function displayInventory(inventory) {
+      inventoryGrid.innerHTML = '';
+
+      inventory.forEach((item, index) => {
+        const newItem = document.createElement('div');
+        newItem.classList.add('inventory-item');
+        newItem.textContent = item;
+
+        // Add a remove button to each item
+        const removeButton = document.createElement('span');
+        removeButton.classList.add('remove-button');
+        removeButton.textContent = 'X';
+        removeButton.addEventListener('click', () => removeItem(index));
+
+        newItem.appendChild(removeButton);
+        inventoryGrid.appendChild(newItem);
+      });
+    }
+
+    function removeItem(index) {
+      // Remove the item from the inventory
+      inventory.splice(index, 1);
+
+      // Update the URL with the new inventory data
+      updateURL();
+
+      // Display items in the inventory
+      displayInventory(inventory);
+    }
+  };
+</script>
+
+</body>
+</html>
