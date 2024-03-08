@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .inventory {
+      display: grid;
+      grid-template-columns: repeat(5, 80px);
+      gap: 10px;
+    }
+
+    .item {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #000;
+      text-align: center;
+      line-height: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="inventory" id="inventory"></div>
+
+  <script>
+    const inventory = document.getElementById('inventory');
+
+    function addItemToInventory(item) {
+      const newItem = document.createElement('div');
+      newItem.classList.add('item');
+      newItem.textContent = item;
+      inventory.appendChild(newItem);
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const newItem = urlParams.get('item');
+
+    if (newItem) {
+      addItemToInventory(decodeURIComponent(newItem));
+    }
+  </script>
+</body>
+</html>
