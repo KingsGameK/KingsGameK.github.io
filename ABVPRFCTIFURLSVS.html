@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roulette & Inventory</title>
+  <style>
+    
+            body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url(https://res.cloudinary.com/dyqaluliy/image/upload/v1709015836/Dise%C3%B1o_sin_t%C3%ADtulo_18_oe6xcw.gif);
+      backdrop-filter: blur(20px);   
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      overflow: hidden;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #232323;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      color: #ffcc00;
+    }
+
+    #roulette-container {
+      position: absolute;
+      top: 10px;
+      height: 150px; /* Adjust the container height as needed */
+      overflow: hidden;
+      border: 2px solid #ffcc00; /* Yellow frame */
+      border-radius: 8px;
+    }
+
+    #roulette-items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      animation: slideRoulette 20s linear infinite; /* Adjust duration as needed */
+      overflow: hidden; /* Hide overflowing content within #roulette-items */
+    }
+
+    .roulette-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      margin: 5px;
+    }
+
+    .roulette-item img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    @keyframes slideRoulette {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-5000px); /* Adjust based on the total height of all items */
+      }
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    #inventory-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 80px);
+      grid-template-rows: repeat(4, 80px);
+      gap: 10px;
+    }
+
+    .inventory-item {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border: 2px solid #ffcc00;
+      text-align: center;
+      overflow: hidden;
+      display: inline-block;
+      background-color: #363636;
+      border-radius: 8px;
+      margin: 0 5px;
+    }
+
+    .inventory-item img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .remove-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      color: #ffcc00;
+      font-size: 14px;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+
+    #spinButton {
+      position: absolute;
+      top: 45px;
+      background-color: #ffcc00;
+      color: #232323;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    #spinButton:disabled {
+      background-color: #7f7f7f;
+      cursor: not-allowed;
+    }
+
+    #ticketDisplay {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #ffcc00;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    #ticketIcon {
+      margin-right: 5px;
+    }
+
+    .confirmation-box {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #363636;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .confirmation-box button {
+      background-color: #ffcc00;
+      color: #232323;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    .confirmation-box button.cancel {
+      background-color: #7f7f7f;
+    }
+  </style>
+</head>
+<body>
+
+<div id="roulette-container">
+  <ul id="roulette-items">
+    <li class="roulette-item" data-item="jerrycan"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="Jerrycan"></li>
+    <li class="roulette-item" data-item="jerrycan"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="Jerrycan"></li>
+    <li class="roulette-item" data-item="jerrycan"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="Jerrycan"></li>
+    <li class="roulette-item" data-item="jerrycan"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="Jerrycan"></li>
+    <li class="roulette-item" data-item="jerrycan"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="Jerrycan"></li>
+    <li class="roulette-item" data-item="jerrycan"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="Jerrycan"></li>
+    <li class="roulette-item" data-item="jerrycan"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="Jerrycan"></li>
+    <li class="roulette-item" data-item="hatchet"><img src="https://vignette.wikia.nocookie.net/play-rust/images/0/06/Hatchet_icon.png/revision/latest?cb=20151106061743" alt="Hatchet"></li>
+    <li class="roulette-item" data-item="medkit"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656" alt="Medkit"></li>
+  </ul>
+</div>
+
+<button id="spinButton">Spin Roulette</button>
+<div id="result"></div>
+
+<h2>Inventory</h2>
+<div id="inventory-grid" class="inventory-grid"></div>
+
+<div id="ticketDisplay">
+  <span id="ticketIcon">🎟️</span>
+  <span id="ticketCount">5</span>
+</div>
+
+<div class="confirmation-box" id="confirmationBox">
+  <p>Use 1 ticket for the roulette spin?</p>
+  <button id="confirmYes">Yes</button>
+  <button id="confirmNo">No</button>
+</div>
+
+<script>
+  
+  window.onload = function () {
+    const inventoryGrid = document.getElementById('inventory-grid');
+    const spinButton = document.getElementById('spinButton');
+    const ticketDisplay = document.getElementById('ticketCount');
+    const confirmationBox = document.getElementById('confirmationBox');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let ticketCount = urlParams.get('ticketCount') || 5;
+    ticketCount = parseInt(ticketCount);
+    ticketDisplay.textContent = ticketCount;
+
+    const inventoryData = urlParams.get('inventoryData');
+    const inventory = inventoryData ? JSON.parse(atob(inventoryData)) : [];
+    displayInventory(inventory);
+
+    spinButton.addEventListener('click', showConfirmation);
+
+    function showConfirmation() {
+      if (ticketCount > 0) {
+        confirmationBox.style.display = 'block';
+        document.getElementById('confirmYes').addEventListener('click', confirmSpin);
+        document.getElementById('confirmNo').addEventListener('click', cancelSpin);
+      } else {
+        alert('You have no tickets left!');
+      }
+    }
+
+    function confirmSpin() {
+      ticketCount--;
+      ticketDisplay.textContent = ticketCount;
+
+      // Update the URL with the new ticket count
+      updateURL();
+
+      confirmationBox.style.display = 'none';
+      startRoulette();
+    }
+
+    function cancelSpin() {
+      confirmationBox.style.display = 'none';
+    }
+
+    function updateURL() {
+      const inventoryData = btoa(JSON.stringify(inventory));
+      const ticketCountParam = `ticketCount=${ticketCount}`;
+      const url = `?inventoryData=${inventoryData}&${ticketCountParam}`;
+      window.history.replaceState({}, '', url);
+    }
+
+    function startRoulette() {
+      const rouletteItems = document.getElementById('roulette-items');
+      const resultDiv = document.getElementById('result');
+
+      spinButton.disabled = true;
+      const rotations = 3 + Math.floor(Math.random() * 3);
+      const finalRotation = rotations * 360 + (Math.floor(Math.random() * 360));
+      rouletteItems.style.transform = `rotate(${finalRotation}deg)`;
+
+      setTimeout(() => {
+        spinButton.disabled = false;
+        const selectedItemIndex = rotations % 3;
+        resultDiv.textContent = `You obtained: ${document.getElementsByClassName('roulette-item')[selectedItemIndex].dataset.item}`;
+        addToInventory(selectedItemIndex);
+      }, 3000);
+    }
+
+    function addToInventory(itemIndex) {
+      inventory.push(document.getElementsByClassName('roulette-item')[itemIndex].dataset.item);
+      updateURL();
+      displayInventory(inventory);
+    }
+
+    function displayInventory(inventory) {
+      inventoryGrid.innerHTML = '';
+
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 5; j++) {
+          const index = i * 5 + j;
+
+          if (index < inventory.length) {
+            const newItem = document.createElement('div');
+            newItem.classList.add('inventory-item');
+            newItem.textContent = '';
+
+            const removeButton = document.createElement('button');
+            removeButton.classList.add('remove-button');
+            removeButton.textContent = '·';
+            removeButton.addEventListener('click', () => removeItem(index));
+            newItem.appendChild(removeButton);
+
+            const itemImage = document.createElement('img');
+            itemImage.src = getItemImageURL(inventory[index]);
+            newItem.appendChild(itemImage);
+
+            inventoryGrid.appendChild(newItem);
+          }
+        }
+      }
+    }
+
+    function removeItem(index) {
+      inventory.splice(index, 1);
+      updateURL();
+      displayInventory(inventory);
+    }
+
+    function getItemImageURL(itemKey) {
+      const itemImages = {
+        jerrycan: 'https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849',
+        hatchet: 'https://vignette.wikia.nocookie.net/play-rust/images/0/06/Hatchet_icon.png/revision/latest?cb=20151106061743',
+        medkit: 'https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656',
+      };
+
+      return itemImages[itemKey];
+    }
+  };
+</script>
+
+</body>
+</html>
