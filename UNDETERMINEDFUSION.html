@@ -1,0 +1,711 @@
+G​<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+
+    <!-- Include your CSS styles here -->
+    <style>
+        /* Your CSS code goes here */
+      
+      body {
+  height: 100vh;
+  background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+      
+   #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Place the video behind other content */
+    }
+      
+.container {
+  padding: 50px 0px;
+}
+.container .heroes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.container .heroes .hero {
+  width: 80px;
+  height: 84px;
+  margin: 4px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #555;
+  overflow: hidden;
+  transform: skewX(-14deg);
+  transition: 
+    transform 0.3s,
+    background-color .6s;
+  
+
+}
+.container .heroes .hero:hover {
+  background-color: #ff9c00;
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}
+.container .heroes .hero .image {
+  width: 140%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90px;
+  transform: skewX(14deg) translate(-16px);
+
+}
+.container .heroes .hero:nth-child(1) .image { background-image: url("https://res.cloudinary.com/dyqaluliy/image/upload/v1708758392/doorway-svgrepo-com_zdpygq.svg"); }
+.container .heroes .hero:nth-child(2) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero2.png"); }
+.container .heroes .hero:nth-child(3) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero3.png"); }
+.container .heroes .hero:nth-child(4) .image { background-image: url("https://res.cloudinary.com/dyqaluliy/image/upload/v1710297600/Dise%C3%B1o_sin_t%C3%ADtulo_63_jhsh62.png"); }
+.container .heroes .hero:nth-child(5) .image { background-image: url("https://res.cloudinary.com/dyqaluliy/image/upload/v1708758403/bleeding-eye-svgrepo-com_scgxqt.svg"); }
+.container .heroes .hero:nth-child(6) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero6.png"); }
+.container .heroes .hero:nth-child(7) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero7.png"); }
+.container .heroes .hero:nth-child(8) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero8.png"); }
+.container .heroes .hero:nth-child(9) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero9.png"); }
+.container .heroes .hero:nth-child(10) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero10.png"); }
+.container .heroes .hero:nth-child(11) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero11.png"); }
+.container .heroes .hero:nth-child(12) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero12.png"); }
+.container .heroes .hero:nth-child(13) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero13.png"); }
+.container .heroes .hero:nth-child(14) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero14.png"); }
+.container .heroes .hero:nth-child(15) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero15.png"); }
+.container .heroes .hero:nth-child(16) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero16.png"); }
+.container .heroes .hero:nth-child(17) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero17.png"); }
+.container .heroes .hero:nth-child(18) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero18.png"); }
+.container .heroes .hero:nth-child(19) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero19.png"); }
+.container .heroes .hero:nth-child(20) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero20.png"); }
+.container .heroes .hero:nth-child(21) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero21.png"); }
+.container .heroes .hero:nth-child(22) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero22.png"); }
+.container .heroes .hero:nth-child(23) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero23.png"); }
+.container .heroes .hero:nth-child(24) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero24.png"); }
+.container .heroes .hero:nth-child(25) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero25.png"); }
+.container .heroes .hero:nth-child(26) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero26.png"); }
+.container .heroes .hero:nth-child(27) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero27.png"); }
+.container .heroes .hero:nth-child(28) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero28.png"); }
+.container .heroes .hero:nth-child(29) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero27.png"); }
+.container .heroes .hero:nth-child(30) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero28.png"); }      
+
+.container {
+  position: relative;
+}
+
+.container .logo {
+  width: 400px; /* Set a fixed width for the logo */
+  margin: 0px auto; /* Adjust the top margin as needed */
+  padding: 0 20px;
+  position: absolute;
+  top: 20px; /* Adjust the top distance as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0; /* Ensure the logo is on top of other elements */
+}
+
+.container .logo img {
+  width: 100%;
+  position: relative;
+  left: 12px
+}
+
+.container .content {
+  margin-top: 100px; /* Adjust the margin-top based on your logo's height */
+  padding-top: 20px; /* Add padding-top for additional space */
+}
+
+.container .rank-marker,
+.container .heroes {
+  margin-top: -10px; /* Adjust the margin-top as needed */
+}
+      
+.container .rank-marker.row-PENALTY {
+  margin-top: 200px; /* Adjust the margin-top as needed */
+}
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            /* Add more styles as needed */
+        }
+
+        /* Add more styles as needed */
+      
+      .content {
+    height: 200vh; /* Adjust the height of your content */
+    overflow-y: scroll;
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for WebKit browsers */
+}
+      
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 120px;
+      border-radius: 5px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      color: red;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .xp-bar-container {
+      margin-top: 20px;
+      position: relative;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    .xp-bar {
+      height: 20px;
+      background-color: #3498db; /* Adjust the color as needed */
+      border-radius: 5px;
+      transition: width 0.3s ease-in-out;
+    }
+
+    #level {
+      display: block;
+      font-size: 30px;
+      margin-top: 20px;
+      color: #fff; /* Adjust the color as needed */
+      font-weight: bold;
+    }
+
+      .button {
+      margin: 0 20px;
+      padding: 20px 40px;
+      position: relative;
+      background-color: #333;
+      border: 1px solid #444;
+      color: rgba(0, 0, 0, 1);
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+    }
+      
+      .container {
+      position: relative;
+    }
+      
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rank-marker {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 0px;
+  margin: 5px;
+}
+
+.rank-marker.row-PENALTY {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(220, 20, 60, 1);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.rank-marker.row-G {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(255, 189, 220, 1);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}
+ 
+.rank-marker.row-F {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(255, 255, 110, 1);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-E {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(255, 165, 0, 1);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+} 
+      
+.rank-marker.row-D {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(0, 168, 107, 1);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-C {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(0, 235, 235, 1);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-B {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(30,144,255, 1);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-A {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(160, 32, 240, 1);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-S {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(169, 169, 169, 0.9);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}   
+      
+.rank-marker.row-EX {
+  background-color: rgba(0, 0, 0, 0.3); /* Red */
+  color: rgba(255, 215, 0, 0.9);
+  font-family: Calibri;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}         
+      
+
+    .heroes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .hero {
+      width: 80px;
+      height: 84px;
+      margin: 4px;
+      border: 3px solid #ffffff;
+      border-radius: 10px;
+      box-sizing: border-box;
+      background-color: #555;
+      overflow: hidden;
+      transform: skewX(-14deg);
+      transition: transform 0.3s, background-color 0.6s;
+    }
+
+    .hero:hover {
+      background-color: #ff9c00;
+      transform: skewX(-14deg) scale(1.3);
+      z-index: 1;
+    }
+
+    .hero .image {
+      width: 140%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 90px;
+      transform: skewX(14deg) translate(-16px);
+    }
+
+    .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-PENALTY .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-G .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-F .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-E .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-D .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-C .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-B .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-A .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-S .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-EX .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+    
+    
+    @keyframes glow-A {
+  0% {
+    text-shadow: 0 0 10px #a020f0, 0 0 20px #a020f0, 0 0 30px #a020f0; /* Green glow for S rank */
+  }
+  50% {
+    text-shadow: 0 0 20px #a020f0, 0 0 30px #a020f0, 0 0 40px #a020f0; /* Green glow for S rank */
+  }
+  100% {
+    text-shadow: 0 0 10px #a020f0, 0 0 20px #a020f0, 0 0 30px #a020f0; /* Green glow for S rank */
+  }
+}  
+      
+      
+    @keyframes glow-S {
+  0% {
+    text-shadow: 0 0 10px #c0c0c0, 0 0 20px #c0c0c0, 0 0 30px #c0c0c0; /* Green glow for S rank */
+  }
+  50% {
+    text-shadow: 0 0 20px #c0c0c0, 0 0 30px #c0c0c0, 0 0 40px #c0c0c0; /* Green glow for S rank */
+  }
+  100% {
+    text-shadow: 0 0 10px #c0c0c0, 0 0 20px #c0c0c0, 0 0 30px #c0c0c0; /* Green glow for S rank */
+  }
+}
+
+@keyframes glow-EX {
+  0% {
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00; /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; /* Yellow glow for EX rank */
+  }
+}
+
+.glowing-text {
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #ffffff; /* Text color */
+  font-family: Arial, sans-serif; /* Adjust the font family as needed */
+}
+
+.glowing-rank-A {
+  animation: glow-A 2s infinite; /* Adjust the animation duration as needed */
+}      
+      
+.glowing-rank-S {
+  animation: glow-S 2s infinite; /* Adjust the animation duration as needed */
+}
+
+.glowing-rank-EX {
+  animation: glow-EX 2s infinite; /* Adjust the animation duration as needed */
+}  
+      
+    </style>
+
+</head>
+<body>
+  
+    <video id="video-background" autoplay muted loop>
+    <source src="https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-loot/global/default/assets/videos/background_ambient.webm" type="video/webm">
+    <!-- Add additional source elements for different video formats (e.g., MP4) -->
+    Your browser does not support the video tag.
+  </video>
+
+    <!-- Your HTML content goes here -->
+
+  <!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overwatch</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="./main.css"/>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="rank-marker row-PENALTY">❖ PENALTY QUEST ❖</div>
+    <div class="heroes row-PENALTY">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-G">❖ G - Rank ❖</div>
+    <div class="heroes row-G">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+
+    <div class="rank-marker row-F">❖ F - Rank ❖</div>
+    <div class="heroes row-F">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-E">❖ E - Rank ❖</div>
+    <div class="heroes row-E">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-D">❖ D - Rank ❖</div>
+    <div class="heroes row-D">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-C">❖ C - Rank ❖</div>
+    <div class="heroes row-C">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-B">❖ B - Rank ❖</div>
+    <div class="heroes row-B">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-A glowing-rank-A">❖ A - Rank ❖</div>
+    <div class="heroes row-A">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-S glowing-rank-S">❖ S - Rank ❖</div>
+    <div class="heroes row-S">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-EX glowing-rank-EX">❖ EX - Rank ❖</div>
+    <div class="heroes row-EX">
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+      <div class="hero">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1708751777/trophy-svgrepo-com_l8isgk.svg');"></div>
+      </div>
+    </div>
+     
+
+    <div class="logo" onclick="openModal()">
+      <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1708638844/765ec5fb-5e0f-4b0b-94c7-b4405ee003bc_weppsk.png" alt="Overwatch">
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <!-- Your modal content goes here -->
+      <img src="placeholder_avatar_image.jpg" alt="Avatar" style="width: 100px; height: 100px; border-radius: 50%;">
+      <div class="xp-bar-container">
+        <div class="xp-bar" id="xpBar" style="width: 50%;"></div>
+        <span id="level">Level 1</span>
+      </div>
+      <button class="button" onclick="addXP()">
+        <span class="decorator top left"></span>
+        <span class="decorator top right"></span>
+        <span class="decorator bottom left"></span>
+        <span class="decorator bottom right"></span>
+        Add XP
+      </button>
+    </div>
+  </div>
+      
+  </div>
+</body>
+</html>
+
+    <!-- Include your JavaScript code here -->
+    <script>
+      
+    function openModal() {
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    let xpBar = document.getElementById('xpBar');
+    let levelSpan = document.getElementById('level');
+    let currentXP = 50; // Initial XP value, adjust as needed
+    let xpNeededForLevelUp = 100; // XP needed to level up, adjust as needed
+
+    function addXP() {
+      currentXP += 20; // Adjust the XP amount to be added as needed
+
+      if (currentXP >= xpNeededForLevelUp) {
+        levelUp();
+      }
+
+      updateXPBar();
+    }
+
+    function levelUp() {
+      currentXP = 0;
+      xpNeededForLevelUp += 50; // Increase XP needed for the next level, adjust as needed
+
+      // Update level display
+      let currentLevel = parseInt(levelSpan.innerText.split(' ')[1]);
+      levelSpan.innerText = `Level ${currentLevel + 1}`;
+    }
+
+    function updateXPBar() {
+      let percentage = (currentXP / xpNeededForLevelUp) * 100;
+      xpBar.style.width = `${percentage}%`;
+    }
+
+        // Add more JavaScript code as needed
+    </script>
+
+</body>
+</html>
