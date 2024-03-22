@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roulette & Inventory</title>
+  
+  <!-- Add Bootstrap CSS link -->
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
+  
+  <style>
+    
+    
+    /* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      
+    
+    body { 
+      
+      overflow-y: scroll; /* Enable vertical scrolling */
+      overflow-scrolling: touch; /* Enable smooth scrolling on touch devices */
+      
+      display: flex;
+      font-family: 'Roboto', sans-serif;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url();
+      backdrop-filter: blur(0px);   
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      overflow: hidden;
+    }  
+    
+
+    h2 {
+      color: #ffffff;
+    }
+
+    #roulette-container {
+    position: absolute;
+    top: 25px;
+    height: 135px;
+    width: 140px; /* Adjust width as needed */
+    border: 0px solid #000000;
+    border-radius: 20px;
+    overflow: hidden;
+    filter: drop-shadow(0 0 6px rgba(220, 20, 60, 1))
+            drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+            drop-shadow(0 0 32px rgba(220, 20, 60, 0.5));
+}
+
+    #roulette-items {
+      list-style: none;
+      margin: -20px;
+      padding: center;
+      animation: slideRoulette 5s linear infinite; /* Adjust duration as needed */
+      overflow: hidden; /* Hide overflowing content within #roulette-items */
+    }
+
+    .roulette-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      margin: 5px;
+    }
+
+    .roulette-item img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    @keyframes slideRoulette {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-800px); /* Adjust based on the total height of all items */
+      }
+    }
+
+    #result { 
+      font-family: Roboto;
+      font-weight: Bold;
+      color: white;
+      position: absolute;
+      left: center;
+      top: 215px;
+      font-size: 18px;
+      filter: drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) 
+		  drop-shadow(0 0 16px rgba(220, 0, 0, 0.5))
+		  drop-shadow(0 0 32px rgba(220, 0, 0, 0.25));
+      
+    }
+
+    #inventory-grid {
+      position: absolute;
+      top: 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      grid-template-rows: repeat(25, 80px);
+      gap: 10px;
+      z-index: -1;
+    }
+
+    .inventory-item {
+      position: relative;
+      top: 200px;
+      width: 80px;
+      height: 82px;
+      border: 0.1px transparent;
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+    background-color: rgba(220, 20, 60, 0.1); /* Fallback for browsers that don't support backdrop-filter */
+    border-radius: 4px;
+    margin: 0 2px;
+    backdrop-filter: blur(10px); /* Adjust blur strength as needed */
+   }
+
+    .inventory-item img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 8px;   
+      filter: drop-shadow(0 0 6px rgba(220, 20, 60, 1)) 
+		drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+		drop-shadow(0 0 32px rgba(220, 20, 60, 0.5));
+    }
+
+    .remove-button {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      cursor: pointer;
+      color: #ffffff;
+      font-size: 14px;
+      background: none;
+      border: none;
+      padding: 5px;
+      z-index: 5;
+    }
+
+#spinButton {
+  position: absolute; /* Changed to relative for proper positioning of ::before pseudo-element */
+  top: 80px;
+  left: 50%; /* Changed to center */
+  transform: translateX(-50%); /* Centering horizontally */
+  background-color: transparent;
+  color: #232323;
+  border: none; 
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 80px;
+  filter: drop-shadow(0 0 6px rgba(220, 20, 60, 1)) 
+  drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+	drop-shadow(0 0 32px rgba(220, 20, 60, 0.5)); 
+  
+} 
+ 
+#spinButton img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#spinButton:disabled { 
+  background-color: transparent;
+  cursor: not-allowed;
+  filter: drop-shadow(0 0 6px rgba(255, 140, 0, 1)) drop-shadow(0 0 16px rgba(255, 140, 0, 0.75)) drop-shadow(0 0 32px rgba(255, 140, 0, 0.5));
+}
+
+
+    #ticketDisplay {
+      font-family: 'Roboto', sans-serif;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: crimson;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center; 
+      filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.75)) 
+		  drop-shadow(0 0 16px rgba(255, 0, 0, 0.5))
+		  drop-shadow(0 0 32px rgba(255, 0, 0, 0.25));
+    }
+
+    #ticketIcon {
+      margin-right: 5px;
+    }
+
+    .confirmation-box {
+      font-family: 'Roboto', sans-serif;
+      display: none;
+      position: fixed;
+      margin-left: 15px;
+      margin-right: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      padding: 20px; 
+      border-radius: 2px;
+      text-align: center;
+      filter: drop-shadow(0 0 6px rgba(220, 20, 60, 1)) 
+		drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+		drop-shadow(0 0 32px rgba(220, 20, 60, 0.5));
+    }
+    
+.confirmation-box p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; /* Example font size */
+  color: #ffffff; /* Golden color */
+  text-shadow: 0 0 10px rgba(0, 20, 60, 0.8), /* Outer glow */
+               0 0 20px rgba(0, 20, 60, 0.6), /* Middle glow */
+               0 0 30px rgba(0, 20, 60, 0.4), /* Inner glow */
+               0 0 40px rgba(0, 20, 60, 0.2); /* Innermost glow */
+}
+ 
+    .confirmation-box button {
+      position: relative;
+      border: none;
+      background-color: rgba(220, 20, 60, 0.3);
+      color: #B59410;
+      padding: 10px 20px;
+      font-size: 13px;
+      cursor: pointer;
+      margin: 10px;
+      border-radius: 8px;
+    }
+
+    .confirmation-box button.cancel {
+      background-color: #000000;
+    }
+    
+    #animationContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Place it behind the roulette container */
+    pointer-events: none; /* Ensure clicks pass through to elements behind */
+    /* Adjust width and height as needed */
+    width: 150%;
+    height: 400px;
+    /* Adjust the following properties to ensure it doesn't overflow the roulette container */
+    /* Ensure content of the animation container doesn't overflow the roulette container */
+    clip-path: inset(0 0 0 0); 
+    /* For older browser support, you might need to set clip property instead */
+    /* clip: rect(auto, auto, auto, auto); */
+}
+
+  /* Add the following styles for a transparent modal */
+  /* Modify existing styles for the modal body */
+.modal-content {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: none;
+  z-index: 2; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 95vh; /* Adjust height as needed */
+}
+ 
+.modal-body { 
+  background-color: rgba(0, 0, 0, 0.9); 
+  border-radius: 8px;
+  position: relative;
+  width: 150%; /* Cover the entire width of the modal */
+  height: 100%; /* Adjust height as needed */
+}
+
+#modalVideo {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  height: 100%;   
+  object-fit: cover;
+  z-index: -1; /* Ensure the video is behind other elements */
+  filter: drop-shadow(0 0 6px rgba(220, 20, 60, 1))
+		drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+		drop-shadow(0 0 32px rgba(220, 20, 60, 0.5));
+}
+
+
+#modalItemImage {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%; /* Ensure the image does not exceed the container */
+  max-height: 100%; /* Ensure the image does not exceed the container */
+  width: auto; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  z-index: 1; /* Ensure the image is in front of the animation */
+}
+
+@keyframes pulseOpacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}        
+    
+#modalAnimationContainer {
+  position: absolute;
+  top: 50%;
+  left: 50.5%;   
+  transform: translate(-50%, -50%);
+  width: 40%; /* Adjust width based on selected item's image */
+  height: 40%; /* Adjust height based on selected item's image */
+  z-index: 0; /* Keep animation behind other elements */
+  /* Add any other styles you want for the in-modal animation container */
+    filter: drop-shadow(0 0 6px rgba(255, 0, 0, 1)) 
+		drop-shadow(0 0 16px rgba(255, 0, 0, 0.75))
+		drop-shadow(0 0 32px rgba(255, 0, 0, 0.5));
+  animation: pulseOpacity 0s infinite; /* Adjust animation duration and iteration as needed */
+
+}
+    
+@keyframes pulseOpacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}    
+
+
+#modalAnimationContainer2 {
+  position: absolute;
+  top: 50%;
+  left: 50.5%;   
+  transform: translate(-50%, -50%);
+  width: 100%; /* Adjust width based on selected item's image */
+  height: 100%; /* Adjust height based on selected item's image */
+  z-index: 0; /* Keep animation behind other elements */
+  /* Add any other styles you want for the in-modal animation container */
+  filter: drop-shadow(0 0 6px rgba(205, 92, 92, 1)) 
+          drop-shadow(0 0 16px rgba(205, 92, 92, 0.75))
+          drop-shadow(0 0 32px rgba(205, 92, 92, 0.5));
+  animation: pulseOpacity 2s infinite; /* Adjust animation duration and iteration as needed */
+}
+    
+
+    
+.modal-close-image {
+  position: absolute; 
+  top: 5px;
+  right: 5px; 
+  cursor: pointer;
+}
+    
+    
+    /* Styles for the level display container */
+#levelDisplay {
+  margin-right: 5px; /* Add margin at the bottom */
+}
+
+/* Styles for the "Player Level:" text */
+#levelText {
+  font-family: roboto;
+  margin-right: 2.5px;
+  color: gold;
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Styles for the player level */
+#levelDisplay {
+  position: absolute;
+  top: 65px;
+  right: 5px;
+  margin-bottom: 50px;
+  font-weight: bold; /* Make the text bold */
+  color: gold; /* Change text color */
+  filter: drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) 
+		  drop-shadow(0 0 16px rgba(220, 0, 0, 0.5))
+		  drop-shadow(0 0 32px rgba(220, 0, 0, 0.25));
+  
+}
+
+/* Styles for the "Level Up" button */
+#levelUpButton {
+  position: absolute;
+  right: 120px;
+  top: 70px;
+  width: 0px;
+  height: 0px;
+  background-color: rgba(178, 34, 34, 0.1); /* Green background */
+  color: white; /* White text color */
+  padding: 0px 0px; /* Padding */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor style */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Make the text bold */
+  backdrop-filter: blur(0px);
+}
+
+/* Hover effect for the "Level Up" button */
+#levelUpButton:hover {
+  opacity: 0.8; /* Reduce opacity on hover */
+}
+    
+.button-border {  
+  position: absolute;
+  z-index: 0;
+  inset: -4px -12px;
+  
+  @supports (-webkit-mask-box-image: inherit) or (mask-border: inherit) {
+    background-image: linear-gradient(to bottom, #FFD700 50%, #FFD700 50%);
+    -webkit-mask-box-image-source: url('https://assets.codepen.io/4175254/baldurs-gate-3-border.svg');
+    -webkit-mask-box-image-slice: 15 23; 
+    -webkit-mask-box-image-width: 15px 23px;
+    -webkit-mask-box-image-repeat: repeat;
+    mask-border-source: url('https://assets.codepen.io/4175254/baldurs-gate-3-border.svg');
+    mask-border-slice: 15 23;
+    mask-border-width: 15px 23px; 
+    mask-border-repeat: repeat; 
+  }
+}    
+    
+#video-background {
+    position: fixed; /* Ensure the video covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the video width 100% of the viewport */
+    height: 100%; /* Make the video height 100% of the viewport */
+    object-fit: cover; /* Maintain aspect ratio and cover entire viewport */
+    z-index: -100; /* Place the video behind everything else */
+}  
+    
+    
+
+#confirmYes,
+#confirmNo {
+  position: relative; /* Adjust positioning */
+  z-index: 100;
+}
+
+#confirmationBox {
+  position: relative; /* Ensure correct positioning context for buttons */
+}
+
+/* Styles for the "ACCEPT" button */
+#confirmYes {
+  
+      padding: 10px 20px; /* Padding */
+      cursor: pointer; /* Cursor style */
+      margin: 0 20px;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1px solid #444;
+      color: rgba(0, 163, 108, 0.9);
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+    }
+
+
+/* Styles for the "DECLINE" button */
+#confirmNo {
+      
+      padding: 10px 20px; /* Padding */
+      cursor: pointer; /* Cursor style */
+      margin: 0 20px;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1px solid #444;
+      color: rgba(255, 0, 0, 0.9);
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+    }
+}
+
+
+/* Hover effect for both buttons */
+#confirmYes:hover,
+#confirmNo:hover {
+  opacity: 0.8; /* Reduce opacity on hover */
+}
+    
+#animationContainer999 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Place it behind the roulette container */
+    pointer-events: none; /* Ensure clicks pass through to elements behind */
+    /* Adjust width and height as needed */
+    width: 100%;
+    height: 400px;
+    /* Adjust the following properties to ensure it doesn't overflow the roulette container */
+    /* Ensure content of the animation container doesn't overflow the roulette container */
+    clip-path: inset(0 0 0 0); 
+    /* For older browser support, you might need to set clip property instead */
+    /* clip: rect(auto, auto, auto, auto); */
+  
+  filter: drop-shadow(0 0 6px rgba(255, 0, 0, 1)) 
+		drop-shadow(0 0 16px rgba(255, 20, 60, 0.75))
+		drop-shadow(0 0 32px rgba(255, 20, 60, 0.5)); 
+}
+    
+    #animationF13 { 
+      position: absolute;
+      z-index: -5;
+    } 
+    
+/* Define the explosion animation */
+/* Define the explosion animation */
+@keyframes explode {
+  0% {
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(0.2);
+  }
+  20% {
+    transform: scale(0.4);
+  }
+  30% {
+    transform: scale(0.6);
+  }
+  40% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(0.85);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(0.93);
+  }
+  90% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Apply the explosion animation to the modal */
+#myModal.show {
+  animation: explode 0.2s ease;
+}
+    
+/* Hide scroll bar when modal is shown */
+#myModal.show {
+  overflow: hidden;
+}    
+ 
+#animation {
+  /* Basic styling */
+  /* Additional styles */
+  /* Specify other styles like position, margin, padding, etc. */
+  filter: drop-shadow(0 0 6px rgba(139, 0, 0, 1)) drop-shadow(0 0 16px rgba(139, 0, 0, 0.75)) drop-shadow(0 0 32px rgba(139, 0, 0, 0.5));
+}
+
+.animation {
+  /* Additional styling specific to the animation class */
+  /* Define animation properties, transitions, etc. */
+}
+
+.hidden {
+  /* Styling for hiding the element */
+  display: none;
+}
+    
+/* Style for the unique image */
+.unique-image {
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    width: 25%;
+}    
+    
+.frosted-glass {
+    background: rgba(255, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+    padding: 8px;
+    margin: 0px;
+    border: 0px solid rgba(255, 255, 255, 0.1); /* Add a border for better visibility */
+    filter: drop-shadow(0 0 6px rgba(220, 0, 0, 0.3)) 
+		drop-shadow(0 0 16px rgba(220, 0, 0, 0.2))
+		drop-shadow(0 0 32px rgba(220, 0, 0, 0.1));
+    
+  }  
+    
+.superbox {
+  border: 0px solid #ffa500;
+  background-color: rgba(220, 20, 60, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+  margin: 20px auto;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1)) 
+		drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+		drop-shadow(0 0 32px rgba(220, 20, 60, 0.5));
+}
+
+.confirmationMessage {
+  color: #ffa500;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  z-index: 100;
+}
+
+.confirmButton, .rejectButton {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 100;
+}
+
+.confirmButton:hover, .rejectButton:hover {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+    
+.confirmButton {
+  
+  padding: 10px 20px; /* Padding */
+      cursor: pointer; /* Cursor style */
+      margin: 0 10px;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1px solid #444;
+      color: rgba(0, 163, 108, 0.9);
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 18px; 
+      font-weight: 700;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+}
+
+.rejectButton {
+  
+  padding: 10px 20px; /* Padding */
+      cursor: pointer; /* Cursor style */
+      margin: 0 10px;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1px solid #444;
+      color: rgba(255, 0, 0, 0.9);
+      text-align: center;
+      letter-spacing: 2px;
+      font-size: 16px; 
+      font-weight: 700;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+      margin-top: 10px;
+}  
+    
+.small-text {
+  font-size: 15px;
+}
+    
+.smallbeast-text {
+  font-size: 13px;
+  color: white;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1)) 
+		drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+		drop-shadow(0 0 32px rgba(220, 20, 60, 0.5));
+}          
+    
+.smallest-text {
+  font-size: 12.5px;
+}      
+    
+.modal-title {
+  font-size: 1.25rem; /* Adjust font size */
+  font-weight: bold; /* Set font weight to bold */
+  color: #ffffff; /* Set font color */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  filter: drop-shadow(0 0 6px rgba(220, 0, 0, 1)) 
+		drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+		drop-shadow(0 0 32px rgba(220, 20, 60, 0.5));
+}
+
+#exampleModalLabel {
+  /* Additional styles specific to the element with the id "exampleModalLabel" */
+}
+   
+.frosted-glass-ticket {
+    background: inherit;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 8px;
+    margin: 0px;
+    border: 0.5px solid rgba(255, 255, 255, 0.1); /* Add a border for better visibility */
+    filter: drop-shadow(0 0 6px rgba(220, 20, 60, 1)) 
+		drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+		drop-shadow(0 0 32px rgba(220, 20, 60, 0.5)); 
+  }      
+    
+  
+    @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes flip {
+    0% {
+      transform: perspective(400px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(400px) rotateY(360deg);
+    }
+  }
+
+  .placeholderX {
+    display: inline-block;
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1711068909/Dise%C3%B1o_sin_t%C3%ADtulo_69_jxrgh1.png'); /* Placeholder image */
+    background-size: cover;
+    border-radius: 0%;
+    animation: flip 2s linear infinite; /* Flip infinitely */
+    margin-right: 3px; /* Horizontal spacing */
+  }
+
+  #ticketCount {
+    margin-left: 3px; /* Horizontal spacing */
+  }
+    
+ #messageContainer {
+  display: none;
+  padding: 10px;
+  background-color: rgba(220, 20, 60, 0.2);
+  border: 2px solid rgba(220, 20, 60, 0.2);
+  position: fixed;
+  width: 100%; /* Adjust width as needed */
+  height: 100%;
+  top: 0px;
+  left: 0%;
+  z-index: 9999;
+  backdrop-filter: blur(20px);
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1)) 
+    drop-shadow(0 0 16px rgba(220, 20, 60, 0.75))
+    drop-shadow(0 0 32px rgba(220, 20, 60, 0.5));
+}
+
+#messageContainer p {
+  margin: 0;
+  margin-top: 50%;
+  font-size: 22px;
+  color: white; 
+  text-align: center; /* Center text */
+}
+
+#imageXXX {
+  display: block;
+  margin-top: 0%;
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  width: 150px; /* Adjust width as needed */
+  height: auto; /* Adjust height as needed */
+  cursor: pointer;
+}
+
+  
+    
+  </style>
+</head>
+<body>
+  
+
+ <div id="messageContainer" class="message-container">
+  <p id="messageText"></p>
+  <img id="imageXXX" src="https://res.cloudinary.com/dyqaluliy/image/upload/v1711074828/Dise%C3%B1o_sin_t%C3%ADtulo_56_pexegw.svg" alt="Image XXX">
+ </div>
+
+  
+<a href="https://example.com">
+    <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1710948680/Dise%C3%B1o_sin_t%C3%ADtulo_54_diopxf.svg" alt="UniquePlaceholderImage1234" class="unique-image">
+</a>  
+
+<video id="video-background" autoplay muted loop> 
+    <source src="https://res.cloudinary.com/dyqaluliy/video/upload/v1710635468/ULTRA_dvl_RWD_BG_kna1id.mp4" type="video/webm">
+    <!-- Add additional source elements for different video formats (e.g., MP4) -->
+    Your browser does not support the video tag.
+  </video>    
+  
+<!-- Add Bootstrap modal structure -->
+<div class="modal" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Selected Item</h5>
+        <!-- Image A (placeholder) -->
+<img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1710510881/icon-lock-large-hover_iqoh6v.png" id="imageA" class="modal-close-image" alt="Image A" style="z-index: 3; width: 50px; height: 50px;">
+
+<!-- Image B (placeholder) -->
+<img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1710510881/icon-lock-large-hover_iqoh6v.png" id="imageB" class="modal-close-image" alt="Image B" style="display: none; z-index: 3; width: 50px; height: 50px; cursor: pointer;">
+      </div>
+      <div class="modal-body">
+        <!-- Video element for the background --> 
+        <video id="modalVideo" autoplay loop muted style="position: fixed; top: 44px; left: -12px; width: 100%; height: 100%; object-fit: cover; z-index: 1;">  
+          <source src="https://res.cloudinary.com/dyqaluliy/video/upload/v1710259415/large_permanent_loop_q0cmya.webm" type="video/mp4">
+          Your browser does not support the video tag. 
+        </video>
+        <!-- The selected item image will be dynamically added here -->
+        <img id="modalItemImage" class="img-fluid" alt="Selected Item">
+        <!-- The in-modal animation container -->
+        <div id="modalAnimationContainer"></div>
+        <!-- Inside the modal body -->
+        <div id="modalAnimationContainer2"></div>
+
+        
+        
+        <!-- Image A (placeholder) -->
+<img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1710510881/icon-lock-large-hover_iqoh6v.png" id="imageA" class="modal-close-image" alt="Image A" style="z-index: 3; width: 50px; height: 50px;">
+
+<!-- Image B (placeholder) -->
+<img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1710510881/icon-lock-large-hover_iqoh6v.png" id="imageB" class="modal-close-image" alt="Image B" style="display: none; z-index: 3; width: 50px; height: 50px; cursor: pointer;">
+
+      </div> 
+    </div>
+  </div>
+</div>
+
+<div id="roulette-container">
+  <ul id="roulette-items">
+    <li class="roulette-item" data-item="jerrycan"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849" alt="JERRYCAN"></li>
+    
+    <li class="roulette-item" data-item="hatchet"><img src="https://vignette.wikia.nocookie.net/play-rust/images/0/06/Hatchet_icon.png/revision/latest?cb=20151106061743" alt="HATCHET"></li>
+    
+    <li class="roulette-item" data-item="medkit"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656" alt="MEDKIT"></li>
+    
+    <li class="roulette-item" data-item="medkit"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656" alt="Medkit"></li>
+    
+    <li class="roulette-item" data-item="medkit"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656" alt="Medkit"></li>
+    
+    <li class="roulette-item" data-item="medkit"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656" alt="Medkit"></li>
+    
+    <li class="roulette-item" data-item="medkit"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656" alt="Medkit"></li>
+    
+    <li class="roulette-item" data-item="medkit"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656" alt="Medkit"></li>
+    
+    <li class="roulette-item" data-item="medkit"><img src="https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656" alt="Medkit"></li>
+    
+  </ul>
+  
+<div id="animationContainer" style="display: block;"></div>
+<div id="animationContainer999" style="display: block;"></div>
+
+   
+</div> 
+
+  
+<button id="spinButton">
+  <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1710947644/Dise%C3%B1o_sin_t%C3%ADtulo_51_vgzuqw.svg" alt="Spin Button Image">
+</button>  
+
+
+<!-- Container for result -->
+  <div id="result" class="frosted-glass">
+    <!-- Content for result -->
+  </div>
+
+<div id="inventory-grid" class="inventory-grid"></div>
+
+<div id="ticketDisplay" class="frosted-glass">
+  <span class="placeholderX"></span>
+  <span id="ticketCount">0</span>
+</div>
+
+  <!-- Add the following code for player level -->
+  <div id="levelDisplay" class="frosted-glass">
+    <span id="levelText">LVL ◈</span>
+    <span id="playerLevel">0</span>
+  </div>
+
+  <button id="levelUpButton"><img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1710943805/Dise%C3%B1o_sin_t%C3%ADtulo_49_ckttfv.svg" alt="Placeholder Image"> 
+    <span class="button-brder"></span></button>
+  
+    
+<div class="confirmation-box" id="confirmationBox">
+  <p>Consume [1] <span class="placeholderX"></span> for [1] spin of Vice Roulette?</p> <p>◈ Warning · An unknown evil entity will notice your existence ◈</p> 
+  <button id="confirmYes">ACCEPT
+  </button>  
+  <button id="confirmNo">DECLINE
+  </button>
+  <span class="button-border"></span>
+</div>
+  
+<div id="animation" class="animation hidden"></div> 
+  
+  
+<!-- Super Confirmation Box -->
+<div id="SuperConfirmationBox" class="superbox" style="display: none; position: relative;">
+  <p class="confirmationMessage">The next Vice Ticket can only be collected at LEVEL <span id="nextLevel"></span>.
+    <br>
+    <br>
+    <span class="smallbeast-text">◈ The system will test the sincerity of player K.D. and will terminate all cheat users ◈</span>
+    <br>
+    <span class="smallest-text"></span> 
+    </p>
+  
+  <button id="confirmButton" class="confirmButton">
+  <span>I AM LEVEL <span id="nextLevelButton"></span></span>
+  <br>
+  <span class="small-text">◈ COLLECT <span class="placeholderX"></span> ◈</span>
+</button>
+  
+  <button id="rejectButton" class="rejectButton">
+  <span>I AM NOT LEVEL <span id="nextLevelButtonReject"></span></span>
+  <br>
+  <span>◈ EXIT ◈</span>
+</button>
+
+  <span class="button-border" style="position: absolute; top: -2px; left: -10px; width: 106.5%; height: 100.5%; border: 0px solid #ffa500; border-radius: 4px; pointer-events: none; z-index: -1;"></span> 
+</div>
+   
+ 
+<!-- Add Bootstrap JS and Popper.js scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  
+  
+<script>
+
+  
+// Function to display the second modal animation
+function displaySecondModalAnimation() {
+  // URL of your new JSON animation file
+  const animationUrl = 'https://kingsgamek.github.io/CONFETTI.json';
+
+  // Fetch and display JSON animation
+  fetch(animationUrl)
+    .then(response => response.json())
+    .then(animationData => {
+      // Display animation using Lottie
+      const animationContainer = document.getElementById('modalAnimationContainer2');
+      lottie.loadAnimation({
+        container: animationContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching or displaying second animation:', error);
+    });
+}
+
+// Call the function to display the second modal animation
+displaySecondModalAnimation();
+
+
+// Listen for the event that triggers the modal to open
+document.getElementById('myModal').addEventListener('show.bs.modal', function() {
+  // Display the second modal animation when the modal opens
+  displaySecondModalAnimation();
+});
+
+// Listen for the event that triggers the modal to close
+document.getElementById('myModal').addEventListener('hide.bs.modal', function() {
+  // Clear the content of the second modal animation container when the modal closes
+  clearSecondModalAnimation();
+});
+  
+
+// Function to clear the content of the second modal animation container
+function clearSecondModalAnimation() {
+  const animationContainer = document.getElementById('modalAnimationContainer2');
+  animationContainer.innerHTML = ''; // Clear the HTML content inside the container
+}  
+  
+
+document.getElementById('levelUpButton').addEventListener('click', function() {
+  // Get the player's current level
+  var playerLevel = parseInt(document.getElementById('playerLevel').innerText);
+  
+  // Calculate the next level
+  var nextLevel = playerLevel + 1;
+
+  // Set the text in the confirmation box
+  document.getElementById('nextLevel').innerText = nextLevel;
+  document.getElementById('nextLevelButton').innerText = nextLevel;
+  document.getElementById('nextLevelButtonReject').innerText = nextLevel;
+
+  // Show the Super confirmation box
+  document.getElementById('SuperConfirmationBox').style.display = 'block';
+});
+
+document.getElementById('confirmButton').addEventListener('click', function() {
+  // Increase player level by 1
+  var playerLevel = parseInt(document.getElementById('playerLevel').innerText);
+  document.getElementById('playerLevel').innerText = playerLevel + 1;
+
+  // Increase ticket balance by 1 (placeholder function)
+  addTicketToBalance();
+
+  // Close the Super confirmation box
+  document.getElementById('SuperConfirmationBox').style.display = 'none';
+});
+
+document.getElementById('rejectButton').addEventListener('click', function() {
+  // Close the Super confirmation box
+  document.getElementById('SuperConfirmationBox').style.display = 'none';
+});
+
+// Placeholder function to add ticket to balance
+function addTicketToBalance() {
+  // This is just a placeholder function, you would implement your logic here
+  // For example:
+  // var ticketBalance = parseInt(document.getElementById('ticketBalance').innerText);
+  // document.getElementById('ticketBalance').innerText = ticketBalance + 1;
+}
+
+  
+  
+
+document.getElementById('confirmYes').addEventListener('click', function() {
+  var existingAnimationContainer = document.getElementById('animation');
+  
+  // Remove any existing animation containers from the DOM
+  if (existingAnimationContainer) {
+    existingAnimationContainer.remove();
+  }
+
+  // Create a new animation container
+  var animationContainer = document.createElement('div');
+  animationContainer.id = 'animation';
+  animationContainer.classList.add('animation');
+  
+  // Append the new animation container to the document body
+  document.body.appendChild(animationContainer);
+
+  // Load the animation into the new container
+  var animation = bodymovin.loadAnimation({
+    container: animationContainer,
+    renderer: 'svg',
+    loop: true, // Make sure loop is set to false
+    autoplay: true,
+    path: 'https://kingsgamek.github.io/WIENER6.json', // Replace this with your Lottie JSON URL
+    rendererSettings: { 
+      // If you're using canvas renderer, set clearCanvas to true
+      clearCanvas: true,
+      // If you're using canvas renderer, set contextMode to '2d' or '3d'
+      contextMode: '3d'
+    }  
+  }); 
+
+  // Listen for the event that triggers the modal to open
+  document.getElementById('myModal').addEventListener('show.bs.modal', function() {
+    // Remove the animation container from the DOM when the modal opens
+    animationContainer.remove();
+  });
+});
+
+
+  
+  function displayAnimation() {
+    // URL of your new JSON animation file
+    const animationUrl = 'https://kingsgamek.github.io/Animation%20-%20K4.json';
+
+    // Fetch and display JSON animation
+    fetch(animationUrl)
+      .then(response => response.json())
+      .then(animationData => {
+        // Display animation using Lottie
+        const animationContainer = document.getElementById('animationContainer');
+        lottie.loadAnimation({
+          container: animationContainer,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          animationData: animationData,
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching or displaying animation:', error);
+      });
+  }
+  
+  // Call the function to display the animation for animationContainer999
+displayAnimation();
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var imageB = document.getElementById('imageB');
+
+    // Close modal on click of Image B
+    imageB.addEventListener('click', function() {
+      var modal = document.getElementById('myModal');
+      var modalInstance = bootstrap.Modal.getInstance(modal);
+      modalInstance.hide();
+    });
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    var imageA = document.getElementById('imageA');
+    var imageB = document.getElementById('imageB');
+
+    // Show Image B and hide Image A on hover
+    imageA.addEventListener('mouseenter', function() {
+      imageA.style.display = 'none';
+      imageB.style.display = 'inline';
+    });
+
+    // Show Image A and hide Image B on mouse leave
+    imageB.addEventListener('mouseleave', function() {
+      imageB.style.display = 'none';
+      imageA.style.display = 'inline';
+    });
+ 
+    // Close modal on click of Image B
+    imageB.addEventListener('click', function() {
+      var modal = new bootstrap.Modal(document.getElementById('myModal'));
+      modal.hide();
+    });
+  });
+  
+  // URL of your JSON animation file
+    const animationUrl = 'https://kingsgamek.github.io/.json';
+
+    // Function to fetch and display JSON animation
+    async function displayAnimation999() {
+      try {
+        const response = await fetch(animationUrl);
+        const animationData = await response.json();
+
+        // Display animation using Lottie
+        const animationContainer = document.getElementById('animationContainer999');
+        const anim = lottie.loadAnimation({
+          container: animationContainer,
+          renderer: 'svg', // or 'canvas'
+          loop: true,
+          autoplay: true,
+          animationData: animationData,
+        });      
+        
+      } catch (error) {
+        console.error('Error fetching animation:', error);
+        
+      }
+    }
+
+    // Call the function to display the animation
+    displayAnimation999();
+  
+  window.onload = function () {
+    const inventoryGrid = document.getElementById('inventory-grid');
+    const spinButton = document.getElementById('spinButton');
+    const ticketDisplay = document.getElementById('ticketCount');
+    const confirmationBox = document.getElementById('confirmationBox');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let ticketCount = urlParams.get('ticketCount') || 0;
+    ticketCount = parseInt(ticketCount);
+    ticketDisplay.textContent = ticketCount;
+    
+          // Add the following code for player level
+      const levelDisplay = document.getElementById('playerLevel');
+      const levelUpButton = document.getElementById('levelUpButton');
+      let playerLevel = 0;
+
+      levelDisplay.textContent = playerLevel;
+
+      confirmButton.addEventListener('click', () => {
+        playerLevel++;
+        ticketCount++;
+        ticketDisplay.textContent = ticketCount;
+        levelDisplay.textContent = playerLevel;
+        updateURL();
+      });
+
+    const inventoryData = urlParams.get('inventoryData');
+    const inventory = inventoryData ? JSON.parse(atob(inventoryData)) : [];
+    displayInventory(inventory);
+
+
+  
+  // Add an event listener to listen for changes in the spin button's disabled property
+  spinButton.addEventListener('click', showConfirmation);
+  spinButton.addEventListener('change', toggleAnimationContainers);
+
+  function toggleAnimationContainers() {
+    // If spin button is disabled, display animationContainer999 and hide animationContainer
+    if (spinButton.disabled) {
+      document.getElementById('animationContainer').style.display = 'none';
+      document.getElementById('animationContainer999').style.display = 'block';
+    } else { // If spin button is enabled, display animationContainer and hide animationContainer999
+      document.getElementById('animationContainer').style.display = 'block';
+      document.getElementById('animationContainer999').style.display = 'none';
+    }
+  }
+
+function showConfirmation() {
+  if (ticketCount > 0) {
+    confirmationBox.style.display = 'block';
+    document.getElementById('confirmYes').addEventListener('click', confirmSpin);
+    document.getElementById('confirmNo').addEventListener('click', cancelSpin);
+  } else {
+    // Display message in the same window
+    var messageContainer = document.getElementById('messageContainer');
+    var messageText = document.getElementById('messageText');
+    var imageXXX = document.getElementById('imageXXX');
+
+    messageText.textContent = 'You have no tickets left!';
+    messageContainer.style.display = 'block';
+
+    // Add click event listener to the image to hide the message container
+    imageXXX.addEventListener('click', function() {
+      messageContainer.style.display = 'none';
+    });
+  }
+}
+
+    
+    
+    function updateLocalStorage() {
+    const gameState = {
+      inventory,
+      ticketCount,
+      playerLevel,
+    };
+
+    // Store the state in local storage
+    localStorage.setItem('gameState', JSON.stringify(gameState));
+  }
+
+  function startRoulette() {
+    // ... (existing code)
+
+    setTimeout(() => {
+      spinButton.disabled = false;
+      const selectedItemIndex = rotations % 3;
+      resultDiv.textContent = `Last Item Obtained : ${document.getElementsByClassName('roulette-item')[selectedItemIndex].dataset.item}`;
+      addToInventory(selectedItemIndex);
+
+      // Update local storage after each spin
+      updateLocalStorage();
+    }, 3000);
+  }
+
+  // Modify the existing updateURL function to call updateLocalStorage
+  function updateURL() {
+    const inventoryData = btoa(JSON.stringify(inventory));
+    const ticketCountParam = `ticketCount=${ticketCount}`;
+    const playerLevelParam = `playerLevel=${playerLevel}`;
+    const url = `?inventoryData=${inventoryData}&${ticketCountParam}&${playerLevelParam}`;
+
+    // Update the URL (if needed)
+    window.history.replaceState({}, '', url);
+
+    // Store the state in local storage
+    updateLocalStorage();
+  }
+
+    function confirmSpin() {
+      ticketCount--;
+      ticketDisplay.textContent = ticketCount;
+
+      // Update the URL with the new ticket count
+      updateURL();
+
+      confirmationBox.style.display = 'none';
+      startRoulette();
+    }
+
+    function cancelSpin() {
+      confirmationBox.style.display = 'none';
+    }
+
+    function updateURL() {
+      const inventoryData = btoa(JSON.stringify(inventory));
+      const ticketCountParam = `ticketCount=${ticketCount}`;
+      const url = `?inventoryData=${inventoryData}&${ticketCountParam}`;
+      window.history.replaceState({}, '', url);
+    }
+
+    function startRoulette() {
+    const rouletteItems = document.getElementById('roulette-items');
+    const resultDiv = document.getElementById('result');
+    const modal = new bootstrap.Modal(document.getElementById('myModal'), {}); // Create a Bootstrap modal instance
+
+    spinButton.disabled = true;
+    const rotations = 3 + Math.floor(Math.random() * 3);
+    const finalRotation = rotations * 360 + (Math.floor(Math.random() * 360));
+    rouletteItems.style.transform = `rotate(${finalRotation}deg)`;
+
+    setTimeout(() => {
+      spinButton.disabled = false;
+      const selectedItemIndex = rotations % 3;
+      const selectedItem = document.getElementsByClassName('roulette-item')[selectedItemIndex].dataset.item;
+
+      // Display the selected item image in the modal
+      const itemImage = document.getElementById('modalItemImage');
+      itemImage.src = getItemImageURL(selectedItem);
+
+      // Display the in-modal animation
+      displayModalAnimation();
+
+      // Show the modal
+      modal.show();
+      
+      // Set the modal title to the selected item's data-item value
+    const modalTitle = document.getElementById('exampleModalLabel');
+    modalTitle.textContent = `·  ${selectedItem} ·`;
+
+      // Add event listener to modal close button
+      document.getElementById('myModal').addEventListener('hidden.bs.modal', () => {
+        // Clear the modal content when it is hidden
+        itemImage.src = '';
+        clearModalAnimation();
+      });
+
+      resultDiv.textContent = `◈ LAST ITEM · ${selectedItem} ◈`;
+      addToInventory(selectedItemIndex); 
+    }, 900);  
+  }  
+
+  function displayModalAnimation() { 
+    // URL of your new JSON animation file
+    const animationUrl = 'https://kingsgamek.github.io/explosion-3.json';
+
+    // Fetch and display JSON animation
+    fetch(animationUrl) 
+      .then(response => response.json())
+      .then(animationData => {
+        // Display animation using Lottie
+        const animationContainer = document.getElementById('modalAnimationContainer');
+        lottie.loadAnimation({
+          container: animationContainer,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          animationData: animationData,
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching or displaying animation:', error);
+      });
+  }
+
+  function clearModalAnimation() {
+    // Clear the content of the modal animation container
+    const animationContainer = document.getElementById('modalAnimationContainer');
+    animationContainer.innerHTML = '';
+  }
+
+    function addToInventory(itemIndex) {
+      inventory.push(document.getElementsByClassName('roulette-item')[itemIndex].dataset.item);
+      updateURL();
+      displayInventory(inventory);
+    }
+
+    function displayInventory(inventory) {
+      inventoryGrid.innerHTML = '';
+
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 5; j++) {
+          const index = i * 5 + j;
+
+          if (index < inventory.length) {
+            const newItem = document.createElement('div');
+            newItem.classList.add('inventory-item');
+            newItem.textContent = '';
+
+            const removeButton = document.createElement('button');
+            removeButton.classList.add('remove-button');
+            removeButton.textContent = '';
+            removeButton.addEventListener('click', () => removeItem(index));
+            newItem.appendChild(removeButton);
+
+            const itemImage = document.createElement('img');
+            itemImage.src = getItemImageURL(inventory[index]);
+            newItem.appendChild(itemImage);
+
+            inventoryGrid.appendChild(newItem);
+          }
+        }
+      }
+    }
+
+    function removeItem(index) {
+      inventory.splice(index, 1);
+      updateURL();
+      displayInventory(inventory);
+    }
+
+    function getItemImageURL(itemKey) {
+      const itemImages = {
+        jerrycan: 'https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/d/dc/Icon_jerrycan.png/revision/latest?cb=20170921010849',
+        hatchet: 'https://vignette.wikia.nocookie.net/play-rust/images/0/06/Hatchet_icon.png/revision/latest?cb=20151106061743',
+        medkit: 'https://vignette.wikia.nocookie.net/playerunknowns-battlegrounds/images/8/8b/Icon_Heal_FirstAid.png/revision/latest?cb=20170921010656',
+      };
+
+      return itemImages[itemKey];
+    }
+   }; 
+    
+</script>
+
+<!-- Add Bootstrap JS and Popper.js scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>  
+  
+</body>
+</html>
