@@ -1,0 +1,4175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title> 
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
+
+    <!-- Include your CSS styles here -->  
+    <style>
+      
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+  
+     
+body {
+  height: 100vh;
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  background-image: url("https://res.cloudinary.com/dyqaluliy/image/upload/v1712318353/Dise%C3%B1o_sin_t%C3%ADtulo_36_xpswzk.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 100%; /* Make the container occupy the full width of the viewport */
+  padding: 50px 0; /* Apply padding as needed */
+  text-align: center; /* Center the content horizontally */
+  backdrop-filter: blur(6px); /* Apply blur effect to the content of the container */
+}
+.container .heroes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.container .heroes .hero {
+  width: 80px;
+  height: 84px;
+  margin: 4px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-filter: blur(20px);
+  overflow: hidden;
+  transform: skewX(-14deg);
+  transition: 
+    transform 0.3s,
+    background-color .6s;
+  
+ 
+}
+      
+.container .heroes .hero:hover {
+  background-color: #ff9c00; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}
+
+#hero-xp-1:hover {
+  background-color: #196F3D;  
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}      
+      
+#hero-physique-1:hover,
+#hero-physique-2:hover,
+#hero-physique-3:hover,
+#hero-physique-4:hover,
+#hero-physique-5:hover,
+#hero-physique-6:hover {
+  background-color: #F57C00; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+} 
+      
+#hero-utility-1:hover,
+#hero-utility-2:hover,
+#hero-utility-3:hover,
+#hero-utility-4:hover,
+#hero-utility-5:hover,
+#hero-utility-6:hover {
+  background-color: #B86749; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}      
+      
+#hero-stoicism-1:hover,
+#hero-stoicism-2:hover,
+#hero-stoicism-3:hover,
+#hero-stoicism-4:hover,
+#hero-stoicism-5:hover,
+#hero-stoicism-6:hover {
+  background-color: #566573; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}  
+      
+#hero-essence-1:hover {
+  background-color: #0D47A1; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}
+      
+#hero-ambition-1:hover {
+  background-color: #5E35B1; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}      
+      
+#hero-bounty-1:hover,
+#hero-bounty-2:hover,
+#hero-bounty-3:hover,
+#hero-bounty-4:hover,
+#hero-bounty-5:hover,
+#hero-bounty-6:hover {
+  background-color: #FDD835; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}  
+      
+#hero-penalty-1:hover,
+#hero-penalty-2:hover,
+#hero-penalty-3:hover,
+#hero-penalty-4:hover,
+#hero-penalty-5:hover,
+#hero-penalty-6:hover,
+#hero-penalty-7:hover,
+#hero-penalty-8:hover,
+#hero-penalty-9:hover,
+#hero-penalty-10:hover,   
+#hero-penalty-11:hover,      
+#hero-penalty-12:hover {
+  background-color: #D32F2F; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}   
+      
+#hero-ticket-1:hover {
+  background-color: #FBC02D; 
+  transform: skewX(-14deg) scale(1.3);
+  z-index: 1;
+}      
+      
+.container .heroes .hero .image {
+  width: 140%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90px;
+  transform: skewX(14deg) translate(-16px);
+
+}
+.container .heroes .hero:nth-child(1) .image { background-image: url("https://res.cloudinary.com/dyqaluliy/image/upload/v1708758392/doorway-svgrepo-com_zdpygq.svg"); }
+.container .heroes .hero:nth-child(2) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero2.png"); }
+.container .heroes .hero:nth-child(3) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero3.png"); } 
+.container .heroes .hero:nth-child(4) .image { background-image: url("https://res.cloudinary.com/dyqaluliy/image/upload/v1710297600/Dise%C3%B1o_sin_t%C3%ADtulo_63_jhsh62.png"); }
+.container .heroes .hero:nth-child(5) .image { background-image: url("https://res.cloudinary.com/dyqaluliy/image/upload/v1708758403/bleeding-eye-svgrepo-com_scgxqt.svg"); }
+.container .heroes .hero:nth-child(6) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero6.png"); }
+.container .heroes .hero:nth-child(7) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero7.png"); }
+.container .heroes .hero:nth-child(8) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero8.png"); }
+.container .heroes .hero:nth-child(9) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero9.png"); }
+.container .heroes .hero:nth-child(10) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero10.png"); }
+.container .heroes .hero:nth-child(11) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero11.png"); }
+.container .heroes .hero:nth-child(12) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero12.png"); }
+.container .heroes .hero:nth-child(13) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero13.png"); }
+.container .heroes .hero:nth-child(14) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero14.png"); }
+.container .heroes .hero:nth-child(15) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero15.png"); }
+.container .heroes .hero:nth-child(16) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero16.png"); }
+.container .heroes .hero:nth-child(17) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero17.png"); }
+.container .heroes .hero:nth-child(18) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero18.png"); }
+.container .heroes .hero:nth-child(19) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero19.png"); }
+.container .heroes .hero:nth-child(20) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero20.png"); }
+.container .heroes .hero:nth-child(21) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero21.png"); }
+.container .heroes .hero:nth-child(22) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero22.png"); }
+.container .heroes .hero:nth-child(23) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero23.png"); }
+.container .heroes .hero:nth-child(24) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero24.png"); }
+.container .heroes .hero:nth-child(25) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero25.png"); }
+.container .heroes .hero:nth-child(26) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero26.png"); }
+.container .heroes .hero:nth-child(27) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero27.png"); }
+.container .heroes .hero:nth-child(28) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero28.png"); }
+.container .heroes .hero:nth-child(29) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero27.png"); }
+.container .heroes .hero:nth-child(30) .image { background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero28.png"); }      
+
+.container {
+  position: relative;
+}
+
+.container .logo {
+  width: 300px; /* Set a fixed width for the logo */
+  margin: 0px auto; /* Adjust the top margin as needed */
+  padding: 0 20px;
+  position: absolute;
+  top: 20px; /* Adjust the top distance as needed */
+  left: 50%;
+  transform: translateX(-53.5%);
+  z-index: 0; /* Ensure the logo is on top of other elements */
+}
+
+.container .logo img {
+  width: 100%;
+  position: relative;
+  left: 12px
+}
+
+.container .content {
+  margin-top: 100px; /* Adjust the margin-top based on your logo's height */
+  padding-top: 20px; /* Add padding-top for additional space */
+}
+
+.container .rank-marker,
+.container .heroes {
+  margin-top: -10px; /* Adjust the margin-top as needed */
+}
+      
+.container .rank-marker.row-PENALTY {
+  margin-top: 200px; /* Adjust the margin-top as needed */
+}
+      
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: #f0f0f0;
+            /* Add more styles as needed */
+        }
+
+        /* Add more styles as needed */
+      
+      .content {
+    height: 200vh; /* Adjust the height of your content */
+    overflow-y: scroll;
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for WebKit browsers */
+}
+      
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      z-index: 2;
+    }
+
+    .modal-content {
+      background-color: rgba(0, 0, 0, 0);
+      padding: 0px;
+      border-radius: 5px; 
+      text-align: center;
+      position: relative;
+      top: 30%;
+    }
+
+    .close-btn {
+      position: absolute;
+      color: red;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      z-index: 5;
+    }
+      
+    .xp-bar-container {
+      margin-top: 20px;
+      position: relative; 
+      width: 100%;
+      margin: 20px auto;
+      white-space: nowrap;
+    }
+
+    .xp-bar {
+      height: 10px;
+      background-color: #5899ef; /* Adjust the color as needed */
+      border-radius: 1px;
+      transition: width 0.3s ease-in-out;
+      white-space: nowrap;
+    }
+
+    #level {
+      display: block;
+      font-size: 28px;
+      margin-top: 20px;
+      color: #5899ef; /* Adjust the color as needed */
+      font-weight: bold;
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
+
+      .button {
+      margin: 0 20px;
+      padding: 20px 40px;
+      position: relative;
+      background-color: #333;
+      border: 1px solid #444;
+      color: rgba(0, 0, 0, 1);
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+    }
+      
+      .container {
+      position: relative;
+    }
+      
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rank-marker {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #fff;
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 0px;
+  margin: 5px;
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+.rank-marker.row-PENALTY {
+  background-color: rgba(34, 153, 84, 0.1); /* Red */
+  color: rgba(34, 153, 84, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.rank-marker.row-G {
+  background-color: rgba(245, 124, 0, 0.1); /* Red */
+  color: rgba(245, 124, 0, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}
+ 
+.rank-marker.row-F {
+  background-color: rgba(184, 103, 73, 0.1); /* Red */
+  color: rgba(184, 103, 73, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-E {
+  background-color: rgba(169, 169, 169, 0.1); /* Red */
+  color: rgba(169, 169, 169, 1); 
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+} 
+      
+.rank-marker.row-D {
+  background-color: rgba(255, 202, 40, 0.1); /* Red */
+  color: rgba(255, 202, 40, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-C {
+  background-color: rgba(255, 0, 0, 0.1); /* Red */
+  color: rgba(229, 57, 53, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-B {
+  background-color: rgba(255, 202, 40, 0.1); /* Red */
+  color: rgba(255, 202, 40, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+       
+.rank-marker.row-A {
+  background-color: rgba(0, 0, 0, 0.1); /* Red */
+  color: rgba(151, 86, 74, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}      
+      
+.rank-marker.row-S {
+  background-color: rgba(126, 87, 194, 0.1); /* Red */
+  color: rgba(126, 87, 194, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}   
+      
+.rank-marker.row-EX {
+  background-color: rgba(21, 101, 192, 0.1); /* Red */
+  color: rgba(21, 101, 192, 1);
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 5px;
+}         
+      
+
+    .heroes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .hero {
+      width: 80px;
+      height: 84px;
+      margin: 4px;
+      border: 3px solid #ffffff;
+      border-radius: 10px;
+      box-sizing: border-box;
+      background-color: #fff;
+      overflow: hidden;
+      transform: skewX(-14deg);
+      transition: transform 0.3s, background-color 0.6s;
+    }
+
+    .hero:hover {
+      background-color: #ffffff;
+      transform: skewX(-14deg) scale(1.3);
+      z-index: 1;
+    }
+
+    .hero .image {
+      width: 140%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 90px;
+      transform: skewX(14deg) translate(-16px);
+    }
+
+    .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-PENALTY .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-G .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-F .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-E .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-D .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-C .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-B .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-A .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-S .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+
+    .row-EX .hero:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+    
+    @keyframes glow-PENALTY {  
+    0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+      
+    @keyframes glow-G {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+      
+    @keyframes glow-F {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+      
+    @keyframes glow-E {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+      
+    @keyframes glow-D {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+      
+    @keyframes glow-C {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+      
+    @keyframes glow-B {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+    
+    @keyframes glow-A {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+      
+      
+    @keyframes glow-S {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+
+@keyframes glow-EX {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1), 0 0 30px rgba(0, 0, 0, 1); /* Yellow glow for EX rank */
+  }
+}
+
+.glowing-text {
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #ffffff; /* Text color */
+  font-family: Arial, sans-serif; /* Adjust the font family as needed */
+}
+
+.glowing-rank-PENALTY {
+  animation: glow-PENALTY 2s infinite; /* Adjust the animation duration as needed */
+}         
+      
+.glowing-rank-G {
+  animation: glow-G 2s infinite; /* Adjust the animation duration as needed */
+}      
+      
+.glowing-rank-F {
+  animation: glow-F 2s infinite; /* Adjust the animation duration as needed */
+}      
+      
+.glowing-rank-E {
+  animation: glow-E 2s infinite; /* Adjust the animation duration as needed */
+}      
+      
+.glowing-rank-D {
+  animation: glow-D 2s infinite; /* Adjust the animation duration as needed */
+}
+      
+.glowing-rank-C {
+  animation: glow-C 2s infinite; /* Adjust the animation duration as needed */
+}      
+      
+.glowing-rank-B {
+  animation: glow-B 2s infinite; /* Adjust the animation duration as needed */
+}      
+
+.glowing-rank-A {
+  animation: glow-A 2s infinite; /* Adjust the animation duration as needed */
+}
+      
+.glowing-rank-S {
+  animation: glow-S 2s infinite; /* Adjust the animation duration as needed */
+}
+
+.glowing-rank-EX {
+  animation: glow-EX 2s infinite; /* Adjust the animation duration as needed */
+} 
+      
+.xp-bar-container {
+    width: 200px;
+    height: 10px;
+    
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .xp-bar {
+    height: 100%;
+    background-color: #5899ef;
+    border-radius: 8px;
+  }      
+      
+   .hero {
+    cursor: pointer; /* Add this to make the hero clickable */
+  }   
+      
+  /* Level Up Modal Styles */
+.level-up-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */ 
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.level-up-modal-content { 
+    position: relative;
+    top: 50%; /* Place the top edge of the box at the middle of the screen */
+    left: 50%;
+    transform: translate(-54%, -50%); /* Center the box */
+    background-color: rgba(0,0,0,0.9);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    align-items: center; /* Center items horizontally */
+}
+
+/* Close Button */
+.level-up-close-btn {
+    position: absolute;  
+    color: rgba(255, 0, 0, 0.4);
+    bottom: -10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    width: 10px; /* Half the original size */
+    height: 10px; /* Half the original size */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.level-up-close-btn:hover,
+.level-up-close-btn:focus {
+    color: ;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Centered Text */
+.level-up-modal-content h2 {
+    color: rgba(0, 163, 108, 0.75);
+    text-align: center;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1)) drop-shadow(0 0 16px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 32px rgba(0, 163, 108, 0.5));
+}
+      
+.level-up-modal-content p {
+    color: rgba(255, 192, 0, 0.75);
+    text-align: center;
+    font-size: 20px;
+    filter: drop-shadow(0 0 6px rgba(255, 192, 0, 1)) drop-shadow(0 0 16px rgba(255, 192, 0, 0.75)) drop-shadow(0 0 32px rgba(255, 192, 0, 0.5));
+}
+
+/* Add more custom styles as needed */
+
+#modalAnimationContainer {
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 500px; /* Set a fixed width */
+    height: 500px; /* Set a fixed height */
+    z-index: 1; /* Keep animation above the background image */
+    background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1711519996/Dise%C3%B1o_sin_t%C3%ADtulo_78_fauwxv.png'), url('https://res.cloudinary.com/dyqaluliy/image/upload/v1711520279/Dise%C3%B1o_sin_t%C3%ADtulo_28_exwzk0.gi');
+    background-position: 50% 64%, 50% 64%; /* Adjust the position for each background image if needed */
+    background-size: 33%, 31%;
+    background-repeat: no-repeat; /* Do not repeat the background image */
+}
+      
+
+#level {
+    position: absolute; /* Position the element relative to its closest positioned ancestor */
+    top: 10px; /* Adjust the top position as needed */
+    left: 50%; /* Align the element to the center horizontally */
+    transform: translateX(-50%); /* Adjust to center horizontally */
+    color: crimson;
+    filter: drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) 
+		  drop-shadow(0 0 16px rgba(220, 0, 0, 0.5))
+		  drop-shadow(0 0 32px rgba(220, 0, 0, 0.25));
+}
+
+#xp {
+    position: absolute; /* Position the element relative to its closest positioned ancestor */
+    top: 80px; /* Adjust the top position as needed */
+    left: 50%; /* Align the element to the center horizontally */
+    transform: translateX(-50%); /* Adjust to center horizontally */
+    color: crimson; /* Default color for XP text */
+    white-space: nowrap;
+    filter: drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) 
+		  drop-shadow(0 0 16px rgba(220, 0, 0, 0.5))
+		  drop-shadow(0 0 32px rgba(220, 0, 0, 0.25));
+}
+
+.xp-bar-container {
+    position: absolute; /* Position the container relative to its closest positioned ancestor */
+    top: 100px; /* Adjust the top position as needed */
+    left: 50%; /* Align the container to the center horizontally */
+    transform: translateX(-50%); /* Adjust to center horizontally */
+    width: 80%; /* Adjust the width of the container as needed */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px; /* Optionally, add border radius for aesthetics */ 
+    overflow: hidden; /* Hide overflow content of the container */
+    filter: drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) 
+		  drop-shadow(0 0 16px rgba(220, 0, 0, 0.5))
+		  drop-shadow(0 0 32px rgba(220, 0, 0, 0.25));
+}
+
+.xp-bar {
+    height: 20px; /* Adjust the height of the XP bar as needed */
+    width: 0; /* Initial width of the XP bar */
+    border-radius: 0px;
+    background-color: rgba(220, 0, 0, 0.7);
+    filter: drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) 
+		  drop-shadow(0 0 16px rgba(220, 0, 0, 0.5))
+		  drop-shadow(0 0 32px rgba(220, 0, 0, 0.25));
+    
+} 
+
+    .modal-content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal-animation-container {
+        position: relative;
+        z-index: 1; /* Ensure the animation container stays on top */
+    }   
+      
+    .circular-image {
+    position: fixed;
+    top: 114px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 144px; /* Set a fixed width */ 
+    height: 144px; /* Set a fixed height */
+    z-index: 1; /* Keep animation above the background image */  
+    border-radius: 100%;
+}
+  
+/* Stats */
+.stats {
+    position: absolute;
+    left: 50%;
+    top: 41%;
+    transform: translate(-50%, -50%);
+}
+
+/* Individual stat */
+.stat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+/* Stat icon */
+.stat img {
+    width: 30px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px;
+    white-space: nowrap;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 16px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 32px rgba(0, 0, 0, 0.25));
+}
+
+/* Stat name */
+.stat-name {
+    font-weight: bold;
+    margin-right: 5px;
+    white-space: nowrap;
+    color: rgba(192, 192, 192, 0.3); /* Adjust the color value as needed */
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 16px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 32px rgba(0, 0, 0, 0.25));
+}
+
+/* Stat value */
+.stat-value {
+    font-weight: bold;
+    white-space: nowrap;
+    color: rgba(192, 192, 192, 0.5) !important;
+    filter: drop-shadow(0 0 6px rgba(192, 192, 192, 1)) drop-shadow(0 0 16px rgba(192, 192, 192, 0.75)) drop-shadow(0 0 32px rgba(192, 192, 192, 0.5));
+}
+      
+.stat2-value {
+    font-weight: bold;
+    white-space: nowrap;
+    color: rgba(2, 170, 109, 0.5) !important;
+    filter: drop-shadow(0 0 6px rgba(2, 170, 109, 1)) drop-shadow(0 0 16px rgba(2, 170, 109, 0.75)) drop-shadow(0 0 32px rgba(2, 170, 109, 0.5));
+}
+      
+.stat3-value {
+    font-weight: bold;
+    white-space: nowrap;
+    color: rgba(251, 192, 45, 0.5) !important;
+    filter: drop-shadow(0 0 6px rgba(251, 192, 45, 1)) drop-shadow(0 0 16px rgba(251, 192, 45, 0.75)) drop-shadow(0 0 32px rgba(251, 192, 45, 0.5));
+}  
+      
+.statphysique-value {
+    font-weight: bold;
+    white-space: nowrap;
+    color: rgba(255, 145, 77, 0.5) !important;
+    filter: drop-shadow(0 0 6px rgba(255, 145, 77, 1)) drop-shadow(0 0 16px rgba(255, 145, 77, 0.75)) drop-shadow(0 0 32px rgba(255, 145, 77, 0.5));
+}  
+      
+.statutility-value {
+    font-weight: bold;
+    white-space: nowrap;
+    color: rgba(184, 103, 73, 0.5) !important;
+    filter: drop-shadow(0 0 6px rgba(184, 103, 73, 1)) drop-shadow(0 0 16px rgba(184, 103, 73, 0.75)) drop-shadow(0 0 32px rgba(184, 103, 73, 0.5));
+}      
+      
+.statambition-value {
+    font-weight: bold;
+    white-space: nowrap;
+    color: rgba(140, 82, 255, 0.5) !important;
+    filter: drop-shadow(0 0 6px rgba(140, 82, 255, 1)) drop-shadow(0 0 16px rgba(140, 82, 255, 0.75)) drop-shadow(0 0 32px rgba(140, 82, 255, 0.5));
+}
+      
+.statessence-value {
+    font-weight: bold;
+    white-space: nowrap;
+    color: rgba(0, 161, 255, 0.5) !important;
+    filter: drop-shadow(0 0 6px rgba(0, 161, 255, 1)) drop-shadow(0 0 16px rgba(0, 161, 255, 0.75)) drop-shadow(0 0 32px rgba(0, 161, 255, 0.5));
+}      
+
+.modal13 {
+    display: none; /* Hide modal by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+}
+
+.modal-content13 {
+    position: fixed;
+    top: 50%; /* Adjust to center vertically */
+    left: 50%; /* Adjust to center horizontally */
+    transform: translate(-50%, -50%); /* Center the modal content */
+    background-color: rgba(113, 112, 110, 0.1);
+    padding: 20px;
+    color: silver;
+    border: 1px solid #888;
+    width: 80%;
+    font-size: 14px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    text-align: center; /* Center align content */
+}
+      
+#confirmButton,
+#cancelButton {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Styling for the Confirm button */
+#confirmButton {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 163, 108, 0.9);
+    color: rgba(0, 163, 108, 0.9);
+}
+
+/* Styling for the Cancel button */
+#cancelButton {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(220, 20, 60, 0.9);
+    color: rgba(220, 20, 60, 0.9);
+}      
+
+.reward-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(255, 192, 0, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.qi-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(88, 214, 141, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.physique-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(230, 126, 34, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.utility-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(184, 103, 73, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.stoicism-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(192, 192, 192, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+} 
+      
+.essence-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(3, 169, 244, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.ambition-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: rgba(165, 105, 189, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}      
+      
+.golddown-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    font-size: bold;
+    color: rgba(100, 30, 22, 1);
+    background-color: rgba(247, 220, 111, 0.6); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.orangedown-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    color: rgba(255, 167, 38, 1);
+    background-color: rgba(0, 0, 0, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.greendown-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    color: rgba(156, 204, 101, 1);
+    background-color: rgba(0, 0, 0, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */ 
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.purpledown-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    color: rgba(187, 143, 206, 1);
+    background-color: rgba(0, 0, 0, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}      
+      
+.ticketminus-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    color: rgba(239, 83, 80, 1);
+    background-color: rgba(0, 0, 0, 0.6); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+      
+.ticketblock-flag {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, -50%);
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 0, 0, 0.8); /* Yellow */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}       
+
+@keyframes pop-up {
+    0% {
+        transform: translate(50%, -50%) scale(0.8); /* Initial scale and position */
+        opacity: 0;
+    }
+    40% {
+        transform: translate(50%, -50%) scale(1); /* Pop up and enlarge */
+        opacity: 1;
+    }
+    60% {
+        transform: translate(50%, -50%) scale(1); /* Pause */
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50%, -50%) scale(1.2); /* Scale up slightly */
+        opacity: 0; /* Fade out gradually */
+    }
+}
+
+        #saveButton {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 0;
+        }
+
+        #loadButton {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            z-index: 0;
+        }
+
+        #savedDataWindow {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 50%; 
+            width: 80%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(0, 168, 107, 0.9);
+            z-index: 9999;
+            
+        }
+
+        #savedDataWindow h3 {
+            margin-top: 0;
+            text-align: center;
+            color: rgba(0, 168, 107, 0.9);
+        }
+
+        #savedDataWindow ul {
+            list-style-type: none;
+            padding: 0;
+        } 
+
+       #savedDataWindow button {
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    background-color: rgba(220, 20, 60, 0.1);
+    border: 1px solid rgba(220, 20, 60, 0.9);
+    color: rgba(220, 20, 60, 0.9);
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    outline: none;
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Ensure block-level behavior */
+}
+      
+#saveButton {
+    top: 5px;
+    left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0); /* Frosted glass effect */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    padding: 0; /* Remove padding */
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(0px);
+    z-index: 1;
+}
+
+#saveButton img {
+    position: absolute;
+    width: 100%; /* Ensure the image fills the button */
+    height: auto; /* Maintain aspect ratio */
+    top: -10px;
+    left: -15px;
+}
+
+#loadButton {
+    top: 0px;
+    right: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0); /* Frosted glass effect */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    padding: 0; /* Remove padding */
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(0px);
+    z-index: 1;
+}
+
+
+#loadButton img {
+    position: absolute;
+    width: 100%; /* Ensure the image fills the button */
+    height: auto; /* Maintain aspect ratio */
+    top: -5px;
+    right: -10px;
+}
+
+#saveProgressMessages {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9px; 
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    width: 60%;
+    z-index: 9999; /* Ensure it's above other content */
+    cursor: pointer; /* Show pointer cursor */
+    text-align: center; /* Center text horizontally */
+    flex-direction: column; /* Stack items vertically */  
+    align-items: center; /* Center items horizontally */
+    background-color: rgba(251, 140, 0, 0.5); /* Yellow */
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+#saveProgressMessages img {
+    max-width: 100px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Add space between image and text */
+}
+
+#saveProgressMessages p {
+  color: rgba(255, 183, 77, 1);
+}
+      
+#loadProgressMessages {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    width: 60%;
+    z-index: 9999; /* Ensure it's above other content */
+    cursor: pointer; /* Show pointer cursor */
+    text-align: center; /* Center text horizontally */
+    flex-direction: column; /* Stack items vertically */  
+    align-items: center; /* Center items horizontally */
+    background-color: rgba(51, 153, 51, 0.5); /* Yellow */
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+#loadProgressMessages img {
+    max-width: 100px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Add space between image and text */
+} 
+
+#loadProgressMessages p {
+  color: rgba(174, 213, 129, 1);
+  margin-top: 10px;
+}           
+      
+.animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+#qiup-container {
+    filter: drop-shadow(0 0 6px rgba(40, 180, 99, 1)) 
+		drop-shadow(0 0 16px rgba(40, 180, 99, 0.75))
+		drop-shadow(0 0 32px rgba(40, 180, 99, 0.5)) !important; 
+}
+      
+#penaltyup-container {
+    filter: drop-shadow(0 0 6px rgba(203, 67, 53, 1)) 
+		drop-shadow(0 0 16px rgba(203, 67, 53, 0.75))
+		drop-shadow(0 0 32px rgba(203, 67, 53, 0.5)) !important; 
+}
+      
+#ticketminus-container {
+    filter: drop-shadow(0 0 6px rgba(203, 67, 53, 1)) 
+		drop-shadow(0 0 16px rgba(203, 67, 53, 0.75))
+		drop-shadow(0 0 32px rgba(203, 67, 53, 0.5)) !important; 
+}
+      
+#ticketblock-container {
+    filter: drop-shadow(0 0 6px rgba(203, 67, 53, 1)) 
+		drop-shadow(0 0 16px rgba(203, 67, 53, 0.75))
+		drop-shadow(0 0 32px rgba(203, 67, 53, 0.5)) !important; 
+}          
+      
+#physiqueup-container {
+    filter: drop-shadow(0 0 6px rgba(220, 118, 51, 1)) 
+		drop-shadow(0 0 16px rgba(220, 118, 51, 0.75))
+		drop-shadow(0 0 32px rgba(220, 118, 51, 0.5)) !important; 
+}
+      
+#utilityup-container {
+    filter: drop-shadow(0 0 6px rgba(184, 103, 73, 1)) 
+		drop-shadow(0 0 16px rgba(184, 103, 73, 0.75))
+		drop-shadow(0 0 32px rgba(184, 103, 73, 0.5)) !important; 
+}
+      
+#stoicismup-container {
+    filter: drop-shadow(0 0 6px rgba(192, 192, 192, 1)) 
+		drop-shadow(0 0 16px rgba(192, 192, 192, 0.75))
+		drop-shadow(0 0 32px rgba(192, 192, 192, 0.5)) !important; 
+}
+      
+#essenceup-container {
+    filter: drop-shadow(0 0 6px rgba(3, 169, 244, 1)) 
+		drop-shadow(0 0 16px rgba(3, 169, 244, 0.75))
+		drop-shadow(0 0 32px rgba(3, 169, 244, 0.5)) !important; 
+}     
+      
+#ambitionup-container {
+    filter: drop-shadow(0 0 6px rgba(165, 105, 189, 1)) 
+		drop-shadow(0 0 16px rgba(165, 105, 189, 0.75))
+		drop-shadow(0 0 32px rgba(165, 105, 189, 0.5)) !important; 
+}      
+      
+#madxpup-container {
+    filter: drop-shadow(0 0 6px rgba(255, 192, 0, 1)) 
+		drop-shadow(0 0 16px rgba(255, 192, 0, 0.75))
+		drop-shadow(0 0 32px rgba(255, 192, 0, 0.5)) !important; 
+} 
+      
+#orangedown-container {
+    filter: drop-shadow(0 0 6px rgba(220, 118, 51, 1)) 
+		drop-shadow(0 0 16px rgba(220, 118, 51, 0.75))
+		drop-shadow(0 0 32px rgba(220, 118, 51, 0.5)) !important; 
+}
+      
+#greendown-container {
+    filter: drop-shadow(0 0 6px rgba(40, 180, 99, 1)) 
+		drop-shadow(0 0 16px rgba(40, 180, 99, 0.75))
+		drop-shadow(0 0 32px rgba(40, 180, 99, 0.5)) !important; 
+}
+      
+#purpledown-container {
+    filter: drop-shadow(0 0 6px rgba(118, 68, 138, 1)) 
+		drop-shadow(0 0 16px rgba(118, 68, 138, 0.75))
+		drop-shadow(0 0 32px rgba(118, 68, 138, 0.5)) !important;  
+}
+      
+#golddown-container {
+    filter: drop-shadow(0 0 6px rgba(255, 192, 0, 1)) 
+		drop-shadow(0 0 16px rgba(255, 192, 0, 0.75))
+		drop-shadow(0 0 32px rgba(255, 192, 0, 0.5)) !important; 
+}      
+      
+#ticketup-container {
+    filter: drop-shadow(0 0 6px rgba(255, 192, 0, 1)) 
+		drop-shadow(0 0 16px rgba(255, 192, 0, 0.75)) 
+		drop-shadow(0 0 32px rgba(255, 192, 0, 0.5)) !important; 
+}       
+
+#animation-container {
+    /* Add any specific styles for the level up animation */
+}
+      
+.level-up-modal-content img {
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    max-width: 60%; /* Ensure image fits within the modal */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add some space below the image */
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1)) drop-shadow(0 0 16px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 32px rgba(0, 163, 108, 0.5));
+}
+
+/* Styling for the second version of the reward flag */
+.reward-flag2 {
+    position: fixed;
+    bottom: 10px;
+    right: 50%;
+    height: 20px;
+    transform: translate(50%, -50%);
+    background-color: rgba(0, 128, 128, 0.1); /* Teal */
+    padding: 10px;
+    border-radius: 8px; 
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Static glow */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    color: rgba(255, 192, 0, 1);
+    font-weight: bold;
+    font-size: 16px;
+    animation: pop-up 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  
+    /* Center text vertically */
+    display: flex;
+    align-items: center;
+}
+
+@keyframes pop-up {
+    0% {
+        transform: translate(50%, -50%) scale(0.8); /* Initial scale and position */
+        opacity: 0;
+    }
+    40% {
+        transform: translate(50%, -50%) scale(1); /* Pop up and enlarge */
+        opacity: 1;
+    }
+    60% {
+        transform: translate(50%, -50%) scale(1); /* Pause */
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50%, -50%) scale(1.2); /* Scale up slightly */
+        opacity: 0; /* Fade out gradually */
+    }
+}      
+      
+.placeholderX {
+    display: inline-block;
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1711068909/Dise%C3%B1o_sin_t%C3%ADtulo_69_jxrgh1.png'); /* Placeholder image */
+    background-size: cover;
+    border-radius: 0%;
+    animation: flip 2s linear infinite; /* Flip infinitely */
+    margin-right: 3px; /* Horizontal spacing */
+    }  
+
+#saveConfirmationBox {
+    display: none;
+    position: fixed;
+    width: 70%;
+    height: 140px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    backdrop-filter: blur(20px);
+}
+
+#saveConfirmationBox p {
+    font-size: 18px;
+    color: rgba(255, 167, 38, 1);
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 16px;
+    filter: drop-shadow(0 0 6px rgba(255, 167, 38, 0.4))
+        drop-shadow(0 0 16px rgba(255, 167, 38, 0.2))
+        drop-shadow(0 0 32px rgba(255, 167, 38, 0.1));
+}
+
+#saveYesButton,
+#saveNoButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 0.5px solid rgba(0, 0, 0, 1);
+    border-radius: 4px;
+    color: black;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+}
+
+#saveYesButton {
+    left: 40px; /* Adjust the left position for the first button */
+    background-color: rgba(165, 214, 167, 0.1); /* Green */
+    border: 0.5px solid rgba(102, 187, 106, 1);
+    color: rgba(102, 187, 106, 1);
+}
+
+#saveNoButton {
+    right: 45px; /* Adjust the left position for the second button */
+    background-color: rgba(239, 154, 154, 0.1); /* Red */
+    border: 0.5px solid rgba(244, 67, 54, 1);
+    color: rgba(244, 67, 54, 1);
+}
+
+/* Hover effect for buttons */
+#saveYesButton:hover,
+#saveNoButton:hover {
+    opacity: 0.8;
+}
+      
+#ultraConfirmationMessage2 {
+        font-size: 16px; /* Set the font size */
+        font-weight: bold; /* Set the font weight */
+        color: crimson; /* Set the text color */
+        margin-top: 10px; /* Set top margin */
+        text-align: center; /* Align text to center */
+    }  
+      
+#toggleSoundButton {
+  display: none;
+}      
+      
+      
+    </style>
+
+</head>
+<body>
+  
+    <div class="background-container"></div>
+
+    <!-- Your HTML content goes here -->  
+    
+  <div class="container">
+    <div class="rank-marker row-PENALTY glowing-rank-PENALTY">◈ XP REWARD ◈</div>
+    <div class="heroes row-PENALTY">
+      <div id="hero-xp-1" class="hero" onclick="THEBESTConfirmation('XP REWARD GRANTED')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718636848/X20_82_driaid.png');"></div>
+      </div>
+      
+    </div>
+    
+    <div class="rank-marker row-G glowing-rank-G">◈ PHYSIQUE ◈</div>
+    <div class="heroes row-G"> 
+      <div id="hero-physique-1" class="hero" onclick="physiqueConfirmation('ATTIRE · HYGIENE')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1713900959/Dise%C3%B1o_sin_t%C3%ADtulo_-_2024-04-23T213541.149_vpkrwy.png');"></div>
+      </div>
+      <div id="hero-physique-1" class="hero" onclick="physiqueConfirmation('TESTOSTERONE NUTRITION ♂')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1713708319/Dise%C3%B1o_sin_t%C3%ADtulo_-_2024-04-21T160508.642_oyf8bl.png');"></div>
+      </div>
+      <div id="hero-physique-1" class="hero" onclick="physiqueConfirmation('HYPERTROPHY · CALISTHENICS')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1712428570/Dise%C3%B1o_sin_t%C3%ADtulo_99_xexrid.png');"></div>
+      </div>
+      <div id="hero-physique-1" class="hero" onclick="physiqueConfirmation([`BOXING · ${level} HITS`])" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1713893921/Take_a_look_at_my_Canva_design_22_labboc.png');"></div>
+      </div>
+    </div>
+
+    <div class="rank-marker row-EX glowing-rank-EX">◈ UTILITY ◈</div>
+    <div class="heroes row-E">
+      <div id="hero-essence-1" class="hero" onclick="utilityConfirmation('PAPERWORK · LICENSES')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1713893933/Take_a_look_at_my_Canva_design_15_ibjedo.png');"></div>
+      </div>
+      <div id="hero-essence-1" class="hero" onclick="utilityConfirmation('INVESTMENT · BUSINESS · INCOME')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1713893896/Take_a_look_at_my_Canva_design_38_yh0gki.png');"></div>
+      </div>
+      <div id="hero-essence-1" class="hero" onclick="utilityConfirmation('MAINTENANCE · CHORES')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1713893929/Take_a_look_at_my_Canva_design_18_mifcun.png');"></div>
+      </div>
+      <div id="hero-essence-1" class="hero" onclick="utilityConfirmation('EMERGENCY · SURVIVAL')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1713904368/Dise%C3%B1o_sin_t%C3%ADtulo_-_2024-04-23T223224.834_slnzfx.png');"></div>
+      </div>
+    </div>
+    
+    <div class="rank-marker row-E glowing-rank-E">◈ COMPOSURE ◈</div>
+    <div class="heroes row-E">
+      <div id="hero-stoicism-1" class="hero" onclick="stoicismConfirmation('ARGUE · GOSSIP · COMPLAIN · CURSE')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718636513/X20_81_m3jl3m.png');"></div>
+      </div>
+      <div id="hero-stoicism-1" class="hero" onclick="stoicismConfirmation('REACTIVE · EMOTIONAL · IMPULSIVE')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718636513/X20_80_mpruxz.png');"></div>
+      </div>
+      <div id="hero-stoicism-1" class="hero" onclick="stoicismConfirmation('OVERTHINKING · FEAR · DEPRESSION')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718636513/X20_79_wqfrct.png');"></div>
+      </div>
+      <div id="hero-stoicism-1" class="hero" onclick="stoicismConfirmation('SLOTH · EXCUSES · ANXIETY · INSECURITY')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718636513/X20_78_k44rfa.png');"></div>
+      </div> 
+    </div> 
+    
+    
+    <div class="rank-marker row-S glowing-rank-S">◈ AMBITION ◈</div>
+    <div class="heroes row-E">
+      <div id="hero-ambition-1" class="hero" onclick="ambitionConfirmation('UNDEAD PROJECT DELEGATION')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1719532122/X20_92_k20ym7.png');"></div>
+      </div> 
+      <div id="hero-ambition-1" class="hero" onclick="ambitionConfirmation('ARTIFICIAL INTELLIGENCE CODING')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718631720/X20_73_kdjoxe.png');"></div>
+      </div>
+      <div id="hero-ambition-1" class="hero" onclick="ambitionConfirmation('BIOGENETICAL ENGINEERING')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1719532115/X20_90_nbwlf6.png');"></div>
+      </div>
+      <div id="hero-ambition-1" class="hero" onclick="ambitionConfirmation('HUMAN LABOR CONGLOMERATE')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1719550257/X20_96_xtflxl.png');"></div>
+      </div>
+    </div>
+    
+    
+    <div class="rank-marker row-C glowing-rank-C">◈ PENALTY ◈</div>
+    <div class="heroes row-C">
+      <div id="hero-penalty-1" class="hero" onclick="orangedownConfirmation(-99, 'NO FAST FOOD ALLOWED')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1717698590/Untitled_design_14_emyavr.png');"></div>
+      </div><div id="hero-penalty-1" class="hero" onclick="orangedownConfirmation(-99, 'NO POISON ALLOWED')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718066795/X20_58_vd1awj.png');"></div>
+      </div>
+      <div id="hero-penalty-1" class="hero" onclick="greendownConfirmation(-99, 'KILL ALL DISTRACTIONS')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718065892/X20_55_m04tpk.png');"></div>
+      </div>
+      <div id="hero-penalty-1" class="hero" onclick="greendownConfirmation(-99, 'NO SLEEP OVER 7 HOURS')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1718066152/X20_56_w6igyw.png');"></div>
+      </div>
+    </div>
+     
+    
+    <div class="rank-marker row-B glowing-rank-B">◈ VIP TICKET ◈</div>
+    <div class="heroes row-B">
+      <div id="hero-ticket-1" class="hero" onclick="handleTicketConfirmation(-1, 'NIGHT OF THE KING')" data-name="Mission 1">
+        <div class="image" style="background-image: url('https://res.cloudinary.com/dyqaluliy/image/upload/v1717693256/Untitled_design_9_cocm9v.png');"></div>
+       </div> 
+    </div>
+ 
+    
+    <div class="logo" id="logo" onclick="openModal()">
+    <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1710419477/8b884e75-fdc3-4aa3-8100-abe5d924ede6_tvko8q.png" alt="Overwatch">
+    </div>
+
+  </div>
+
+  <div id="myModal" class="modal">
+    <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1712380705/HELL_BUTTON_4_mv7vqh.svg" class="close-btn" onclick="closeModal()" alt="Close" style="width: 25px; height: 25px;">
+    <div class="modal-content">
+        <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1711523291/Dise%C3%B1o_sin_t%C3%ADtulo_30_bbogdp.gif" class="circular-image" alt="Circular Image">
+       
+        <div id="level">✧ LEVEL 0 ✧</div>
+        <div id="xp" style="color: crimson;">◈ 0 / 20 xp ◈</div>
+        <div class="xp-bar-container">
+            <div id="xp-bar" class="xp-bar"></div>
+        </div>
+      
+      <!-- Stats -->
+        <!-- Inside your modal content -->
+<div class="stats">
+    <!-- Stamina stat -->
+    <div class="stat">
+       <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1718478252/X20_65_tlrfvt.png" alt="Stamina Icon">
+        <div class="stat-name">Earned ✦</div>
+        <div id="stamina-value" class="stat2-value"></div>
+    </div>
+  
+    <div class="stat">       
+    </div>
+  
+    <!-- Physique stat -->
+    <div class="stat">
+        <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1718565391/X20_76_fif2zb.png" alt="Control Icon">
+        <div class="stat-name">PHYSIQUE ◈ </div>
+        <div id="physique-value" class="statphysique-value">0</div>
+    </div> 
+  
+  
+    <!-- UTILITY stat -->
+    <div class="stat">
+        <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1719529620/X20_87_f41mrk.png" alt="Control Icon">
+        <div class="stat-name">UTILITY ◈ </div>
+        <div id="utility-value" class="statessence-value">0</div>
+    </div>
+  
+  
+   <!-- AMBITION stat -->
+    <div class="stat">
+        <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1718565392/X20_69_ghbeac.png" alt="Control Icon">
+        <div class="stat-name">AMBITION ◈ </div>
+        <div id="ambition-value" class="statambition-value">0</div>
+    </div>
+  
+  
+   <!-- UTILITY stat -->
+    <div class="stat">
+        <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1717621402/Untitled_design_3_fgrmhj.png" alt="Control Icon">
+        <div class="stat-name">COMPOSURE ◈ </div>
+        <div id="stoicism-value" class="stat-value">0</div>
+    </div>
+  
+  
+  
+  <!-- UTILITY stat -->
+    <div class="stat">
+        <div class="stat-name"></div> 
+        <div id="bounty-value" class="stat-value"></div>
+    </div>
+  
+  
+    <!-- Tickets -->
+    <div class="stat">
+        <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1717620924/Untitled_design_1_ljeapt.png" alt="Utility Icon">
+        <div class="stat-name"> VIP Tickets ✦</div>
+        <div id="ticket-value" class="stat3-value">0</div>
+    </div>
+  
+</div>
+
+      
+        <!-- Modal Animation Container -->
+        <div id="modalAnimationContainer" class="modal-animation-container"></div>
+        
+    </div>
+</div>
+
+  
+  <!-- Level Up Modal -->
+    <div id="levelUpModal" class="level-up-modal">
+        <div class="level-up-modal-content">
+            <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1711956261/checkmark-hover_zgryux.png" class="level-up-close-btn" onclick="closeLevelUpModal()" alt="Close" style="width: 50px; height: 50px;">
+            <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1711954764/Dise%C3%B1o_sin_t%C3%ADtulo_-_2024-04-01T085906.073_uy98jm.svg" alt="LVLUPimg">
+            <h2>✧ YOU LEVELED UP ✧</h2>
+            <p>◈ LEVEL <span id="newLevel"></span> ◈</p>
+            <!-- You can add additional content here if needed -->
+        </div>
+    </div>
+</div>
+  
+<div id="ultraConfirmationBox" class="modal13">
+  <div class="modal-content13">
+    <p id="ultraConfirmationMessage2"></p>
+    <p id="ultraConfirmationMessage"></p>
+    <p>‎ </p>
+    <button id="confirmButton">Accept</button>
+    <button id="cancelButton">Decline</button>
+  </div>
+</div>
+
+<div id="progressMessages">
+  <div id="saveProgressMessages"></div>  
+  <div id="loadProgressMessages"></div> 
+</div>
+  
+<button id="saveButton"><img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1712320999/HELL_BUTTON_2_kt4nbi.svg" alt="Load"></button>
+<button id="loadButton" onclick="displaySavedData()"><img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1712320997/HELL_BUTTON_3_bmjhkq.svg" alt="Load"></button> 
+
+ 
+<div id="savedDataWindow">
+    <h3>► SELECT A SAVE FILE ◄</h3>
+    <ul id="savedDataList"></ul>  
+    
+    <button onclick="closeSavedDataWindow()">EXIT</button>
+</div> 
+
+<div id="saveConfirmationBox">
+    <p>Do you want to save your progress at this point?</p>
+    <div id="buttonContainer">
+        <button id="saveYesButton">SAVE</button>
+        <button id="saveNoButton">EXIT</button>
+    </div>
+</div>   
+  
+<div id="noTicketsImageContainer"></div>  
+  
+
+<audio id="backgroundMusic" autoplay loop>
+    <source src="https://kingsgamek.github.io/Infinite%20Leveling%20.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<button id="toggleSoundButton">Toggle Sound</button> 
+  
+<audio id="levelUpSound" src="https://kingsgamek.github.io/LVLUPSoundEffect.mp3" preload="auto"></audio>  
+  
+<audio id="levelUpSound2" src="https://kingsgamek.github.io/SUCCESS.ogg" preload="auto"></audio>
+  
+<audio id="levelUpSound3" src="https://kingsgamek.github.io/ARROWDOWN.ogg" preload="auto"></audio>
+  
+<audio id="STATWINDOWSFX" src="https://kingsgamek.github.io/OPENSTATFX.ogg" preload="auto"></audio>  
+  
+<audio id="SAVESFX" src="https://kingsgamek.github.io/TICKETWINSFX.ogg" preload="auto"></audio>
+  
+<audio id="LOADSFX" src="https://kingsgamek.github.io/LOADFX.ogg" preload="auto"></audio> 
+
+<audio id="TICKETWINSFX" src="https://kingsgamek.github.io/THANKS.ogg" preload="auto"></audio>  
+  
+<audio id="HEYOSFX" src="https://kingsgamek.github.io/HEYO.ogg" preload="auto"></audio>  
+   
+<script>  
+    
+// Define initial stat values  
+let requiredSTTValue = 0;
+let level = 1;
+let ticket = 0;   
+let physique = 0;
+let utility = 0;
+let stoicism = 0; 
+let essence = 0;
+let ambition = 0;
+let bounty = 0;
+let xp = 0; 
+let stamina = (sumUpTo(level - 2)) * 7; 
+let stamina2 = (sumUpTo(level - 1)) * 7;   
+
+// Function to add random values to stats and update
+function addRandomStats() {
+    stamina += ((sumUpTo(level - 1)) * 7) - ((sumUpTo(level - 2)) * 7); 
+    physique += 0;
+    bounty += 0; 
+
+    updateStatsUI();
+}
+ 
+// Update UI with current stats
+function updateStatsUI() {
+    document.getElementById('stamina-value').textContent = stamina;
+    document.getElementById('stoicism-value').textContent = stoicism;
+    document.getElementById('utility-value').textContent = utility;
+    document.getElementById('ambition-value').textContent = ambition;
+    document.getElementById('physique-value').textContent = `${physique}`;
+    document.getElementById('level').textContent = `✧ LEVEL ${level} ✧`;
+    document.getElementById('ticket-value').textContent = ticket;
+}
+
+// Call addRandomStats function to initialize stats with random values at level 0
+addRandomStats(); // Initialize stats with random values at level 0
+
+// Event listener for Save button click
+document.getElementById('saveButton').addEventListener('click', function() { 
+    const saveConfirmationBox = document.getElementById('saveConfirmationBox');
+    saveConfirmationBox.style.display = 'block';
+});
+
+// Handle "Yes" button click within saveConfirmationBox
+document.getElementById('saveYesButton').addEventListener('click', function() {
+    // Call saveProgress function after confirmation
+    saveProgress();
+    // Optionally hide saveConfirmationBox after "Yes"
+    const saveConfirmationBox = document.getElementById('saveConfirmationBox');
+    saveConfirmationBox.style.display = 'none';
+});
+
+// Handle "No" button click within saveConfirmationBox
+document.getElementById('saveNoButton').addEventListener('click', function() {
+    // Simply hide saveConfirmationBox after "No"
+    const saveConfirmationBox = document.getElementById('saveConfirmationBox');
+    saveConfirmationBox.style.display = 'none';
+});
+
+// Function to display a progress message
+function showProgressMessageSV(elementId, message) {
+    const saveProgressMessages = document.getElementById(elementId);
+
+    const saveImage = new Image();
+    saveImage.src = 'https://res.cloudinary.com/dyqaluliy/image/upload/v1711851121/Dise%C3%B1o_sin_t%C3%ADtulo_98_gxs3ft.svg';
+
+    saveImage.onload = () => {
+        saveProgressMessages.innerHTML = `<img src="${saveImage.src}" alt="Save Progress"> <p>${message}</p>`;
+        saveProgressMessages.style.display = 'block';
+      
+        // Play the sound effect when the image is loaded
+        playSAVESFX();
+
+        setTimeout(function() {
+            saveProgressMessages.style.display = 'none';
+        }, 2000);
+    };
+} 
+
+// Function to save progress to local storage
+function saveProgress() {
+    const now = new Date(); // Get the current date and time
+    const timestamp = now.getTime(); // Get timestamp in milliseconds
+
+    const progress = {
+        timestamp: timestamp, // Include timestamp in the progress object
+        xp: xp,
+        level: level,
+        stamina: stamina,
+        physique: physique,
+        utility: utility,
+        stoicism: stoicism,
+        essence: essence,
+        ambition: ambition,
+        ticket: ticket,
+        requiredSTTValue: requiredSTTValue,
+    };
+
+    // Retrieve existing saved data or initialize an empty array
+    let savedData = JSON.parse(localStorage.getItem('savedData')) || [];
+
+    // Limit the number of saves to 3
+    if (savedData.length >= 6) {
+        // Remove all existing saves before adding the new one
+        savedData = [];
+    } 
+
+    savedData.push(progress);
+
+    // Save the updated array back to local storage
+    localStorage.setItem('savedData', JSON.stringify(savedData));
+
+    showProgressMessageSV('saveProgressMessages', '✦ SAVE COMPLETED ✦');
+  
+}
+
+
+// Display saved data before loading
+function displaySavedData() {
+    const savedData = JSON.parse(localStorage.getItem('savedData'));
+    const savedDataList = document.getElementById('savedDataList');
+    savedDataList.innerHTML = '';
+ 
+    if (savedData && savedData.length > 0) {
+        savedData.forEach((data, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Save ${index + 1}: ${new Date(data.timestamp).toLocaleString()} - Level ${data.level}, XP ${data.xp}, Stats (${data.physique}, ${data.utility}, ${data.stoicism}, ${data.ambition}, [${data.ticket}], ${data.requiredSTTValue} ⚠)`;
+            listItem.style.marginBottom = '10px'; // Add margin bottom for spacing
+            listItem.style.color = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`; // Generate random color for each save
+            listItem.onclick = function() {
+                loadSelectedData(index);
+            };
+            savedDataList.appendChild(listItem);
+        });
+        document.getElementById('savedDataWindow').style.display = 'block';
+    } else {
+        alert('No saved data available!');
+    }
+}
+
+// Load selected saved data
+function loadSelectedData(index) {
+    const savedData = JSON.parse(localStorage.getItem('savedData'));
+    const selectedData = savedData[index];
+
+    if (selectedData) {
+        xp = selectedData.xp || 0;
+        level = selectedData.level || 0;
+        stamina = selectedData.stamina || 0;
+        physique = selectedData.physique || 0;
+        utility = selectedData.utility || 0;
+        stoicism = selectedData.stoicism || 0;
+        essence = selectedData.essence || 0;
+        ambition = selectedData.ambition || 0;
+        ticket = selectedData.ticket || 0;
+        requiredSTTValue = selectedData.requiredSTTValue || 0;
+
+        updateStatsUI();
+        updateBackdropFilter(xp);  
+        updateXPColor(xp);
+        
+        document.getElementById('level').textContent = `✧ LEVEL ${level} ✧`;
+        document.getElementById('xp').textContent = `◈ ${xp} / ${sumUpTo(level) * 7} xp ◈`;
+        document.getElementById('xp-bar').style.width = `${(xp / (sumUpTo(level) * 7) * 100)}%`;
+
+        showProgressMessageLD('loadProgressMessages', '✦ LOAD COMPLETED ✦');
+    }
+
+    closeSavedDataWindow(); 
+}
+
+// Close saved data window
+function closeSavedDataWindow() {
+    document.getElementById('savedDataWindow').style.display = 'none';
+}
+  
+
+function showProgressMessageLD(elementId, message) {
+    const loadProgressMessages = document.getElementById(elementId);
+
+    const saveImage = new Image();
+    saveImage.src = 'https://res.cloudinary.com/dyqaluliy/image/upload/v1711851115/Dise%C3%B1o_sin_t%C3%ADtulo_100_ap4dun.svg';
+
+    saveImage.onload = () => {
+        loadProgressMessages.innerHTML = `<img src="${saveImage.src}" alt="Save Progress"> <p>${message}</p>`;
+        loadProgressMessages.style.display = 'block';
+      
+        playLOADSFX();
+
+        setTimeout(function() {
+            loadProgressMessages.style.display = 'none';
+        }, 2000);
+    };
+}  
+ 
+
+// Initialize UI with current stats
+updateStatsUI();
+document.getElementById('level').textContent = `✧ LEVEL ${level} ✧`;
+document.getElementById('xp').textContent = `◈ ${xp} / ${(sumUpTo(level) * 7)} xp ◈`;
+document.getElementById('xp-bar').style.width = `${(xp / (sumUpTo(level) * 7) * 100)}%`;
+
+    
+function updateBackdropFilter(xp) {
+    const levelElement = document.getElementById('level');
+    const xpElement = document.getElementById('xp'); 
+    const xpBarElement = document.getElementById('xp-bar');
+    const xpBarContainerElement = document.querySelector('.xp-bar-container');
+ 
+    if (xp >= (((sumUpTo(level)) * 7) * 0 / 6) && xp < (((sumUpTo(level)) * 7) * 1 / 6)) {
+        levelElement.style.filter = 'drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) drop-shadow(0 0 16px rgba(220, 0, 0, 0.5)) drop-shadow(0 0 32px rgba(220, 0, 0, 0.25))';
+        xpElement.style.filter = 'drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) drop-shadow(0 0 16px rgba(220, 0, 0, 0.5)) drop-shadow(0 0 32px rgba(220, 0, 0, 0.25))';
+        xpBarElement.style.filter = 'drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) drop-shadow(0 0 16px rgba(220, 0, 0, 0.5)) drop-shadow(0 0 32px rgba(220, 0, 0, 0.25))';
+        xpBarContainerElement.style.filter = 'drop-shadow(0 0 6px rgba(220, 0, 0, 0.75)) drop-shadow(0 0 16px rgba(220, 0, 0, 0.5)) drop-shadow(0 0 32px rgba(220, 0, 0, 0.25))';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 1 / 6) && xp < (((sumUpTo(level)) * 7) * 2 / 6)) {
+        levelElement.style.filter = 'drop-shadow(0 0 6px rgba(249, 105, 14, 0.75)) drop-shadow(0 0 16px rgba(249, 105, 14, 0.5)) drop-shadow(0 0 32px rgba(249, 105, 14, 0.25))';
+        xpElement.style.filter = 'drop-shadow(0 0 6px rgba(249, 105, 14, 0.75)) drop-shadow(0 0 16px rgba(249, 105, 14, 0.5)) drop-shadow(0 0 32px rgba(249, 105, 14, 0.25))';
+        xpBarElement.style.filter = 'drop-shadow(0 0 6px rgba(249, 105, 14, 0.75)) drop-shadow(0 0 16px rgba(249, 105, 14, 0.5)) drop-shadow(0 0 32px rgba(249, 105, 14, 0.25))';
+        xpBarContainerElement.style.filter = 'drop-shadow(0 0 6px rgba(249, 105, 14, 0.75)) drop-shadow(0 0 16px rgba(249, 105, 14, 0.5)) drop-shadow(0 0 32px rgba(249, 105, 14, 0.25))';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 2 / 6) && xp < (((sumUpTo(level)) * 7) * 3 / 6)) {
+        levelElement.style.filter = 'drop-shadow(0 0 6px rgba(255, 215, 0, 0.75)) drop-shadow(0 0 16px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 32px rgba(255, 215, 0, 0.25))';
+        xpElement.style.filter = 'drop-shadow(0 0 6px rgba(255, 215, 0, 0.75)) drop-shadow(0 0 16px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 32px rgba(255, 215, 0, 0.25))';
+        xpBarElement.style.filter = 'drop-shadow(0 0 6px rgba(255, 215, 0, 0.75)) drop-shadow(0 0 16px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 32px rgba(255, 215, 0, 0.25))';
+        xpBarContainerElement.style.filter = 'drop-shadow(0 0 6px rgba(255, 215, 0, 0.75)) drop-shadow(0 0 16px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 32px rgba(255, 215, 0, 0.25))';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 3 / 6) && xp < (((sumUpTo(level)) * 7) * 4 / 6)) {
+        levelElement.style.filter = 'drop-shadow(0 0 6px rgba(0, 168, 107, 0.75)) drop-shadow(0 0 16px rgba(0, 168, 107, 0.5)) drop-shadow(0 0 32px rgba(0, 168, 107, 0.25))';
+        xpElement.style.filter = 'drop-shadow(0 0 6px rgba(0, 168, 107, 0.75)) drop-shadow(0 0 16px rgba(0, 168, 107, 0.5)) drop-shadow(0 0 32px rgba(0, 168, 107, 0.25))';
+        xpBarElement.style.filter = 'drop-shadow(0 0 6px rgba(0, 168, 107, 0.75)) drop-shadow(0 0 16px rgba(0, 168, 107, 0.5)) drop-shadow(0 0 32px rgba(0, 168, 107, 0.25))';
+        xpBarContainerElement.style.filter = 'drop-shadow(0 0 6px rgba(0, 168, 107, 0.75)) drop-shadow(0 0 16px rgba(0, 168, 107, 0.5)) drop-shadow(0 0 32px rgba(0, 168, 107, 0.25))';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 4 / 6) && xp < (((sumUpTo(level)) * 7) * 5 / 6)) {
+        levelElement.style.filter = 'drop-shadow(0 0 6px rgba(3, 138, 255, 0.75)) drop-shadow(0 0 16px rgba(3, 138, 255, 0.5)) drop-shadow(0 0 32px rgba(3, 138, 255, 0.25))';
+        xpElement.style.filter = 'drop-shadow(0 0 6px rgba(3, 138, 255, 0.75)) drop-shadow(0 0 16px rgba(3, 138, 255, 0.5)) drop-shadow(0 0 32px rgba(3, 138, 255, 0.25))';
+        xpBarElement.style.filter = 'drop-shadow(0 0 6px rgba(3, 138, 255, 0.75)) drop-shadow(0 0 16px rgba(3, 138, 255, 0.5)) drop-shadow(0 0 32px rgba(3, 138, 255, 0.25))';
+        xpBarContainerElement.style.filter = 'drop-shadow(0 0 6px rgba(3, 138, 255, 0.75)) drop-shadow(0 0 16px rgba(3, 138, 255, 0.5)) drop-shadow(0 0 32px rgba(3, 138, 255, 0.25))';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 5 / 6) && xp < (((sumUpTo(level)) * 7) * 6 / 6)) {
+        levelElement.style.filter = 'drop-shadow(0 0 6px rgba(163, 17, 226, 0.75)) drop-shadow(0 0 16px rgba(163, 17, 226, 0.5)) drop-shadow(0 0 32px rgba(163, 17, 226, 0.25))';
+        xpElement.style.filter = 'drop-shadow(0 0 6px rgba(163, 17, 226, 0.75)) drop-shadow(0 0 16px rgba(163, 17, 226, 0.5)) drop-shadow(0 0 32px rgba(163, 17, 226, 0.25))';
+        xpBarElement.style.filter = 'drop-shadow(0 0 6px rgba(163, 17, 226, 0.75)) drop-shadow(0 0 16px rgba(163, 17, 226, 0.5)) drop-shadow(0 0 32px rgba(163, 17, 226, 0.25))';
+        xpBarContainerElement.style.filter = 'drop-shadow(0 0 6px rgba(163, 17, 226, 0.75)) drop-shadow(0 0 16px rgba(163, 17, 226, 0.5)) drop-shadow(0 0 32px rgba(163, 17, 226, 0.25))';  
+    } else {
+        // Handle other XP ranges if needed 
+    } 
+}
+  
+updateBackdropFilter(xp);  
+  
+  
+function updateXPColor(xp) {
+    const xpElement = document.getElementById('xp');
+    const xpBarElement = document.getElementById('xp-bar');
+    const lvlElement = document.getElementById('level');
+
+    if (xp >= (((sumUpTo(level)) * 7) * 0 / 6) && xp < (((sumUpTo(level)) * 7) * 1 / 6)) {
+        xpElement.style.color = 'rgba(220, 0, 0, 0.9)';
+        xpBarElement.style.backgroundColor = 'rgba(220, 0, 0, 0.9)';
+        lvlElement.style.color = 'rgba(220, 0, 0, 0.9)';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 1 / 6) && xp < (((sumUpTo(level)) * 7) * 2 / 6)) {
+        xpElement.style.color = 'rgba(249, 105, 14, 0.9)';
+        xpBarElement.style.backgroundColor = 'rgba(249, 105, 14, 0.9)';
+        lvlElement.style.color = 'rgba(249, 105, 14, 0.9)';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 2 / 6) && xp < (((sumUpTo(level)) * 7) * 3 / 6)) { 
+        xpElement.style.color = 'rgba(255, 215, 0, 0.9)';
+        xpBarElement.style.backgroundColor = 'rgba(247, 202, 24, 0.9)';
+        lvlElement.style.color = 'rgba(247, 202, 24, 0.9)';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 3 / 6) && xp < (((sumUpTo(level)) * 7) * 4 / 6)) {
+        xpElement.style.color = 'rgba(0, 168, 107, 0.9)';
+        xpBarElement.style.backgroundColor = 'rgba(0, 168, 107, 0.9)';
+        lvlElement.style.color = 'rgba(0, 168, 107, 0.9)';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 4 / 6) && xp < (((sumUpTo(level)) * 7) * 5 / 6)) {
+        xpElement.style.color = 'rgba(3, 138, 255, 0.9)';
+        xpBarElement.style.backgroundColor = 'rgba(3, 138, 255, 0.9)';
+        lvlElement.style.color = 'rgba(3, 138, 255, 0.9)';
+    } else if (xp >= (((sumUpTo(level)) * 7) * 5 / 6) && xp < (((sumUpTo(level)) * 7) * 6 / 6)) {
+        xpElement.style.color = 'rgba(163, 17, 226, 0.9)';
+        xpBarElement.style.backgroundColor = 'rgba(163, 17, 226, 0.9)';
+        lvlElement.style.color = 'rgba(163, 17, 226, 0.9)';  
+    }
+}
+
+// Call this function whenever XP changes
+// For example, after adding XP
+updateXPColor(xp); // Pass the current XP value as an argument  
+  
+
+    function showConfirmation(amount, missionName) {
+    xpToAdd = amount;
+    const confirmationText = `You have completed "${missionName}", do you want to collect your reward of ${xpToAdd} Qi?`;
+    const confirmationText2 = `${missionName}`;  // Set the text for ultraConfirmationMessage2
+
+    document.getElementById('ultraConfirmationMessage').textContent = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    // Define a map of mission names to colors
+    const missionColors = {
+        'Death Quest X · From Dawn to Dusk': 'crimson',
+        'Death Quest Y · The Double Marathon': 'crimson',
+        'Death Quest Z · 7 Days of Hunger': 'crimson',
+      
+        'Hydration (G-)': 'pink',
+        'Jaw Tempering (G)': 'pink',
+        'Solar Charge (G+)': 'pink',
+      
+        'Meditation (F-)': 'yellow',
+        'Deep Stretch (F)': 'yellow',
+        'Posture Correction (F+)': 'yellow',
+      
+        'Dressing (E-)': 'orange',
+        'Hygiene (E)': 'orange',
+        'Bond Maintenance (E+)': 'orange',
+      
+        'Retention (D-)': 'green',
+        'Ice Bath (D)': 'green',
+        'Testosterone Nutrition (D+)': 'green',
+      
+        'Weight Lifting (C-)': 'deepskyblue',
+        'Light Jog (C)': 'deepskyblue',
+        'Boxing Workout (C+)': 'deepskyblue',
+      
+        'Focused Learning (B-)': 'purple',
+        'Slow Motion (B)': 'purple',
+        'Emotional Control (B+)': 'purple',
+      
+        'Sleep Schedule (A-)': 'sienna',
+        'Emergency Protocol (A)': 'sienna',
+        'Coursing Progress (A+)': 'sienna',
+      
+        'Errand Running (S-)': 'slategray',
+        'Domestic Chore (S)': 'slategray',
+        'Optimal Repair (S+)': 'slategray',
+      
+        'Static Job (EX-)': 'goldenrod',
+        'Burocratic Paperwork (EX)': 'goldenrod',
+        'Business Management (EX+)': 'goldenrod',
+      
+      
+        // Add more missions and colors as needed
+    };
+
+    // Get the mission color based on the mission name
+    const missionColor = missionColors[missionName] || 'white'; // Default to black if color not found
+
+    // Set the text color of ultraConfirmationMessage2
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+      
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    // Add event listener to confirm button only once
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addXP(xpToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        displayRewardFlag(xpToAdd);
+        
+        // Remove event listeners after confirmation
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    // Add event listener to cancel button only once
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+
+        // Remove event listeners after cancellation
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}
+  
+function THEBESTConfirmation(mission) {
+    if (physique >= requiredSTTValue && utility >= requiredSTTValue && ambition >= requiredSTTValue) {
+        xpConfirmation(mission);
+    } else {
+        TICKETBLOCKANIMA();
+        QIBLOCKFlag();
+        playLevelUpSound3();
+    }
+}
+  
+function xpConfirmation(missionName) {
+    xpToAdd = sumUpTo(level);
+    const confirmationText = `Your stats are all above ${requiredSTTValue}, which is the required threshold to receive an xp reward. <br><br>The conditions to obtain additional xp have been met, do you wish to receive ${xpToAdd} xp?`;
+    const confirmationText2 = `${missionName}`;  // Set the text for ultraConfirmationMessage2 
+
+    document.getElementById('ultraConfirmationMessage').innerHTML = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    // Define a map of mission names to colors  
+    const missionColors = {
+        'Death Quest X · From Dawn to Dusk': 'crimson',
+        'Death Quest Y · The Double Marathon': 'crimson',
+        'Death Quest Z · 7 Days of Hunger': 'crimson',
+      
+        'Hydration (G-)': 'pink',
+        'Jaw Tempering (G)': 'pink',
+        'Solar Charge (G+)': 'pink',
+      
+        'Meditation (F-)': 'yellow',
+        'Deep Stretch (F)': 'yellow',
+        'Posture Correction (F+)': 'yellow',
+      
+        'Dressing (E-)': 'orange',
+        'Hygiene (E)': 'orange',
+        'Bond Maintenance (E+)': 'orange',
+      
+        'XP REWARD GRANTED': 'green',
+        'Ice Bath (D)': 'green',
+        'Testosterone Nutrition (D+)': 'green',
+      
+        'CULTIVATION · UNKNOWN ESSENCE (?)': 'deepskyblue',
+        'Light Jog (C)': 'deepskyblue',
+        'Boxing Workout (C+)': 'deepskyblue',
+      
+        'Focused Learning (B-)': 'purple', 
+        'Slow Motion (B)': 'purple',
+        'Emotional Control (B+)': 'purple',
+      
+        'Sleep Schedule (A-)': 'sienna',
+        'Emergency Protocol (A)': 'sienna',
+        'Coursing Progress (A+)': 'sienna',
+      
+        'Errand Running (S-)': 'slategray',
+        'Domestic Chore (S)': 'slategray',
+        'Optimal Repair (S+)': 'slategray',
+      
+        'Static Job (EX-)': 'goldenrod',
+        'Burocratic Paperwork (EX)': 'goldenrod',
+        'Business Management (EX+)': 'goldenrod',
+      
+      
+        // Add more missions and colors as needed
+    };
+   
+    // Get the mission color based on the mission name
+    const missionColor = missionColors[missionName] || 'white'; // Default to black if color not found
+
+    // Set the text color of ultraConfirmationMessage2
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+      
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    // Add event listener to confirm button only once
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addXP(xpToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        QIFlag(xpToAdd);
+        
+        // Remove event listeners after confirmation
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    // Add event listener to cancel button only once
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+
+        // Remove event listeners after cancellation
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}  
+ 
+
+// Define a map of mission names to their respective level multipliers
+const missionMultipliers = {
+    'Death Quest X · From Dawn to Dusk': 2,
+    'Death Quest Y · The Double Marathon': 3,
+    'Death Quest Z · 7 Days of Hunger': 1.5,
+    'Hydration (G-)': 1,
+    'Jaw Tempering (G)': 1.2,
+    'Solar Charge (G+)': 1.3,
+    'Meditation (F-)': 1.1,
+    'Deep Stretch (F)': 1.4,
+    'Posture Correction (F+)': 1.5,
+    'Dressing (E-)': 1.6,
+    'Hygiene (E)': 1.7,
+    'Bond Maintenance (E+)': 1.8,
+    'Retention (D-)': 1.9,
+    'Ice Bath (D)': 2,
+    'Testosterone Nutrition (D+)': 2.1,
+    'Weight Lifting (C-)': 2.2,
+    'Light Jog (C)': 2.3,
+    'Boxing Workout (C+)': 2.4,
+    'Focused Learning (B-)': 2.5,
+    'Slow Motion (B)': 2.6,
+    'Emotional Control (B+)': 2.7,
+    'Sleep Schedule (A-)': 2.8,
+    'Emergency Protocol (A)': 2.9,
+    'Coursing Progress (A+)': 3,
+    'Errand Running (S-)': 3.1,
+    'Domestic Chore (S)': 3.2,
+    'Optimal Repair (S+)': 3.3,
+    'Static Job (EX-)': 3.4,
+    'Burocratic Paperwork (EX)': 3.5,
+    'Business Management (EX+)': 3.6,
+    // Add more missions and multipliers as needed
+};
+
+function bountyConfirmation(amount, missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const BountyToAdd = amount;
+    const confirmationText = `You have cleared the quest "${missionName}", do you want to claim your reward of ${BountyToAdd} € and add it to your bounty?`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').textContent = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = {
+        
+        'FORTUNE BOOST I · SHARD': 'goldenrod',
+        'FORTUNE BOOST II · TOKEN': 'goldenrod',
+        'FORTUNE BOOST III · ORE': 'goldenrod',
+        'FORTUNE BOOST IV · GEMSTONE': 'goldenrod',
+        'FORTUNE BOOST V · BANKNOTE': 'goldenrod',
+        'FORTUNE BOOST VI · PALACE': 'goldenrod',
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addBounty(BountyToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        displayPenaltyFlag(BountyToAdd);
+        
+        // Update bounty stat display
+        updateBountyStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}
+  
+  
+function bountyConfirmation2(amount, missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const BountyToAdd = amount;
+    const confirmationText = `You have cleared the quest "${missionName}", do you want to claim your reward of ${BountyToAdd} € and add it to your bounty?`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').textContent = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = {
+        'FORTUNE BOOST I · SHARD': 'goldenrod',
+        'FORTUNE BOOST II · TOKEN': 'goldenrod',
+        'FORTUNE BOOST III · ORE': 'goldenrod',
+        'FORTUNE BOOST IV · GEMSTONE': 'goldenrod',
+        'FORTUNE BOOST V · BANKNOTE': 'goldenrod',
+        'FORTUNE BOOST VI · PALACE': 'goldenrod',
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addBounty2(BountyToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        displayPenaltyFlag(BountyToAdd);
+        
+        // Update bounty stat display
+        updateBountyStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}  
+  
+  
+function physiqueConfirmation(missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const physiqueToAdd = Math.floor(Math.random() * 4) + 1;
+    const confirmationText = `You have cleared the quest "${missionName}", do you wish to claim your reward of (???) physique points?`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').innerHTML = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').innerHTML = confirmationText2;
+
+    const missionColors = {
+        
+        'ATTIRE · HYGIENE': 'orange',
+        'TESTOSTERONE NUTRITION ♂': 'orange',
+        'HYPERTROPHY · CALISTHENICS': 'orange',
+        [`BOXING · ${level} HITS`]: 'orange',
+        'OPTIMAL TRACK · 20 KM AT 13KMH': 'orange',
+        'VOLLEYBALL · 300 DEMONIC SERVES': 'orange',
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addPhysique(physiqueToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        PHYSIQUEFlag(physiqueToAdd);
+        
+        // Update bounty stat display
+        updatePhysiqueStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}
+
+function stoicismConfirmation(missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const stoicismToAdd = Math.floor(Math.random() * 4) + 1;
+    const confirmationText = `You have successfully kept your emotions under control and resisted the urge to "${missionName}", do you wish to claim your reward of (???) composure points?`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').textContent = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = {
+        'PLAYER VS OVERFEEL': 'purple',
+        'PLAYER VS OVERPRAISE': 'purple',
+        'ARGUE · GOSSIP · COMPLAIN · CURSE': 'SlateGray',
+        'PLAYER VS OVERSHARE': 'purple',
+        'PLAYER VS OVERTALK': 'purple',
+        'REACTIVE · EMOTIONAL · IMPULSIVE': 'SlateGray',
+        'OVERTHINKING · FEAR · DEPRESSION': 'SlateGray',
+        'SLOTH · EXCUSES · ANXIETY · INSECURITY': 'SlateGray',
+        'PLAYER VS CURSING': 'purple',
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addStoicism(stoicismToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        STOICISMFlag(stoicismToAdd);
+        
+        // Update bounty stat display
+        updateStoicismStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}
+  
+
+function utilityConfirmation(missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const utilityToAdd = Math.floor(Math.random() * 4) + 1;
+    const confirmationText = `You have cleared the quest "${missionName}", do you wish to claim your reward of (???) utility points?`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').textContent = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = { 
+        
+        'PAPERWORK · LICENSES': 'DodgerBlue',
+        'INVESTMENT · BUSINESS · INCOME': 'DodgerBlue',
+        'MAINTENANCE · CHORES': 'DodgerBlue',
+        'GROCERIES & OTHER MANLY CHORES': 'green',
+        'THE EXOTIC ALGERIAN PARROT': 'green',
+        'EMERGENCY · SURVIVAL': 'DodgerBlue',
+        
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addUtility(utilityToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        UTILITYFlag(utilityToAdd);
+        
+        // Update bounty stat display
+        updateUtilityStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}  
+
+function essenceConfirmation(missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const essenceToAdd = Math.floor(Math.random() * 4) + 1;
+    const confirmationText = `You have cleared the quest "${missionName}", do you want to claim your reward of (???) essence points?`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').textContent = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = { 
+        
+        'PAPERWORK · LICENSES': 'green',
+        'SHIVER ESSENCE TECHNIQUE (∞)': 'deepskyblue',
+        'BUSINESS · INCOME': 'green',
+        'MAINTENANCE · CHORES': 'green',
+        'GROCERIES & OTHER MANLY CHORES': 'green',
+        'THE EXOTIC ALGERIAN PARROT': 'green',
+        'EMERGENCY · SURVIVAL': 'green',
+        
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addEssence(essenceToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        ESSENCEFlag(essenceToAdd);
+        
+        // Update bounty stat display
+        updateEssenceStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}
+  
+function ambitionConfirmation(missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const ambitionToAdd = Math.floor(Math.random() * 4) + 1;
+    const confirmationText = `You have cleared the quest "${missionName}", do you want to claim your reward of (???) ambition points?`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').textContent = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = { 
+        
+        'UNDEAD PROJECT DELEGATION': 'purple',
+        'ARTIFICIAL INTELLIGENCE CODING': 'purple',
+        'BIOGENETICAL ENGINEERING': 'purple',
+        'HUMAN LABOR CONGLOMERATE': 'purple',
+        'BUSINESS · INCOME': 'green',
+        'MAINTENANCE · CHORES': 'green',
+        'GROCERIES & OTHER MANLY CHORES': 'green',
+        'THE EXOTIC ALGERIAN PARROT': 'green',
+        'EMERGENCY · SURVIVAL': 'green',
+        
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addAmbition(ambitionToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        AMBITIONFlag(ambitionToAdd);
+        
+        // Update bounty stat display
+        updateAmbitionStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}  
+  
+
+function orangedownConfirmation(amount, missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const orangedownToAdd = amount;
+    const confirmationText = `You have failed to complete the quest "${missionName}", ${orangedownToAdd} physique points will be deducted from your physique stat. <br><br>⚠ Declining this penalty may result in the system's retribution ⚠`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').innerHTML = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = {
+        
+        'NO FAST FOOD ALLOWED': 'crimson',
+        'NO SLEEP OVER 7 HOURS': 'crimson', 
+        'NO FAST FOOD ALLOWED': 'crimson',
+        'NO POISON ALLOWED': 'crimson',
+        
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addOrangedown(orangedownToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        ORANGEDOWNFlag(orangedownToAdd);
+        
+        // Update bounty stat display
+        updatePhysiqueStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}
+
+function purpledownConfirmation(amount, missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const purpledownToAdd = amount;
+    const confirmationText = `You have failed to complete the quest "${missionName}", ${purpledownToAdd} resolve points will be deducted from your control stat. <br><br>⚠ Declining this penalty may result in the system's retribution ⚠`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').innerHTML = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = { 
+        
+        'KILL ALL DISTRACTIONS': 'crimson',
+        
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addPurpledown(purpledownToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        PURPLEDOWNFlag(purpledownToAdd);
+        
+        // Update bounty stat display
+        updateStoicismStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}
+  
+
+function greendownConfirmation(amount, missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const greendownToAdd = amount;
+    const confirmationText = `You have failed to complete the quest "${missionName}", ${greendownToAdd} utility points will be deducted from your utility stat. <br><br>⚠ Declining this penalty may result in the system's retribution ⚠`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').innerHTML = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = {
+        
+        'NO SLEEP OVER 7 HOURS': 'crimson',
+        'KILL ALL DISTRACTIONS': 'crimson',
+        'KILL ALL SOCIAL MEDIA': 'crimson',
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addGreendown(greendownToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        GREENDOWNFlag(greendownToAdd);
+        
+        // Update bounty stat display
+        updateUtilityStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}  
+  
+  
+function golddownConfirmation(amount, missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const golddownToAdd = amount;
+    const confirmationText = `You have failed to complete the quest "${missionName}", ${golddownToAdd} € will be deducted from your bounty. <br>⚠ Declining this penalty may result in the system's retribution ⚠`;
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').innerHTML = confirmationText;
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = {
+        
+        'FORTUNE DECAY I · TUTORIAL': 'crimson',
+        'FORTUNE DECAY II · EASY': 'crimson',
+        'FORTUNE DECAY III · MEDIUM': 'crimson',
+        'FORTUNE DECAY IV · HARD': 'crimson',
+        'FORTUNE DECAY V · NIGHTMARE': 'crimson',
+        'FORTUNE DECAY VI · TRIBULATION': 'crimson',
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addGolddown(golddownToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        GOLDDOWNFlag(golddownToAdd);
+        
+        // Update bounty stat display
+        updateBountyStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+}  
+  
+  
+function ticketConfirmation(amount, missionName) {
+    // Get the multiplier for the mission, defaulting to 1 if not found
+    const multiplier = missionMultipliers[missionName] || 1;
+    const ticketToAdd = amount;
+    const confirmationText = `Do you want to consume [1] VIP Ticket? <br><br>✦ For the next 24 hours, all of your stats will be granted full immunity towards penalties ✦`;
+
+    const confirmationText2 = `${missionName}`;
+
+    document.getElementById('ultraConfirmationMessage').innerHTML = confirmationText; 
+    document.getElementById('ultraConfirmationMessage2').textContent = confirmationText2;
+
+    const missionColors = {
+        'NIGHT OF THE KING': 'goldenrod',
+        'Death Quest Y · The Double Marathon': 'crimson',
+        'Death Quest Z · 7 Days of Hunger': 'crimson',
+        'Hydration (G-)': 'pink',
+        'Jaw Tempering (G)': 'pink',
+        'Solar Charge (G+)': 'pink', 
+        'Meditation (F-)': 'yellow',
+        'Deep Stretch (F)': 'yellow',
+        'Posture Correction (F+)': 'yellow',
+        'Dressing (E-)': 'orange',
+        'Hygiene (E)': 'orange',
+        'Bond Maintenance (E+)': 'orange',
+        'Retention (D-)': 'green',
+        'Ice Bath (D)': 'green',
+        'Testosterone Nutrition (D+)': 'green',
+        'Weight Lifting (C-)': 'deepskyblue',
+        'Light Jog (C)': 'deepskyblue',
+        'Boxing Workout (C+)': 'deepskyblue',
+        'Focused Learning (B-)': 'purple',
+        'Slow Motion (B)': 'purple',
+        'Emotional Control (B+)': 'purple',
+        'Sleep Schedule (A-)': 'sienna',
+        'Emergency Protocol (A)': 'sienna',
+        'Coursing Progress (A+)': 'sienna',
+        'Errand Running (S-)': 'slategray',
+        'Domestic Chore (S)': 'slategray',
+        'Optimal Repair (S+)': 'slategray',
+        'Static Job (EX-)': 'goldenrod',
+        'Burocratic Paperwork (EX)': 'goldenrod',
+        'Business Management (EX+)': 'goldenrod',
+    };
+
+    const missionColor = missionColors[missionName] || 'white';
+    document.getElementById('ultraConfirmationMessage2').style.color = missionColor;
+
+    document.getElementById('ultraConfirmationBox').style.display = "block";
+
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    confirmButton.onclick = function() {
+        addTicket(ticketToAdd);
+        document.getElementById('ultraConfirmationBox').style.display = "none"; 
+        TICKETMINUSFlag(ticketToAdd);
+        
+        // Update bounty stat display
+        updateTicketStatDisplay();
+
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+
+    cancelButton.onclick = function() {
+        document.getElementById('ultraConfirmationBox').style.display = "none";
+        confirmButton.onclick = null;
+        cancelButton.onclick = null;
+    };
+} 
+  
+function handleTicketConfirmation(amount, missionName) {
+    if (ticket > 0) {
+        ticketConfirmation(amount, missionName);
+    } else {
+        TICKETBLOCKANIMA();
+        playLevelUpSound3();
+        displayRewardFlag2();
+        
+    }
+} 
+  
+function displayRewardFlag(xp) {
+    const flag = document.createElement('div');
+    flag.textContent = `✦ REWARD COLLECTED ◈ [+${xp} XP] ✦`;
+    flag.classList.add('reward-flag');
+    document.body.appendChild(flag); 
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}
+   
+function TICKETMINUSFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.innerHTML = `✦ ONE TICKET HAS BEEN CONSUMED ✦`;
+    flag.classList.add('ticketminus-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}  
+  
+function TICKETBLOCKFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.innerHTML = `✵ YOU HAVE NO TICKETS LEFT ✵`;
+    flag.classList.add('reward-flag2');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}    
+  
+function QIBLOCKFlag(bounty) {
+    const checkSymbol = '☑';
+    const xSymbol = '☐';
+
+    // Determine symbols for each stat
+    const physiqueSymbol = (physique >= requiredSTTValue) ? checkSymbol : xSymbol;
+    const utilitySymbol = (utility >= requiredSTTValue) ? checkSymbol : xSymbol;
+    const ambitionSymbol = (ambition >= requiredSTTValue) ? checkSymbol : xSymbol;
+
+    const flag = document.createElement('div');
+    flag.innerHTML = `✵ YOUR STATS ARE INSUFFICIENT ✵<br><br>
+        ⚠ Conditions for next XP reward ⚠ <br><br>
+        ✦ Physique: ${requiredSTTValue} ${physiqueSymbol} <br>
+        ✦ Utility: ${requiredSTTValue} ${utilitySymbol} <br>
+        ✦ Ambition: ${requiredSTTValue} ${ambitionSymbol}`;
+    flag.classList.add('ticketblock-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 5000);
+}
+  
+
+function QIFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `✦ XP ◈ [+${bounty}] ✦`;
+    flag.classList.add('qi-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}
+  
+function PHYSIQUEFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `✦ PHYSIQUE ◈ [+${bounty}] ✦`;
+    flag.classList.add('physique-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}
+  
+
+function UTILITYFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `✦ UTILITY ◈ [+${bounty}] ✦`;
+    flag.classList.add('essence-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000); 
+}
+  
+  
+function STOICISMFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `✦ COMPOSURE ◈ [+${bounty}] ✦`;
+    flag.classList.add('stoicism-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}  
+
+function ESSENCEFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `✦ ESSENCE ◈ [+${bounty}] ✦`;
+    flag.classList.add('essence-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}
+  
+function AMBITIONFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `✦ AMBITION ◈ [+${bounty}] ✦`;
+    flag.classList.add('ambition-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}  
+  
+function GOLDDOWNFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `⚠ BOUNTY PENALTY ◈ [${bounty} €] ⚠`;
+    flag.classList.add('golddown-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}
+  
+function ORANGEDOWNFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `⚠ PHYSIQUE PENALTY ◈ [${bounty}] ⚠`;
+    flag.classList.add('orangedown-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}
+  
+
+function GREENDOWNFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `⚠ UTILITY PENALTY ◈ [${bounty}] ⚠`;
+    flag.classList.add('greendown-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}
+  
+  
+function PURPLEDOWNFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `⚠ RESOLVE PENALTY ◈ [${bounty}] ⚠`;
+    flag.classList.add('purpledown-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}  
+  
+  
+function TICKETUPFlag(bounty) {
+    const imageUrl = "https://res.cloudinary.com/dyqaluliy/image/upload/v1711074828/Dise%C3%B1o_sin_t%C3%ADtulo_56_pexegw.svg";
+    const img = new Image();
+    
+    img.src = imageUrl;
+
+    // Preload the image
+    img.onload = function() {
+        const flag = document.createElement('div');
+        flag.innerHTML = `✦ YOU HAVE RECEIVED 1 x <img src="${imageUrl}" alt="Unlocked Image" style="width: 40px; height: 40px;"> ✦`;
+        flag.classList.add('reward-flag2');
+        document.body.appendChild(flag);
+
+        setTimeout(function() {
+            flag.remove();
+        }, 4000);
+    };
+
+    // Optionally, handle errors
+    img.onerror = function() {
+        console.error("Error loading the image.");
+    };
+}  
+
+  
+function displayPenaltyFlag(bounty) {
+    const flag = document.createElement('div');
+    flag.textContent = `✦ BOUNTY ◈ [+${bounty} €] ✦`;
+    flag.classList.add('reward-flag');
+    document.body.appendChild(flag);
+
+    setTimeout(function() {
+        flag.remove();
+    }, 4000);
+}  
+  
+
+function playLevelUpSound2() {
+  const levelUpSound = document.getElementById('levelUpSound2');
+  levelUpSound.play();
+} 
+  
+function playLevelUpSound3() {
+  const levelUpSound = document.getElementById('levelUpSound3');
+  levelUpSound.play();
+}  
+  
+function playLOADSFX() {
+  const levelUpSound = document.getElementById('LOADSFX');
+  levelUpSound.play();
+}
+  
+function playSAVESFX() {
+  const levelUpSound = document.getElementById('SAVESFX');
+  levelUpSound.play();
+}
+  
+function playSTATWINDOWSFX() {
+  const levelUpSound = document.getElementById('STATWINDOWSFX');
+  levelUpSound.play();
+}  
+  
+function playTICKETWINSFX() {
+  const levelUpSound = document.getElementById('TICKETWINSFX');
+  levelUpSound.play();
+}  
+  
+function playHEYOSFX() {
+  const levelUpSound = document.getElementById('HEYOSFX');
+  levelUpSound.play();
+}   
+  
+function addBounty(amount) {
+    bounty += amount;
+    
+    updateStatsUI();
+    updateBountyStatDisplay();
+  
+    MADXPUPANIMA();
+    playLevelUpSound2();
+}
+
+function updateBountyStatDisplay() {
+    const bountyStatElement = document.getElementById('bounty-value'); 
+    if (bountyStatElement) {
+        bountyStatElement.textContent = `${bounty} €`;
+    }
+}  
+
+  
+function addBounty2(amount) {
+    bounty += amount;
+    
+    updateStatsUI();
+    updateBountyStatDisplay();
+  
+    MADXPUPANIMA2();
+    playLevelUpSound2();
+}
+
+function updateBountyStatDisplay() {
+    const bountyStatElement = document.getElementById('bounty-value'); 
+    if (bountyStatElement) {
+        bountyStatElement.textContent = `${bounty} €`;
+    }
+}
+  
+  
+function addPhysique(amount) {
+    PHYSIQUEUPANIMA();
+    playLevelUpSound2();
+    physique += amount;
+    
+    updateStatsUI();
+    updatePhysiqueStatDisplay();
+  
+    
+}
+
+function updatePhysiqueStatDisplay() {
+    const physiqueStatElement = document.getElementById('physique-value');
+    if (physiqueStatElement) {
+        physiqueStatElement.textContent = `${physique}`;
+    }
+}
+ 
+  
+function addStoicism(amount) {
+    STOICISMUPANIMA();
+    playLevelUpSound2();
+    stoicism += amount;
+    
+    updateStatsUI();
+    updateStoicismStatDisplay();
+  
+    
+}
+
+function updateStoicismStatDisplay() {
+    const stoicismStatElement = document.getElementById('stoicism-value');
+    if (stoicismStatElement) {
+        stoicismStatElement.textContent = `${stoicism}`;
+    }
+}  
+   
+
+function addUtility(amount) {
+    UTILITYUPANIMA();
+    playLevelUpSound2();
+    utility += amount;
+    
+    updateStatsUI();
+    updateUtilityStatDisplay();
+}
+
+function updateUtilityStatDisplay() {
+    const utilityStatElement = document.getElementById('utility-value');
+    if (utilityStatElement) {
+        utilityStatElement.textContent = `${utility}`;
+    }
+}  
+  
+function addEssence(amount) {
+    essence += amount;
+    
+    updateStatsUI();
+    updateEssenceStatDisplay();
+  
+    ESSENCEUPANIMA();
+    playLevelUpSound2();
+}
+
+function updateEssenceStatDisplay() {
+    const essenceStatElement = document.getElementById('essence-value');
+    if (essenceStatElement) {
+        essenceStatElement.textContent = `${essence}`;
+    }
+}
+  
+function addAmbition(amount) {
+    AMBITIONUPANIMA();
+    playLevelUpSound2();
+    ambition += amount;
+    
+    updateStatsUI();
+    updateAmbitionStatDisplay();
+  
+    
+}
+
+function updateAmbitionStatDisplay() {
+    const ambitionStatElement = document.getElementById('ambition-value');
+    if (ambitionStatElement) {
+        ambitionStatElement.textContent = `${ambition}`;
+    }
+}  
+
+function addOrangedown(amount) {
+    ORANGEDOWNANIMA();
+    playLevelUpSound3();
+    physique += amount;
+    
+    updateStatsUI();
+    updatePhysiqueStatDisplay();
+  
+    
+}
+
+function updatePhysiqueStatDisplay() {
+    const physiqueStatElement = document.getElementById('physique-value');
+    if (physiqueStatElement) {
+        physiqueStatElement.textContent = `${physique}`;
+    }
+}
+ 
+  
+function addPurpledown(amount) {
+    stoicism += amount;
+    
+    updateStatsUI();
+    updateStoicismStatDisplay();
+  
+    PURPLEDOWNANIMA();
+    playLevelUpSound3();
+}
+
+function updateStoicismStatDisplay() {
+    const stoicismStatElement = document.getElementById('stoicism-value');
+    if (stoicismStatElement) {
+        stoicismStatElement.textContent = `${stoicism}`;
+    }
+}  
+  
+
+function addGreendown(amount) {
+    GREENDOWNANIMA();
+    playLevelUpSound3();
+    utility += amount;
+    
+    updateStatsUI();
+    updateUtilityStatDisplay();
+  
+    
+}
+
+function updateUtilityStatDisplay() {
+    const utilityStatElement = document.getElementById('utility-value');
+    if (utilityStatElement) {
+        utilityStatElement.textContent = `${utility}`;
+    }
+}  
+  
+
+function addGolddown(amount) {
+    bounty += amount;
+    
+    updateStatsUI();
+    updateBountyStatDisplay();
+  
+    GOLDDOWNANIMA();
+    playLevelUpSound3();
+}
+
+function updateBountyStatDisplay() {
+    const bountyStatElement = document.getElementById('bounty-value');
+    if (bountyStatElement) {
+        bountyStatElement.textContent = `${bounty} €`;
+    }
+}  
+  
+  
+function addTicket(amount) {
+    TICKETMINUSANIMA();
+    TICKETMINUSFlag()
+    playTICKETWINSFX();
+    ticket += amount;
+     
+    updateStatsUI();
+    updateTicketStatDisplay();
+  
+    
+}
+
+function updateTicketStatDisplay() {
+    const ticketStatElement = document.getElementById('ticket-value');
+    if (ticketStatElement) {
+        ticketStatElement.textContent = `${ticket}`;
+    }
+}  
+  
+  
+  function sumUpTo(n) {
+    return (n * (n + 1)) / 2;
+}
+  
+function updateTickets() {
+    if (level % 50 === 0) {
+        ticket++;
+    }
+} 
+  
+function playLevelUpSound() {
+  const levelUpSound = document.getElementById('levelUpSound');
+  levelUpSound.play();
+}
+  
+  
+   
+    function addXP(amount) {
+        QIUPANIMA(); 
+        playLevelUpSound2();
+        xp += Math.round(sumUpTo(level)) * 1
+        requiredSTTValue += 1;
+        document.getElementById('xp').textContent = `◈ ${xp} / ${(sumUpTo(level) * 7)} xp ◈`; 
+        document.getElementById('xp-bar').style.width = `${(xp / (sumUpTo(level) * 7)) * 100}%`;   
+      
+        // Call updateXPColor function to update XP color
+    updateXPColor(xp);
+      
+        // Call updateBackdropFilter function to update backdrop filters
+    updateBackdropFilter(xp);
+
+        while (xp >= (sumUpTo(level) * 7)) { 
+        
+            showLevelUpAnimation();
+            level++;
+            playLevelUpSound();
+            updateTickets();
+            xp = Math.round(sumUpTo(level) * 0 / 7);
+           
+       // Call updateXPColor function after leveling up to update XP color
+        updateXPColor(xp);   
+          
+       // Call updateBackdropFilter function after leveling up to update backdrop filters
+        updateBackdropFilter(xp); 
+          
+       // Add random values to stats when level increases
+        addRandomStats();  
+          
+            document.getElementById('level').textContent = `✧ LEVEL ${level} ✧`;
+            document.getElementById('xp').textContent = `◈ ${xp} / ${(sumUpTo(level) * 7)} xp ◈`;
+            document.getElementById('xp-bar').style.width = `${(xp / (sumUpTo(level) * 7)) * 100}%`;
+            
+          
+        setTimeout(function() {
+                openLevelUpModal(level); // Call function to open modal with new level after a delay
+            }, 2000); // Adjust the delay time as needed (2000 milliseconds = 2 seconds)
+        
+    }
+}
+
+    function openLevelUpModal(newLevel) {
+        document.getElementById('newLevel').textContent = newLevel;
+        document.getElementById('levelUpModal').style.display = "block";
+ 
+    }
+  
+
+    function levelsUntilNextTicket(level) {
+    const nextTicketLevel = Math.ceil(level / 50) * 50;
+    return nextTicketLevel - level;
+}
+ 
+  
+    function displayRewardFlag2(xp) {
+    const imageUrl = "https://res.cloudinary.com/dyqaluliy/image/upload/v1711074828/Dise%C3%B1o_sin_t%C3%ADtulo_56_pexegw.svg";
+    const img = new Image();
+    
+    img.src = imageUrl;
+
+    // Preload the image
+    img.onload = function() {
+        const flag = document.createElement('div');
+        flag.innerHTML = `✦ NEXT <img src="${imageUrl}" alt="Unlocked Image" style="width: 40px; height: 40px;"> WILL UNLOCK IN ${levelsUntilNextTicket(level)} LEVELS ✦`;
+        flag.classList.add('reward-flag2');
+        document.body.appendChild(flag);
+
+        // Set a timeout to remove the flag after a certain duration
+        setTimeout(function() {
+            flag.remove();
+        }, 4000); // Adjust the duration as needed (4000 milliseconds = 4 seconds)
+    };
+
+    // Optionally, handle errors
+    img.onerror = function() {
+        console.error("Error loading the image.");
+    };
+}
+
+
+    function closeLevelUpModal() {
+        document.getElementById('levelUpModal').style.display = "none";
+      
+      if (level % 50 === 0) {  
+        TICKETUPANIMA(); 
+        playHEYOSFX();
+        TICKETUPFlag()
+        
+        
+      } else {
+      displayRewardFlag2(xp);
+      } 
+        
+    }
+
+  
+    function MADXPUPANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'madxpup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/BILLS.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  function MADXPUPANIMA2() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'madxpup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/MONEY4.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  
+  function PHYSIQUEUPANIMA() {
+        const physiqueup = document.createElement('div');
+      
+        physiqueup.id = 'physiqueup-container';
+        physiqueup.style.position = 'fixed';
+        physiqueup.style.top = '0';
+        physiqueup.style.left = '0';
+        physiqueup.style.width = '100%';
+        physiqueup.style.height = '100%';
+        physiqueup.style.zIndex = '9999';
+
+        document.body.appendChild(physiqueup);
+
+        const animation = bodymovin.loadAnimation({
+            container: physiqueup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/explosion-6.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            physiqueup.parentNode.removeChild(physiqueup);
+        });
+    }
+  
+  
+  function UTILITYUPANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'essenceup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup, 
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/explosion-8.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  
+  function STOICISMUPANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'stoicismup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/explosion-4.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  
+  function ESSENCEUPANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'essenceup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/explosion-7.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  
+  function AMBITIONUPANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'ambitionup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/explosion-1.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+   
+  function QIUPANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'qiup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/explosion-11.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  
+  function PENALTYUPANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'penaltyup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/explosion-7.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  
+  function TICKETMINUSANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'ticketminus-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/MONEY1.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    } 
+  
+  
+  function TICKETBLOCKANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'ticketblock-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+ 
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/TICKETBLOCK.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  function TICKETUPANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'ticketup-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/WIENER5.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  function GOLDDOWNANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'golddown-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/VIOLETDOWN.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  function ORANGEDOWNANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'orangedown-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/ORANGEDOWN.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  function PURPLEDOWNANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'purpledown-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/YELLOWDOWN.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  
+  function GREENDOWNANIMA() {
+        const madxpup = document.createElement('div');
+      
+        madxpup.id = 'greendown-container';
+        madxpup.style.position = 'fixed';
+        madxpup.style.top = '0';
+        madxpup.style.left = '0';
+        madxpup.style.width = '100%';
+        madxpup.style.height = '100%';
+        madxpup.style.zIndex = '9999';
+
+        document.body.appendChild(madxpup);
+
+        const animation = bodymovin.loadAnimation({
+            container: madxpup,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/GREENDOWN.json' // Replace with the path to your Lottie animation JSON file
+        });
+
+        animation.addEventListener('complete', function() {
+            madxpup.parentNode.removeChild(madxpup);
+        });
+    }
+  
+  
+    function showLevelUpAnimation() {
+        const animationContainer = document.createElement('div');
+        const qiupContainer = document.getElementById('qiup-container');
+        const physiqueupContainer = document.getElementById('physiqueup-container');
+        const utilityupContainer = document.getElementById('utilityup-container');
+        const stoicismupContainer = document.getElementById('stoicismup-container');
+        const madxpupContainer = document.getElementById('madxpup-container');
+
+    // Hide madxpup animation if it's visible
+    qiupContainer.style.display = 'none'; 
+    
+      
+        animationContainer.id = 'animation-container';
+        animationContainer.style.position = 'fixed';
+        animationContainer.style.top = '0';
+        animationContainer.style.left = '0';
+        animationContainer.style.width = '100%';
+        animationContainer.style.height = '100%';
+        animationContainer.style.zIndex = '9999';
+
+        document.body.appendChild(animationContainer);
+
+        const animation = bodymovin.loadAnimation({
+            container: animationContainer,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'https://kingsgamek.github.io/LEVL%20UP%20PRPL%20ONLY.json' // Replace with the path to your Lottie animation JSON file 
+        });
+
+        animation.addEventListener('complete', function() {
+            animationContainer.parentNode.removeChild(animationContainer);
+        });
+    }
+
+    function openModal() {
+        displayModalAnimation(level); // Pass the current level to display the appropriate animation
+        document.getElementById('myModal').style.display = "block";
+      
+      playSTATWINDOWSFX();
+    }
+
+    function closeModal() {
+        clearModalAnimation(); // Call function to clear animation
+        document.getElementById('myModal').style.display = "none";
+    }
+
+    function displayModalAnimation(level) {
+        let animationUrl = '';
+
+        // Determine the animation URL based on the level range
+        if (level >= 500 && level <= 1999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS0.json';
+        } else if (level >= 2000 && level <= 2999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS1.json'; 
+        } else if (level >= 3000 && level <= 3999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS2.json';
+        } else if (level >= 4000 && level <= 4999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS3.json';
+        } else if (level >= 5000 && level <= 5999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS4.json';  
+        } else if (level >= 6000 && level <= 6999) { 
+            animationUrl = 'https://kingsgamek.github.io/WINGS5.json';
+        } else if (level >= 7000 && level <= 7999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS6.json';
+        } else if (level >= 8000 && level <= 8999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS7.json';
+        } else if (level >= 9000 && level <= 9999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS8.json';
+        } else if (level >= 9999 && level <= 999999) {
+            animationUrl = 'https://kingsgamek.github.io/WINGS9.json';
+        } else {
+            // Handle levels outside of the specified range
+            console.error('Invalid level range');
+            return;
+        }
+
+        fetch(animationUrl)
+            .then(response => response.json())
+            .then(animationData => {
+                const animationContainer = document.getElementById('modalAnimationContainer');
+                const anim = lottie.loadAnimation({
+                    container: animationContainer,
+                    renderer: 'svg',
+                    loop: false, // Change loop to true to make the animation loop
+                    autoplay: true,
+                    animationData: animationData,
+                });
+
+                // Adjust the speed of the animation
+                anim.setSpeed(0.4); // Change the speed factor as needed, 0.5 would be half the original speed
+            })
+            .catch(error => {
+                console.error('Error fetching or displaying animation:', error);
+            });
+    }
+
+    // Function to clear the modal animation
+    function clearModalAnimation() {
+        const animationContainer = document.getElementById('modalAnimationContainer');
+        animationContainer.innerHTML = '';
+    }
+  
+  // Define loadProgress function
+    function loadProgress() {
+        // Implementation remains the same as needed
+    }
+  
+  
+const backgroundMusic = document.getElementById('backgroundMusic');
+const toggleSoundButton = document.getElementById('toggleSoundButton');
+
+// Function to toggle sound 
+function toggleSound() {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+        toggleSoundButton.textContent = 'Mute Sound'; 
+    } else {
+        backgroundMusic.play();
+        toggleSoundButton.textContent = 'Unmute Sound';
+    }
+}
+  
+function toggleSound2() {
+    if (backgroundMusic.play) {
+        backgroundMusic.pause();
+        toggleSoundButton.textContent = 'Mute Sound'; 
+    } else {
+        backgroundMusic.pause();
+        toggleSoundButton.textContent = 'Unmute Sound';
+    }
+}  
+
+// Event listener for the toggle sound button
+toggleSoundButton.addEventListener('click', toggleSound);
+
+document.getElementById('logo').addEventListener('click', function() {
+    toggleSound();
+});  
+  
+document.getElementById('saveButton').addEventListener('click', function() {
+    toggleSound2();  
+});
+  
+  
+</script>
+
+
+</body>
+</html> 
