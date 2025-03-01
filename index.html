@@ -23,12 +23,13 @@
         }
 
         body {
-            background: #001b12;
+            background: #000000;
             margin: 0 10px;
         }
 
         .payment {
-            background: #000000;
+            border: 1px solid #009c64;
+            background: #001b12;
             max-width: 360px;
             margin: 80px auto;
             padding: 35px;
@@ -50,16 +51,31 @@
             margin-bottom: 6px;
         }
 
+        /* General input styling for Cardholder Name field and Stripe Elements */
         .input {
             padding: 13px 0px 13px 25px;
             width: 100%;
             text-align: center;
-            border: 2px solid #009c64;
+            border: 1px solid #009c64;
             border-radius: 5px;
             letter-spacing: 1px;
             outline: none;
             font-size: 16px;
             color: #009c64;
+        }
+
+        /* Make sure the card holder name field has the same styling as other Stripe inputs */
+        #card-holder-name {
+            background-color: transparent;
+            color: #009c64;
+            font-size: 16px;
+            letter-spacing: 1px;
+            padding: 13px 0px 13px 25px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #009c64;
+            border-radius: 5px;
+            outline: none;
         }
 
         .card-grp {
@@ -131,6 +147,8 @@
         }
 
         .payment-logo img {
+            border: 2px solid #009c64;
+            border-radius: 50%;
             width: 100%;
             height: 100%;
             object-fit: cover; /* Ensures the image covers the circle */
@@ -151,6 +169,27 @@
                 margin-top: 20px;
             }
         }
+
+        /* Styling for Stripe Elements */
+        .StripeElement {
+            color: #009c64 !important; /* Ensure text inside the Stripe input fields is green */
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .StripeElement--empty {
+            color: #009c64 !important; /* Color when input field is empty */
+        }
+
+        .StripeElement--focus {
+            border-color: #009c64 !important; /* Green border on focus */
+        }
+
+        /* Style for Stripe Elements container */
+        .StripeElement--webkit-autofill {
+            background: #e0f7fa !important;
+        }
+
     </style>
 
 </head>
@@ -165,9 +204,10 @@
             <h2>✦ Become a Player ✦</h2>
             <form id="payment-form">
                 <div class="form">
+                    <!-- Styled Card holder input with the same styles as Stripe Elements -->
                     <div class="card space icon-relative">
                         <label class="label">Card holder:</label>
-                        <input type="text" class="input" id="card-holder-name" placeholder="">
+                        <input type="text" class="input" id="card-holder-name" placeholder="Cardholder Name">
                         <i class="fas fa-user"></i>
                     </div>
 
@@ -203,14 +243,47 @@
 
         // Define the price here (in dollars)
         const price = 10.00; // Change this value as needed
-      
+
         // Update the Pay button to show the price
         document.getElementById("payment-amount").textContent = price.toFixed(2);
 
-        // Create individual Stripe Elements
-        const cardNumber = elements.create("cardNumber");
-        const cardExpiry = elements.create("cardExpiry");
-        const cardCvc = elements.create("cardCvc");
+        // Create individual Stripe Elements with custom style
+        const cardNumber = elements.create("cardNumber", {
+            style: {
+                base: {
+                    color: "#009c64", /* Green text color */
+                    fontSize: "16px",
+                    letterSpacing: "1px",
+                    "::placeholder": {
+                        color: "#009c64"
+                    }
+                }
+            }
+        });
+        const cardExpiry = elements.create("cardExpiry", {
+            style: {
+                base: {
+                    color: "#009c64", /* Green text color */
+                    fontSize: "16px",
+                    letterSpacing: "1px",
+                    "::placeholder": {
+                        color: "#009c64"
+                    }
+                }
+            }
+        });
+        const cardCvc = elements.create("cardCvc", {
+            style: {
+                base: {
+                    color: "#009c64", /* Green text color */
+                    fontSize: "16px",
+                    letterSpacing: "1px",
+                    "::placeholder": {
+                        color: "#009c64"
+                    }
+                }
+            }
+        });
 
         // Mount them to respective divs
         cardNumber.mount("#card-element");
