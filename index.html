@@ -3,154 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Payment</title>
+    <title>Stripe Payment</title>
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Ubuntu" rel="stylesheet">
+
+    <!-- Stripe JS -->
     <script src="https://js.stripe.com/v3/"></script>
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        body {
+            background: #001b12;
+            margin: 0 10px;
+        }
+
+        .payment {
+            background: #000000;
+            max-width: 360px;
+            margin: 80px auto;
+            padding: 35px;
+            padding-top: 80px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .payment h2 {
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            color: #009c64;
+        }
+
+        .form .label {
+            display: block;
+            color: #009c64;
+            margin-bottom: 6px;
+        }
+
+        .input {
+            padding: 13px 0px 13px 25px;
+            width: 100%;
+            text-align: center;
+            border: 2px solid #009c64;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            outline: none;
+            font-size: 16px;
+            color: #009c64;
+        }
+
+        .card-grp {
+            display: flex;
+            justify-content: space-between;
+            color: #009c64;
+        }
+
+        .card-item {
+            color: #009c64;
+            width: 48%;
+        }
+
+        .space {
+            margin-bottom: 20px;
+        }
+
+        .icon-relative {
+            position: relative;
+        }
+
+        .icon-relative .fas,
+        .icon-relative .far {
+            position: absolute;
+            bottom: 12px;
+            right: 15px;
+            font-size: 20px;
+            color: #009c64;
+        }
+
+        .btn {
+            margin-top: 30px;
+            background: #00482e;
+            padding: 12px;
+            text-align: center;
+            color: #009c64;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .payment-logo {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            background: #000000;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            line-height: 85px;
+            overflow: hidden; /* Prevent image from going beyond the circle */
+        }
+
+        .payment-logo:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 90px;
+            height: 90px;
+            background: #ffb300;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .payment-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the circle */
+            object-position: center; /* Centers the image within the circle */
+        }
+
+        @media screen and (max-width: 420px) {
+            .card-grp {
+                flex-direction: column;
+            }
+
+            .card-item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .btn {
+                margin-top: 20px;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
-    <div class="payment-container">
-        <h2>Secure Payment</h2>
-        <form id="payment-form">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" required>
+    <div class="wrapper">
+        <div class="payment">
+            <div class="payment-logo">
+                <img src="https://res.cloudinary.com/dyqaluliy/image/upload/v1740836039/Untitled_design_10_ew9arc.gif" alt="Logo">
+            </div>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" required>
+            <h2>✦ Become a Player ✦</h2>
+            <form id="payment-form">
+                <div class="form">
+                    <div class="card space icon-relative">
+                        <label class="label">Card holder:</label>
+                        <input type="text" class="input" id="card-holder-name" placeholder="">
+                        <i class="fas fa-user"></i>
+                    </div>
 
-            <label for="amount">Amount (USD)</label>
-            <input type="number" id="amount" required min="1">
+                    <div class="card space icon-relative">
+                        <label class="label">Card number:</label>
+                        <div id="card-element" class="input"></div>
+                        <i class="far fa-credit-card"></i>
+                    </div>
 
-            <label for="card-element">Credit Card</label>
-            <div id="card-element"></div> <!-- Stripe Card Element -->
+                    <div class="card-grp space">
+                        <div class="card-item icon-relative">
+                            <label class="label">Expiry date:</label>
+                            <div id="card-expiry" class="input"></div>
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-item icon-relative">
+                            <label class="label">CVC:</label>
+                            <div id="card-cvc" class="input"></div>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
 
-            <button type="submit" id="submit-button">Pay Now</button>
-        </form>
-        <div id="payment-message"></div>
+                    <button type="submit" class="btn">Membership · $<span id="payment-amount">10.00</span></button>
+                    <p id="message"></p>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script>
-        const stripe = Stripe("pk_test_51QxYD05ZzUyAuQZVSSR8ucryv3E2R0O0QohLd3shUZsUNO5TqE3VAny5t5cSM6Nw8jczdFjKkMLFKr7denBp8X4400QZ4VJW91"); // Replace with your actual Stripe public key
+        const stripe = Stripe("pk_test_your_publishable_key");
         const elements = stripe.elements();
 
-        const cardElement = elements.create("card", {
-            style: {
-                base: {
-                    fontSize: "16px",
-                    color: "#32325d",
-                    fontFamily: "Arial, sans-serif",
-                    "::placeholder": { color: "#aab7c4" }
-                },
-                invalid: { color: "#fa755a" }
+        // Define the price here (in dollars)
+        const price = 10.00; // Change this value as needed
+      
+        // Update the Pay button to show the price
+        document.getElementById("payment-amount").textContent = price.toFixed(2);
+
+        // Create individual Stripe Elements
+        const cardNumber = elements.create("cardNumber");
+        const cardExpiry = elements.create("cardExpiry");
+        const cardCvc = elements.create("cardCvc");
+
+        // Mount them to respective divs
+        cardNumber.mount("#card-element");
+        cardExpiry.mount("#card-expiry");
+        cardCvc.mount("#card-cvc");
+
+        document.getElementById("payment-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const cardHolderName = document.getElementById("card-holder-name").value;
+            if (!cardHolderName) {
+                document.getElementById("message").textContent = "Please enter cardholder name";
+                return;
             }
-        });
 
-        cardElement.mount("#card-element");
+            const res = await fetch("http://localhost:5000/create-payment-intent", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ amount: price * 100 }) // Convert dollars to cents
+            });
 
-        const form = document.getElementById("payment-form");
-        const submitButton = document.getElementById("submit-button");
-        const paymentMessage = document.getElementById("payment-message");
+            const { clientSecret } = await res.json();
 
-        form.addEventListener("submit", async (event) => {
-            event.preventDefault();
-            submitButton.disabled = true;
-            submitButton.textContent = "Processing...";
-
-            const { paymentMethod, error } = await stripe.createPaymentMethod({
-                type: "card",
-                card: cardElement,
-                billing_details: {
-                    name: document.getElementById("name").value,
-                    email: document.getElementById("email").value
+            const { paymentIntent, error } = await stripe.confirmCardPayment(clientSecret, {
+                payment_method: {
+                    card: cardNumber,
+                    billing_details: { name: cardHolderName }
                 }
             });
 
             if (error) {
-                paymentMessage.textContent = error.message;
-                submitButton.disabled = false;
-                submitButton.textContent = "Pay Now";
-                return;
+                document.getElementById("message").textContent = error.message;
+            } else if (paymentIntent.status === "succeeded") {
+                document.getElementById("message").textContent = "Payment successful!";
             }
-
-            const response = await fetch("http://localhost:5000/payment", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    paymentMethodId: paymentMethod.id,
-                    amount: document.getElementById("amount").value
-                })
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                paymentMessage.textContent = "Payment Successful!";
-                paymentMessage.style.color = "green";
-            } else {
-                paymentMessage.textContent = "Payment Failed: " + result.message;
-                paymentMessage.style.color = "red";
-            }
-
-            submitButton.disabled = false;
-            submitButton.textContent = "Pay Now";
         });
     </script>
-
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            background: #f4f4f4; 
-            text-align: center; 
-            padding: 20px;
-        }
-
-        .payment-container { 
-            background: white; 
-            padding: 20px; 
-            width: 350px; 
-            margin: 50px auto; 
-            border-radius: 10px; 
-            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-        }
-
-        input { 
-            display: block; 
-            width: 100%; 
-            padding: 10px; 
-            margin: 10px 0; 
-            border: 1px solid #ccc; 
-            border-radius: 5px; 
-            font-size: 16px;
-        }
-
-        #card-element {
-            background: white;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button { 
-            background: #28a745; 
-            color: white; 
-            padding: 10px; 
-            width: 100%; 
-            border: none; 
-            cursor: pointer; 
-            font-size: 16px;
-        }
-
-        button:disabled { 
-            background: #ccc; 
-            cursor: not-allowed;
-        }
-
-        #payment-message { 
-            margin-top: 10px; 
-            font-size: 14px;
-        }
-    </style>
 
 </body>
 </html>
